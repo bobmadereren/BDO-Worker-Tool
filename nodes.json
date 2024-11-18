@@ -1,5 +1,5 @@
-{
-    "1": {
+[
+    {
         "id": 1,
         "name": "Velia",
         "territory": "Balenos Territory",
@@ -24,7 +24,7 @@
         "type": "City",
         "monopoly": false
     },
-    "2": {
+    {
         "id": 2,
         "name": "Western Guard Camp",
         "territory": "Balenos Territory",
@@ -45,7 +45,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "3": {
+    {
         "id": 3,
         "name": "Cron Castle",
         "territory": "Balenos Territory",
@@ -63,7 +63,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "4": {
+    {
         "id": 4,
         "name": "Western Gateway",
         "territory": "Balenos Territory",
@@ -83,7 +83,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "5": {
+    {
         "id": 5,
         "name": "Bandit's Den Byway",
         "territory": "Serendia Territory",
@@ -103,7 +103,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "6": {
+    {
         "id": 6,
         "name": "Heidel Pass",
         "territory": "Balenos Territory",
@@ -123,7 +123,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "21": {
+    {
         "id": 21,
         "name": "Bartali Farm",
         "territory": "Balenos Territory",
@@ -149,7 +149,7 @@
         "type": "Trade",
         "monopoly": false
     },
-    "22": {
+    {
         "id": 22,
         "name": "Finto Farm",
         "territory": "Balenos Territory",
@@ -172,7 +172,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "23": {
+    {
         "id": 23,
         "name": "Goblin Cave",
         "territory": "Balenos Territory",
@@ -192,7 +192,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "24": {
+    {
         "id": 24,
         "name": "Ancient Stone Chamber",
         "territory": "Balenos Territory",
@@ -211,7 +211,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "25": {
+    {
         "id": 25,
         "name": "Imp Cave",
         "territory": "Balenos Territory",
@@ -233,7 +233,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "26": {
+    {
         "id": 26,
         "name": "Loggia Farm",
         "territory": "Balenos Territory",
@@ -254,7 +254,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "27": {
+    {
         "id": 27,
         "name": "Marino Farm",
         "territory": "Balenos Territory",
@@ -273,7 +273,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "41": {
+    {
         "id": 41,
         "name": "Cron Castle Site",
         "territory": "Balenos Territory",
@@ -295,7 +295,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "42": {
+    {
         "id": 42,
         "name": "Ehwaz Hill",
         "territory": "Balenos Territory",
@@ -317,7 +317,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "43": {
+    {
         "id": 43,
         "name": "Forest of Plunder",
         "territory": "Balenos Territory",
@@ -339,7 +339,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "44": {
+    {
         "id": 44,
         "name": "Balenos Forest",
         "territory": "Balenos Territory",
@@ -360,7 +360,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "45": {
+    {
         "id": 45,
         "name": "Toscani Farm",
         "territory": "Balenos Territory",
@@ -383,7 +383,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "46": {
+    {
         "id": 46,
         "name": "Coastal Cave",
         "territory": "Balenos Territory",
@@ -405,7 +405,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "47": {
+    {
         "id": 47,
         "name": "Altar of Agris",
         "territory": "Balenos Territory",
@@ -424,7 +424,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "48": {
+    {
         "id": 48,
         "name": "Forest of Seclusion",
         "territory": "Balenos Territory",
@@ -446,7 +446,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "49": {
+    {
         "id": 49,
         "name": "Coastal Cliff",
         "territory": "Balenos Territory",
@@ -468,7 +468,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "61": {
+    {
         "id": 61,
         "name": "Olvia",
         "territory": "Balenos Territory",
@@ -488,7 +488,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "62": {
+    {
         "id": 62,
         "name": "Florin Gateway",
         "territory": "Balenos Territory",
@@ -508,7 +508,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "63": {
+    {
         "id": 63,
         "name": "Elder's Bridge",
         "territory": "Balenos Territory",
@@ -529,7 +529,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "64": {
+    {
         "id": 64,
         "name": "Casta Farm",
         "territory": "Balenos Territory",
@@ -551,7 +551,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "65": {
+    {
         "id": 65,
         "name": "Wale Farm",
         "territory": "Balenos Territory",
@@ -572,7 +572,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "66": {
+    {
         "id": 66,
         "name": "Wolf Hills",
         "territory": "Balenos Territory",
@@ -593,7 +593,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "67": {
+    {
         "id": 67,
         "name": "Balenos River Mouth",
         "territory": "Balenos Territory",
@@ -613,7 +613,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "68": {
+    {
         "id": 68,
         "name": "Terrmian Cliff",
         "territory": "Balenos Territory",
@@ -633,7 +633,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "69": {
+    {
         "id": 69,
         "name": "Foot of Terrmian Mountain",
         "territory": "Balenos Territory",
@@ -651,7 +651,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "70": {
+    {
         "id": 70,
         "name": "Olvia Coast",
         "territory": "Balenos Territory",
@@ -670,7 +670,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "71": {
+    {
         "id": 71,
         "name": "Epheria Ridge",
         "territory": "Balenos Territory",
@@ -689,7 +689,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "72": {
+    {
         "id": 72,
         "name": "Mask Owl's Forest",
         "territory": "Balenos Territory",
@@ -708,7 +708,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "102": {
+    {
         "id": 102,
         "name": "Santo Manzi Investment Bank",
         "territory": "Balenos Territory",
@@ -735,7 +735,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "103": {
+    {
         "id": 103,
         "name": "Bahar Investment Bank",
         "territory": "Balenos Territory",
@@ -762,7 +762,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "104": {
+    {
         "id": 104,
         "name": "Specialties",
         "territory": "Balenos Territory",
@@ -785,7 +785,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "105": {
+    {
         "id": 105,
         "name": "Specialties",
         "territory": "Balenos Territory",
@@ -808,7 +808,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "106": {
+    {
         "id": 106,
         "name": "Specialties",
         "territory": "Balenos Territory",
@@ -831,7 +831,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "107": {
+    {
         "id": 107,
         "name": "Specialties",
         "territory": "Balenos Territory",
@@ -854,7 +854,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "108": {
+    {
         "id": 108,
         "name": "Specialties",
         "territory": "Balenos Territory",
@@ -877,7 +877,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "109": {
+    {
         "id": 109,
         "name": "Specialties",
         "territory": "Balenos Territory",
@@ -900,7 +900,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "110": {
+    {
         "id": 110,
         "name": "Specialties",
         "territory": "Balenos Territory",
@@ -923,7 +923,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "131": {
+    {
         "id": 131,
         "name": "Potato Farming",
         "territory": "Balenos Territory",
@@ -951,7 +951,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "132": {
+    {
         "id": 132,
         "name": "Chicken Meat Production",
         "territory": "Balenos Territory",
@@ -987,7 +987,7 @@
         "type": "Production",
         "monopoly": false
     },
-    "133": {
+    {
         "id": 133,
         "name": "Ossuary",
         "territory": "Balenos Territory",
@@ -1005,7 +1005,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "134": {
+    {
         "id": 134,
         "name": "Ossuary",
         "territory": "Balenos Territory",
@@ -1023,7 +1023,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "135": {
+    {
         "id": 135,
         "name": "Potato Farming",
         "territory": "Balenos Territory",
@@ -1051,7 +1051,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "136": {
+    {
         "id": 136,
         "name": "Chicken Meat Production",
         "territory": "Balenos Territory",
@@ -1087,7 +1087,7 @@
         "type": "Production",
         "monopoly": false
     },
-    "139": {
+    {
         "id": 139,
         "name": "Mining",
         "territory": "Balenos Territory",
@@ -1119,7 +1119,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "142": {
+    {
         "id": 142,
         "name": "Lumbering",
         "territory": "Balenos Territory",
@@ -1167,7 +1167,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "144": {
+    {
         "id": 144,
         "name": "Excavation",
         "territory": "Balenos Territory",
@@ -1215,7 +1215,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "147": {
+    {
         "id": 147,
         "name": "Mining",
         "territory": "Balenos Territory",
@@ -1247,7 +1247,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "148": {
+    {
         "id": 148,
         "name": "Mining",
         "territory": "Balenos Territory",
@@ -1279,7 +1279,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "151": {
+    {
         "id": 151,
         "name": "Potato Farming",
         "territory": "Balenos Territory",
@@ -1307,7 +1307,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "152": {
+    {
         "id": 152,
         "name": "Specialties",
         "territory": "Balenos Territory",
@@ -1330,7 +1330,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "155": {
+    {
         "id": 155,
         "name": "Gathering",
         "territory": "Balenos Territory",
@@ -1362,7 +1362,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "156": {
+    {
         "id": 156,
         "name": "Mining",
         "territory": "Balenos Territory",
@@ -1380,7 +1380,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "159": {
+    {
         "id": 159,
         "name": "Gathering",
         "territory": "Balenos Territory",
@@ -1412,7 +1412,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "160": {
+    {
         "id": 160,
         "name": "Lumbering",
         "territory": "Balenos Territory",
@@ -1460,7 +1460,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "164": {
+    {
         "id": 164,
         "name": "Gathering",
         "territory": "Balenos Territory",
@@ -1492,7 +1492,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "167": {
+    {
         "id": 167,
         "name": "Lumbering",
         "territory": "Balenos Territory",
@@ -1540,7 +1540,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "168": {
+    {
         "id": 168,
         "name": "Gathering",
         "territory": "Balenos Territory",
@@ -1572,7 +1572,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "171": {
+    {
         "id": 171,
         "name": "Corn Farming",
         "territory": "Balenos Territory",
@@ -1600,7 +1600,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "172": {
+    {
         "id": 172,
         "name": "Corn Farming",
         "territory": "Balenos Territory",
@@ -1628,7 +1628,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "175": {
+    {
         "id": 175,
         "name": "Mining",
         "territory": "Balenos Territory",
@@ -1660,7 +1660,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "176": {
+    {
         "id": 176,
         "name": "Mining",
         "territory": "Balenos Territory",
@@ -1692,7 +1692,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "179": {
+    {
         "id": 179,
         "name": "Gathering",
         "territory": "Balenos Territory",
@@ -1710,7 +1710,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "183": {
+    {
         "id": 183,
         "name": "Lumbering",
         "territory": "Balenos Territory",
@@ -1758,7 +1758,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "184": {
+    {
         "id": 184,
         "name": "Mining",
         "territory": "Balenos Territory",
@@ -1790,7 +1790,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "187": {
+    {
         "id": 187,
         "name": "Gathering",
         "territory": "Balenos Territory",
@@ -1822,7 +1822,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "188": {
+    {
         "id": 188,
         "name": "Mining",
         "territory": "Balenos Territory",
@@ -1854,7 +1854,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "201": {
+    {
         "id": 201,
         "name": "Lumbering",
         "territory": "Balenos Territory",
@@ -1898,7 +1898,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "202": {
+    {
         "id": 202,
         "name": "Mining",
         "territory": "Balenos Territory",
@@ -1926,7 +1926,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "203": {
+    {
         "id": 203,
         "name": "Grapes",
         "territory": "Balenos Territory",
@@ -1954,7 +1954,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "204": {
+    {
         "id": 204,
         "name": "Olives",
         "territory": "Balenos Territory",
@@ -1982,7 +1982,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "205": {
+    {
         "id": 205,
         "name": "Specialties",
         "territory": "Balenos Territory",
@@ -2005,7 +2005,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "301": {
+    {
         "id": 301,
         "name": "Heidel",
         "territory": "Serendia Territory",
@@ -2029,7 +2029,7 @@
         "type": "City",
         "monopoly": false
     },
-    "302": {
+    {
         "id": 302,
         "name": "Glish",
         "territory": "Serendia Territory",
@@ -2054,7 +2054,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "303": {
+    {
         "id": 303,
         "name": "Northern Guard Camp",
         "territory": "Serendia Territory",
@@ -2075,7 +2075,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "304": {
+    {
         "id": 304,
         "name": "Central Guard Camp",
         "territory": "Serendia Territory",
@@ -2096,7 +2096,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "305": {
+    {
         "id": 305,
         "name": "Southern Guard Camp",
         "territory": "Serendia Territory",
@@ -2117,7 +2117,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "306": {
+    {
         "id": 306,
         "name": "Northwestern Gateway",
         "territory": "Serendia Territory",
@@ -2139,7 +2139,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "307": {
+    {
         "id": 307,
         "name": "Southwestern Gateway",
         "territory": "Serendia Territory",
@@ -2160,7 +2160,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "308": {
+    {
         "id": 308,
         "name": "Eastern Border",
         "territory": "Serendia Territory",
@@ -2180,7 +2180,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "309": {
+    {
         "id": 309,
         "name": "Eastern Gateway",
         "territory": "Serendia Territory",
@@ -2201,7 +2201,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "321": {
+    {
         "id": 321,
         "name": "Alejandro Farm",
         "territory": "Serendia Territory",
@@ -2223,7 +2223,7 @@
         "type": "Trade",
         "monopoly": false
     },
-    "322": {
+    {
         "id": 322,
         "name": "Costa Farm",
         "territory": "Serendia Territory",
@@ -2246,7 +2246,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "323": {
+    {
         "id": 323,
         "name": "Moretti Plantation",
         "territory": "Serendia Territory",
@@ -2270,7 +2270,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "324": {
+    {
         "id": 324,
         "name": "Castle Ruins",
         "territory": "Serendia Territory",
@@ -2291,7 +2291,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "325": {
+    {
         "id": 325,
         "name": "Bloody Monastery",
         "territory": "Serendia Territory",
@@ -2309,7 +2309,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "326": {
+    {
         "id": 326,
         "name": "Northern Heidel Quarry",
         "territory": "Serendia Territory",
@@ -2329,7 +2329,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "327": {
+    {
         "id": 327,
         "name": "Serendia Shrine",
         "territory": "Serendia Territory",
@@ -2349,7 +2349,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "328": {
+    {
         "id": 328,
         "name": "Lynch Ranch",
         "territory": "Serendia Territory",
@@ -2368,7 +2368,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "341": {
+    {
         "id": 341,
         "name": "Northern Plain of Serendia",
         "territory": "Serendia Territory",
@@ -2391,7 +2391,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "343": {
+    {
         "id": 343,
         "name": "Glish Swamp",
         "territory": "Serendia Territory",
@@ -2411,7 +2411,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "344": {
+    {
         "id": 344,
         "name": "Southern Swamp",
         "territory": "Serendia Territory",
@@ -2433,7 +2433,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "345": {
+    {
         "id": 345,
         "name": "Glish Ruins",
         "territory": "Serendia Territory",
@@ -2454,7 +2454,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "346": {
+    {
         "id": 346,
         "name": "Northern Swamp",
         "territory": "Serendia Territory",
@@ -2477,7 +2477,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "347": {
+    {
         "id": 347,
         "name": "Lynch Farm Ruins",
         "territory": "Serendia Territory",
@@ -2500,7 +2500,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "371": {
+    {
         "id": 371,
         "name": "Biraghi Den",
         "territory": "Serendia Territory",
@@ -2520,7 +2520,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "372": {
+    {
         "id": 372,
         "name": "Bradie Fortress",
         "territory": "Serendia Territory",
@@ -2540,7 +2540,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "373": {
+    {
         "id": 373,
         "name": "Southern Neutral Zone",
         "territory": "Serendia Territory",
@@ -2561,7 +2561,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "374": {
+    {
         "id": 374,
         "name": "Orc Camp",
         "territory": "Serendia Territory",
@@ -2582,7 +2582,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "375": {
+    {
         "id": 375,
         "name": "Delphe Knights Castle",
         "territory": "Calpheon Territory",
@@ -2604,7 +2604,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "376": {
+    {
         "id": 376,
         "name": "Watchtower",
         "territory": "Serendia Territory",
@@ -2623,7 +2623,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "401": {
+    {
         "id": 401,
         "name": "Luciano Pietro Investment Bank",
         "territory": "Serendia Territory",
@@ -2650,7 +2650,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "402": {
+    {
         "id": 402,
         "name": "Siuta Investment Bank",
         "territory": "Serendia Territory",
@@ -2677,7 +2677,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "405": {
+    {
         "id": 405,
         "name": "Freharau Investment Bank",
         "territory": "Serendia Territory",
@@ -2704,7 +2704,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "406": {
+    {
         "id": 406,
         "name": "Larc Investment Bank",
         "territory": "Serendia Territory",
@@ -2731,7 +2731,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "407": {
+    {
         "id": 407,
         "name": "Specialties",
         "territory": "Serendia Territory",
@@ -2754,7 +2754,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "408": {
+    {
         "id": 408,
         "name": "Specialties",
         "territory": "Serendia Territory",
@@ -2777,7 +2777,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "409": {
+    {
         "id": 409,
         "name": "Specialties",
         "territory": "Serendia Territory",
@@ -2800,7 +2800,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "410": {
+    {
         "id": 410,
         "name": "Specialties",
         "territory": "Serendia Territory",
@@ -2823,7 +2823,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "431": {
+    {
         "id": 431,
         "name": "Pumpkin Farming",
         "territory": "Serendia Territory",
@@ -2851,7 +2851,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "432": {
+    {
         "id": 432,
         "name": "Honey Production",
         "territory": "Serendia Territory",
@@ -2879,7 +2879,7 @@
         "type": "Production",
         "monopoly": false
     },
-    "435": {
+    {
         "id": 435,
         "name": "Wheat Farming",
         "territory": "Serendia Territory",
@@ -2907,7 +2907,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "436": {
+    {
         "id": 436,
         "name": "Pumpkin Farming",
         "territory": "Serendia Territory",
@@ -2935,7 +2935,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "437": {
+    {
         "id": 437,
         "name": "Specialties",
         "territory": "Serendia Territory",
@@ -2958,7 +2958,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "438": {
+    {
         "id": 438,
         "name": "Flax Farming",
         "territory": "Serendia Territory",
@@ -2990,7 +2990,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "439": {
+    {
         "id": 439,
         "name": "Wheat Farming",
         "territory": "Serendia Territory",
@@ -3018,7 +3018,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "440": {
+    {
         "id": 440,
         "name": "Flax Farming",
         "territory": "Serendia Territory",
@@ -3050,7 +3050,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "441": {
+    {
         "id": 441,
         "name": "Moretti Safe Zone",
         "territory": "Serendia Territory",
@@ -3068,7 +3068,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "443": {
+    {
         "id": 443,
         "name": "Lumbering",
         "territory": "Serendia Territory",
@@ -3116,7 +3116,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "451": {
+    {
         "id": 451,
         "name": "Mining",
         "territory": "Serendia Territory",
@@ -3148,7 +3148,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "452": {
+    {
         "id": 452,
         "name": "Mining",
         "territory": "Serendia Territory",
@@ -3180,7 +3180,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "455": {
+    {
         "id": 455,
         "name": "Lumbering",
         "territory": "Serendia Territory",
@@ -3228,7 +3228,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "459": {
+    {
         "id": 459,
         "name": "Fleece Production",
         "territory": "Serendia Territory",
@@ -3264,7 +3264,7 @@
         "type": "Production",
         "monopoly": false
     },
-    "463": {
+    {
         "id": 463,
         "name": "Gathering",
         "territory": "Serendia Territory",
@@ -3296,7 +3296,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "464": {
+    {
         "id": 464,
         "name": "Lumbering",
         "territory": "Serendia Territory",
@@ -3344,7 +3344,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "471": {
+    {
         "id": 471,
         "name": "Gathering",
         "territory": "Serendia Territory",
@@ -3376,7 +3376,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "472": {
+    {
         "id": 472,
         "name": "Mining",
         "territory": "Serendia Territory",
@@ -3408,7 +3408,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "473": {
+    {
         "id": 473,
         "name": "Specialties",
         "territory": "Serendia Territory",
@@ -3431,7 +3431,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "475": {
+    {
         "id": 475,
         "name": "Gathering",
         "territory": "Serendia Territory",
@@ -3463,7 +3463,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "476": {
+    {
         "id": 476,
         "name": "Mining",
         "territory": "Serendia Territory",
@@ -3495,7 +3495,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "479": {
+    {
         "id": 479,
         "name": "Gathering",
         "territory": "Serendia Territory",
@@ -3513,7 +3513,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "480": {
+    {
         "id": 480,
         "name": "Excavation",
         "territory": "Serendia Territory",
@@ -3565,7 +3565,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "483": {
+    {
         "id": 483,
         "name": "Gathering",
         "territory": "Serendia Territory",
@@ -3597,7 +3597,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "484": {
+    {
         "id": 484,
         "name": "Mining",
         "territory": "Serendia Territory",
@@ -3615,7 +3615,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "487": {
+    {
         "id": 487,
         "name": "Gathering",
         "territory": "Serendia Territory",
@@ -3647,7 +3647,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "488": {
+    {
         "id": 488,
         "name": "Excavation",
         "territory": "Serendia Territory",
@@ -3699,7 +3699,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "601": {
+    {
         "id": 601,
         "name": "Calpheon",
         "territory": "Calpheon Territory",
@@ -3730,7 +3730,7 @@
         "type": "City",
         "monopoly": false
     },
-    "602": {
+    {
         "id": 602,
         "name": "Keplan",
         "territory": "Calpheon Territory",
@@ -3753,7 +3753,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "603": {
+    {
         "id": 603,
         "name": "Florin",
         "territory": "Calpheon Territory",
@@ -3777,7 +3777,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "604": {
+    {
         "id": 604,
         "name": "Port Epheria",
         "territory": "Calpheon Territory",
@@ -3798,7 +3798,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "605": {
+    {
         "id": 605,
         "name": "Enrique Encarotia Investment Bank",
         "territory": "Calpheon Territory",
@@ -3825,7 +3825,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "606": {
+    {
         "id": 606,
         "name": "Lehard Mertenan Investment Bank",
         "territory": "Calpheon Territory",
@@ -3852,7 +3852,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "607": {
+    {
         "id": 607,
         "name": "Luolo Grebe Investment Bank",
         "territory": "Calpheon Territory",
@@ -3879,7 +3879,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "608": {
+    {
         "id": 608,
         "name": "Trent",
         "territory": "Calpheon Territory",
@@ -3899,7 +3899,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "609": {
+    {
         "id": 609,
         "name": "Behr",
         "territory": "Calpheon Territory",
@@ -3919,7 +3919,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "610": {
+    {
         "id": 610,
         "name": "Basquean Ljurik Investment Bank",
         "territory": "Calpheon Territory",
@@ -3946,7 +3946,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "611": {
+    {
         "id": 611,
         "name": "Norma Leight Investment Bank",
         "territory": "Calpheon Territory",
@@ -3973,7 +3973,7 @@
         "type": "Investment Bank",
         "monopoly": false
     },
-    "612": {
+    {
         "id": 612,
         "name": "Valentine Investment Bank",
         "territory": "Calpheon Territory",
@@ -4000,7 +4000,7 @@
         "type": "Investment Bank",
         "monopoly": false
     },
-    "613": {
+    {
         "id": 613,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -4023,7 +4023,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "614": {
+    {
         "id": 614,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -4046,7 +4046,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "615": {
+    {
         "id": 615,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -4069,7 +4069,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "616": {
+    {
         "id": 616,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -4092,7 +4092,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "617": {
+    {
         "id": 617,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -4115,7 +4115,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "618": {
+    {
         "id": 618,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -4138,7 +4138,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "619": {
+    {
         "id": 619,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -4161,7 +4161,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "621": {
+    {
         "id": 621,
         "name": "Abandoned Land",
         "territory": "Calpheon Territory",
@@ -4181,7 +4181,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "622": {
+    {
         "id": 622,
         "name": "Quint Hill",
         "territory": "Calpheon Territory",
@@ -4201,7 +4201,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "623": {
+    {
         "id": 623,
         "name": "Anti-Troll Fortification",
         "territory": "Calpheon Territory",
@@ -4222,7 +4222,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "624": {
+    {
         "id": 624,
         "name": "Bree Tree Ruins",
         "territory": "Calpheon Territory",
@@ -4243,7 +4243,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "625": {
+    {
         "id": 625,
         "name": "Khuruto Cave",
         "territory": "Calpheon Territory",
@@ -4264,7 +4264,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "626": {
+    {
         "id": 626,
         "name": "Delphe Outpost",
         "territory": "Calpheon Territory",
@@ -4284,7 +4284,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "627": {
+    {
         "id": 627,
         "name": "Karanda Ridge",
         "territory": "Calpheon Territory",
@@ -4304,7 +4304,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "628": {
+    {
         "id": 628,
         "name": "Northern Wheat Plantation",
         "territory": "Calpheon Territory",
@@ -4330,7 +4330,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "629": {
+    {
         "id": 629,
         "name": "Old Dandelion",
         "territory": "Calpheon Territory",
@@ -4352,7 +4352,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "630": {
+    {
         "id": 630,
         "name": "Contaminated Farm",
         "territory": "Calpheon Territory",
@@ -4371,7 +4371,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "631": {
+    {
         "id": 631,
         "name": "Caphras Cave",
         "territory": "Calpheon Territory",
@@ -4390,7 +4390,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "632": {
+    {
         "id": 632,
         "name": "Isolated Sentry Post",
         "territory": "Calpheon Territory",
@@ -4412,7 +4412,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "633": {
+    {
         "id": 633,
         "name": "Dias Farm",
         "territory": "Calpheon Territory",
@@ -4434,7 +4434,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "634": {
+    {
         "id": 634,
         "name": "Epheria Sentry Post",
         "territory": "Calpheon Territory",
@@ -4453,7 +4453,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "635": {
+    {
         "id": 635,
         "name": "Epheria Valley",
         "territory": "Calpheon Territory",
@@ -4473,7 +4473,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "636": {
+    {
         "id": 636,
         "name": "Cohen Farm",
         "territory": "Calpheon Territory",
@@ -4492,7 +4492,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "637": {
+    {
         "id": 637,
         "name": "Elder's Bridge Post",
         "territory": "Calpheon Territory",
@@ -4511,7 +4511,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "638": {
+    {
         "id": 638,
         "name": "Bernianto Farm",
         "territory": "Calpheon Territory",
@@ -4532,7 +4532,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "651": {
+    {
         "id": 651,
         "name": "Marni Cave Path",
         "territory": "Calpheon Territory",
@@ -4554,7 +4554,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "652": {
+    {
         "id": 652,
         "name": "Oze Pass",
         "territory": "Calpheon Territory",
@@ -4578,7 +4578,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "653": {
+    {
         "id": 653,
         "name": "Marni Farm Ruins",
         "territory": "Calpheon Territory",
@@ -4598,7 +4598,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "654": {
+    {
         "id": 654,
         "name": "Keplan Hill",
         "territory": "Calpheon Territory",
@@ -4618,7 +4618,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "655": {
+    {
         "id": 655,
         "name": "Saunil Camp",
         "territory": "Calpheon Territory",
@@ -4637,7 +4637,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "656": {
+    {
         "id": 656,
         "name": "Primal Giant Post",
         "territory": "Calpheon Territory",
@@ -4657,7 +4657,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "657": {
+    {
         "id": 657,
         "name": "Saunil Battlefield",
         "territory": "Calpheon Territory",
@@ -4678,7 +4678,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "658": {
+    {
         "id": 658,
         "name": "Trina Fort",
         "territory": "Calpheon Territory",
@@ -4698,7 +4698,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "659": {
+    {
         "id": 659,
         "name": "Trina Beacon Towers",
         "territory": "Calpheon Territory",
@@ -4717,7 +4717,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "660": {
+    {
         "id": 660,
         "name": "Marni's Lab",
         "territory": "Calpheon Territory",
@@ -4736,7 +4736,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "661": {
+    {
         "id": 661,
         "name": "Falres Dirt Farm",
         "territory": "Calpheon Territory",
@@ -4758,7 +4758,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "662": {
+    {
         "id": 662,
         "name": "Hexe Stone Wall",
         "territory": "Calpheon Territory",
@@ -4779,7 +4779,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "663": {
+    {
         "id": 663,
         "name": "Bain Farmland",
         "territory": "Calpheon Territory",
@@ -4799,7 +4799,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "664": {
+    {
         "id": 664,
         "name": "North Abandoned Quarry",
         "territory": "Calpheon Territory",
@@ -4820,7 +4820,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "665": {
+    {
         "id": 665,
         "name": "Oberen Farm",
         "territory": "Calpheon Territory",
@@ -4840,7 +4840,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "666": {
+    {
         "id": 666,
         "name": "Beacon Entrance Post",
         "territory": "Calpheon Territory",
@@ -4860,7 +4860,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "667": {
+    {
         "id": 667,
         "name": "Abandoned Quarry",
         "territory": "Calpheon Territory",
@@ -4880,7 +4880,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "668": {
+    {
         "id": 668,
         "name": "Gehaku Plain",
         "territory": "Calpheon Territory",
@@ -4901,7 +4901,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "669": {
+    {
         "id": 669,
         "name": "Keplan Vicinity",
         "territory": "Calpheon Territory",
@@ -4921,7 +4921,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "670": {
+    {
         "id": 670,
         "name": "Gianin Farm",
         "territory": "Calpheon Territory",
@@ -4942,7 +4942,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "671": {
+    {
         "id": 671,
         "name": "Serendia Western Gateway",
         "territory": "Calpheon Territory",
@@ -4961,7 +4961,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "672": {
+    {
         "id": 672,
         "name": "Glutoni Cave",
         "territory": "Calpheon Territory",
@@ -4981,7 +4981,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "673": {
+    {
         "id": 673,
         "name": "Quarry Byway",
         "territory": "Calpheon Territory",
@@ -5001,7 +5001,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "674": {
+    {
         "id": 674,
         "name": "Keplan Quarry",
         "territory": "Calpheon Territory",
@@ -5021,7 +5021,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "675": {
+    {
         "id": 675,
         "name": "Oze's House",
         "territory": "Calpheon Territory",
@@ -5040,7 +5040,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "676": {
+    {
         "id": 676,
         "name": "Dane Canyon",
         "territory": "Calpheon Territory",
@@ -5059,7 +5059,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "677": {
+    {
         "id": 677,
         "name": "Tarte Rock Fork",
         "territory": "Calpheon Territory",
@@ -5079,7 +5079,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "701": {
+    {
         "id": 701,
         "name": "Calpheon Castle Site",
         "territory": "Calpheon Territory",
@@ -5099,7 +5099,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "702": {
+    {
         "id": 702,
         "name": "Calpheon Castle",
         "territory": "Calpheon Territory",
@@ -5118,7 +5118,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "703": {
+    {
         "id": 703,
         "name": "Treant Forest",
         "territory": "Calpheon Territory",
@@ -5137,7 +5137,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "704": {
+    {
         "id": 704,
         "name": "North Kaia Pier",
         "territory": "Calpheon Territory",
@@ -5157,7 +5157,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "705": {
+    {
         "id": 705,
         "name": "Behr Riverhead",
         "territory": "Calpheon Territory",
@@ -5177,7 +5177,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "706": {
+    {
         "id": 706,
         "name": "Rhutum Outstation",
         "territory": "Calpheon Territory",
@@ -5197,7 +5197,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "707": {
+    {
         "id": 707,
         "name": "Rhutum Sentry Post",
         "territory": "Calpheon Territory",
@@ -5217,7 +5217,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "708": {
+    {
         "id": 708,
         "name": "Abandoned Monastery",
         "territory": "Calpheon Territory",
@@ -5238,7 +5238,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "709": {
+    {
         "id": 709,
         "name": "Crioville",
         "territory": "Calpheon Territory",
@@ -5257,7 +5257,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "710": {
+    {
         "id": 710,
         "name": "Rhua Tree Stub",
         "territory": "Calpheon Territory",
@@ -5279,7 +5279,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "711": {
+    {
         "id": 711,
         "name": "South Kaia Pier",
         "territory": "Calpheon Territory",
@@ -5298,7 +5298,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "712": {
+    {
         "id": 712,
         "name": "Gabino Farm",
         "territory": "Calpheon Territory",
@@ -5319,7 +5319,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "713": {
+    {
         "id": 713,
         "name": "Catfishman Camp",
         "territory": "Calpheon Territory",
@@ -5340,7 +5340,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "714": {
+    {
         "id": 714,
         "name": "Calpheon Castle Western Forest",
         "territory": "Calpheon Territory",
@@ -5359,7 +5359,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "715": {
+    {
         "id": 715,
         "name": "Mansha Forest",
         "territory": "Calpheon Territory",
@@ -5381,7 +5381,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "716": {
+    {
         "id": 716,
         "name": "Marie Cave",
         "territory": "Calpheon Territory",
@@ -5402,7 +5402,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "717": {
+    {
         "id": 717,
         "name": "Tobare's Cabin",
         "territory": "Calpheon Territory",
@@ -5422,7 +5422,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "718": {
+    {
         "id": 718,
         "name": "Lumberjack's Rest Area",
         "territory": "Calpheon Territory",
@@ -5442,7 +5442,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "719": {
+    {
         "id": 719,
         "name": "Longleaf Tree Sentry Post",
         "territory": "Calpheon Territory",
@@ -5463,7 +5463,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "720": {
+    {
         "id": 720,
         "name": "Longleaf Tree Forest",
         "territory": "Calpheon Territory",
@@ -5484,7 +5484,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "721": {
+    {
         "id": 721,
         "name": "Witch's Chapel",
         "territory": "Calpheon Territory",
@@ -5504,7 +5504,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "722": {
+    {
         "id": 722,
         "name": "Phoniel's Cabin",
         "territory": "Calpheon Territory",
@@ -5526,7 +5526,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "723": {
+    {
         "id": 723,
         "name": "Behr Downstream",
         "territory": "Calpheon Territory",
@@ -5548,7 +5548,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "724": {
+    {
         "id": 724,
         "name": "Hexe Sanctuary",
         "territory": "Calpheon Territory",
@@ -5567,7 +5567,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "725": {
+    {
         "id": 725,
         "name": "Phoniel's Cabin Entrance",
         "territory": "Calpheon Territory",
@@ -5587,7 +5587,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "726": {
+    {
         "id": 726,
         "name": "North Kaia Mountaintop",
         "territory": "Calpheon Territory",
@@ -5606,7 +5606,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "727": {
+    {
         "id": 727,
         "name": "Lake Kaia",
         "territory": "Calpheon Territory",
@@ -5624,7 +5624,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "801": {
+    {
         "id": 801,
         "name": "Calpheon Trade Exchange",
         "territory": "Calpheon Territory",
@@ -5642,7 +5642,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "805": {
+    {
         "id": 805,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -5665,7 +5665,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "806": {
+    {
         "id": 806,
         "name": "Florin_2",
         "territory": "Calpheon Territory",
@@ -5683,7 +5683,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "807": {
+    {
         "id": 807,
         "name": "Florin_3",
         "territory": "Calpheon Territory",
@@ -5701,7 +5701,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "809": {
+    {
         "id": 809,
         "name": "Marco Faust Investment Bank",
         "territory": "Calpheon Territory",
@@ -5728,7 +5728,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "810": {
+    {
         "id": 810,
         "name": "Christine Cessory Investment Bank",
         "territory": "Calpheon Territory",
@@ -5755,7 +5755,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "831": {
+    {
         "id": 831,
         "name": "Gathering",
         "territory": "Calpheon Territory",
@@ -5787,7 +5787,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "832": {
+    {
         "id": 832,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -5810,7 +5810,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "834": {
+    {
         "id": 834,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -5858,7 +5858,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "835": {
+    {
         "id": 835,
         "name": "Mining",
         "territory": "Calpheon Territory",
@@ -5890,7 +5890,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "840": {
+    {
         "id": 840,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -5938,7 +5938,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "841": {
+    {
         "id": 841,
         "name": "Gathering",
         "territory": "Calpheon Territory",
@@ -5970,7 +5970,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "842": {
+    {
         "id": 842,
         "name": "Excavation",
         "territory": "Calpheon Territory",
@@ -6018,7 +6018,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "843": {
+    {
         "id": 843,
         "name": "Mining",
         "territory": "Calpheon Territory",
@@ -6050,7 +6050,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "844": {
+    {
         "id": 844,
         "name": "Khuruto Cave",
         "territory": "Calpheon Territory",
@@ -6068,7 +6068,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "849": {
+    {
         "id": 849,
         "name": "Gathering",
         "territory": "Calpheon Territory",
@@ -6100,7 +6100,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "850": {
+    {
         "id": 850,
         "name": "Karanda Ridge",
         "territory": "Calpheon Territory",
@@ -6118,7 +6118,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "852": {
+    {
         "id": 852,
         "name": "Wheat Farming",
         "territory": "Calpheon Territory",
@@ -6146,7 +6146,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "853": {
+    {
         "id": 853,
         "name": "Barley Farming",
         "territory": "Calpheon Territory",
@@ -6174,7 +6174,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "854": {
+    {
         "id": 854,
         "name": "Paprika Farming",
         "territory": "Calpheon Territory",
@@ -6202,7 +6202,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "855": {
+    {
         "id": 855,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -6250,7 +6250,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "856": {
+    {
         "id": 856,
         "name": "Old Dandelion",
         "territory": "Calpheon Territory",
@@ -6268,7 +6268,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "857": {
+    {
         "id": 857,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -6291,7 +6291,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "858": {
+    {
         "id": 858,
         "name": "Northern Wheat Plantation Safe Zone",
         "territory": "Calpheon Territory",
@@ -6309,7 +6309,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "901": {
+    {
         "id": 901,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -6357,7 +6357,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "902": {
+    {
         "id": 902,
         "name": "Excavation",
         "territory": "Calpheon Territory",
@@ -6409,7 +6409,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "903": {
+    {
         "id": 903,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -6457,7 +6457,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "904": {
+    {
         "id": 904,
         "name": "Gathering",
         "territory": "Calpheon Territory",
@@ -6489,7 +6489,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "905": {
+    {
         "id": 905,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -6537,7 +6537,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "906": {
+    {
         "id": 906,
         "name": "Gathering",
         "territory": "Calpheon Territory",
@@ -6569,7 +6569,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "907": {
+    {
         "id": 907,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -6617,7 +6617,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "908": {
+    {
         "id": 908,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -6665,7 +6665,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "909": {
+    {
         "id": 909,
         "name": "Abandoned Monastery",
         "territory": "Calpheon Territory",
@@ -6683,7 +6683,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "910": {
+    {
         "id": 910,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -6731,7 +6731,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "911": {
+    {
         "id": 911,
         "name": "Gathering",
         "territory": "Calpheon Territory",
@@ -6763,7 +6763,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "912": {
+    {
         "id": 912,
         "name": "Excavation",
         "territory": "Calpheon Territory",
@@ -6811,7 +6811,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "913": {
+    {
         "id": 913,
         "name": "Mining",
         "territory": "Calpheon Territory",
@@ -6843,7 +6843,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "914": {
+    {
         "id": 914,
         "name": "Mining",
         "territory": "Calpheon Territory",
@@ -6875,7 +6875,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "915": {
+    {
         "id": 915,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -6898,7 +6898,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "950": {
+    {
         "id": 950,
         "name": "Mining",
         "territory": "Calpheon Territory",
@@ -6930,7 +6930,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "951": {
+    {
         "id": 951,
         "name": "Mining",
         "territory": "Calpheon Territory",
@@ -6962,7 +6962,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "952": {
+    {
         "id": 952,
         "name": "Lumbering",
         "territory": "Calpheon Territory",
@@ -7010,7 +7010,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "953": {
+    {
         "id": 953,
         "name": "Oze Pass",
         "territory": "Calpheon Territory",
@@ -7028,7 +7028,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "954": {
+    {
         "id": 954,
         "name": "North Abandoned Quarry",
         "territory": "Calpheon Territory",
@@ -7046,7 +7046,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "955": {
+    {
         "id": 955,
         "name": "Abandoned Quarry",
         "territory": "Calpheon Territory",
@@ -7064,7 +7064,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "956": {
+    {
         "id": 956,
         "name": "Keplan Hill",
         "territory": "Calpheon Territory",
@@ -7082,7 +7082,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "957": {
+    {
         "id": 957,
         "name": "Gathering",
         "territory": "Calpheon Territory",
@@ -7114,7 +7114,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "958": {
+    {
         "id": 958,
         "name": "Mining",
         "territory": "Calpheon Territory",
@@ -7146,7 +7146,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "959": {
+    {
         "id": 959,
         "name": "Mining",
         "territory": "Calpheon Territory",
@@ -7178,7 +7178,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "960": {
+    {
         "id": 960,
         "name": "Hexe Stone Wall",
         "territory": "Calpheon Territory",
@@ -7196,7 +7196,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "961": {
+    {
         "id": 961,
         "name": "Calpheon City Trade Zone",
         "territory": "Calpheon Territory",
@@ -7214,7 +7214,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "962": {
+    {
         "id": 962,
         "name": "Calpheon Market Trade Zone",
         "territory": "Calpheon Territory",
@@ -7232,7 +7232,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "963": {
+    {
         "id": 963,
         "name": "Calpheon Holy College Trade Zone",
         "territory": "Calpheon Territory",
@@ -7250,7 +7250,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "964": {
+    {
         "id": 964,
         "name": "Specialties",
         "territory": "Calpheon Territory",
@@ -7273,7 +7273,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1001": {
+    {
         "id": 1001,
         "name": "Lema Island",
         "territory": "Balenos Territory",
@@ -7300,7 +7300,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1002": {
+    {
         "id": 1002,
         "name": "Iliya Island",
         "territory": "Balenos Territory",
@@ -7322,7 +7322,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1003": {
+    {
         "id": 1003,
         "name": "Pilava Island",
         "territory": "Mediah Territory",
@@ -7343,7 +7343,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1004": {
+    {
         "id": 1004,
         "name": "Delinghart Island",
         "territory": "Mediah Territory",
@@ -7364,7 +7364,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1005": {
+    {
         "id": 1005,
         "name": "Pujara Island",
         "territory": "Balenos Territory",
@@ -7385,7 +7385,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1006": {
+    {
         "id": 1006,
         "name": "Ajir Island",
         "territory": "Balenos Territory",
@@ -7404,7 +7404,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1007": {
+    {
         "id": 1007,
         "name": "Al-Naha Island",
         "territory": "Balenos Territory",
@@ -7424,7 +7424,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1008": {
+    {
         "id": 1008,
         "name": "Racid Island",
         "territory": "Balenos Territory",
@@ -7444,7 +7444,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1009": {
+    {
         "id": 1009,
         "name": "Baremi Island",
         "territory": "Balenos Territory",
@@ -7464,7 +7464,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1010": {
+    {
         "id": 1010,
         "name": "Weita Island",
         "territory": "Balenos Territory",
@@ -7485,7 +7485,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1011": {
+    {
         "id": 1011,
         "name": "Beiruwa Island",
         "territory": "Mediah Territory",
@@ -7505,7 +7505,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1012": {
+    {
         "id": 1012,
         "name": "Taramura Island",
         "territory": "Mediah Territory",
@@ -7526,7 +7526,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1013": {
+    {
         "id": 1013,
         "name": "Ostra Island",
         "territory": "Mediah Territory",
@@ -7545,7 +7545,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1014": {
+    {
         "id": 1014,
         "name": "Arakil Island",
         "territory": "Balenos Territory",
@@ -7564,7 +7564,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1015": {
+    {
         "id": 1015,
         "name": "Kanvera Island",
         "territory": "Balenos Territory",
@@ -7583,7 +7583,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1016": {
+    {
         "id": 1016,
         "name": "Orffs Island",
         "territory": "Balenos Territory",
@@ -7605,7 +7605,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1017": {
+    {
         "id": 1017,
         "name": "Tulu Island",
         "territory": "Balenos Territory",
@@ -7624,7 +7624,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1018": {
+    {
         "id": 1018,
         "name": "Luivano Island",
         "territory": "Balenos Territory",
@@ -7647,7 +7647,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1019": {
+    {
         "id": 1019,
         "name": "Duch Island",
         "territory": "Balenos Territory",
@@ -7666,7 +7666,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1020": {
+    {
         "id": 1020,
         "name": "Mariveno Island",
         "territory": "Balenos Territory",
@@ -7686,7 +7686,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1021": {
+    {
         "id": 1021,
         "name": "Paratama Island",
         "territory": "Balenos Territory",
@@ -7707,7 +7707,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1022": {
+    {
         "id": 1022,
         "name": "Eveto Island",
         "territory": "Balenos Territory",
@@ -7726,7 +7726,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1023": {
+    {
         "id": 1023,
         "name": "Balvege Island",
         "territory": "Balenos Territory",
@@ -7746,7 +7746,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1024": {
+    {
         "id": 1024,
         "name": "Marlene Island",
         "territory": "Balenos Territory",
@@ -7764,7 +7764,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1026": {
+    {
         "id": 1026,
         "name": "Invernen Island",
         "territory": "Balenos Territory",
@@ -7785,7 +7785,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1027": {
+    {
         "id": 1027,
         "name": "Angie Island",
         "territory": "Balenos Territory",
@@ -7807,7 +7807,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1028": {
+    {
         "id": 1028,
         "name": "Tashu Island",
         "territory": "Balenos Territory",
@@ -7826,7 +7826,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1029": {
+    {
         "id": 1029,
         "name": "Fish Drying Yard 1",
         "territory": "Balenos Territory",
@@ -7870,7 +7870,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1030": {
+    {
         "id": 1030,
         "name": "Fish Drying Yard 2",
         "territory": "Balenos Territory",
@@ -7914,7 +7914,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1031": {
+    {
         "id": 1031,
         "name": "Fish Drying Yard 1",
         "territory": "Mediah Territory",
@@ -7958,7 +7958,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1032": {
+    {
         "id": 1032,
         "name": "Fish Drying Yard 2",
         "territory": "Mediah Territory",
@@ -8002,7 +8002,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1033": {
+    {
         "id": 1033,
         "name": "Fish Drying Yard 1",
         "territory": "Mediah Territory",
@@ -8046,7 +8046,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1034": {
+    {
         "id": 1034,
         "name": "Fish Drying Yard 2",
         "territory": "Mediah Territory",
@@ -8090,7 +8090,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1035": {
+    {
         "id": 1035,
         "name": "Fish Drying Yard 1",
         "territory": "Mediah Territory",
@@ -8130,7 +8130,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1036": {
+    {
         "id": 1036,
         "name": "Fish Drying Yard 2",
         "territory": "Mediah Territory",
@@ -8174,7 +8174,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1037": {
+    {
         "id": 1037,
         "name": "Fish Drying Yard",
         "territory": "Mediah Territory",
@@ -8218,7 +8218,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1038": {
+    {
         "id": 1038,
         "name": "Fish Drying Yard",
         "territory": "Balenos Territory",
@@ -8262,7 +8262,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1039": {
+    {
         "id": 1039,
         "name": "Ephde Rune Island",
         "territory": "Balenos Territory",
@@ -8281,7 +8281,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1040": {
+    {
         "id": 1040,
         "name": "Fish Drying Yard",
         "territory": "Balenos Territory",
@@ -8325,7 +8325,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1041": {
+    {
         "id": 1041,
         "name": "Fish Drying Yard 1",
         "territory": "Balenos Territory",
@@ -8369,7 +8369,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1042": {
+    {
         "id": 1042,
         "name": "Fish Drying Yard",
         "territory": "Balenos Territory",
@@ -8413,7 +8413,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1043": {
+    {
         "id": 1043,
         "name": "Fish Drying Yard 1",
         "territory": "Balenos Territory",
@@ -8457,7 +8457,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1044": {
+    {
         "id": 1044,
         "name": "Fish Drying Yard 2",
         "territory": "Balenos Territory",
@@ -8475,7 +8475,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1045": {
+    {
         "id": 1045,
         "name": "Fish Drying Yard 3",
         "territory": "Balenos Territory",
@@ -8519,7 +8519,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1046": {
+    {
         "id": 1046,
         "name": "Fish Drying Yard 1",
         "territory": "Balenos Territory",
@@ -8563,7 +8563,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1047": {
+    {
         "id": 1047,
         "name": "Fish Drying Yard 2",
         "territory": "Balenos Territory",
@@ -8607,7 +8607,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1048": {
+    {
         "id": 1048,
         "name": "Fish Drying Yard 1",
         "territory": "Balenos Territory",
@@ -8651,7 +8651,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1049": {
+    {
         "id": 1049,
         "name": "Fish Drying Yard",
         "territory": "Balenos Territory",
@@ -8695,7 +8695,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1050": {
+    {
         "id": 1050,
         "name": "Fish Drying Yard 2",
         "territory": "Balenos Territory",
@@ -8739,7 +8739,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1051": {
+    {
         "id": 1051,
         "name": "Marka Island",
         "territory": "Balenos Territory",
@@ -8758,7 +8758,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1052": {
+    {
         "id": 1052,
         "name": "Louruve Island",
         "territory": "Balenos Territory",
@@ -8779,7 +8779,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1053": {
+    {
         "id": 1053,
         "name": "Staren Island",
         "territory": "Balenos Territory",
@@ -8800,7 +8800,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1054": {
+    {
         "id": 1054,
         "name": "Lisz Island",
         "territory": "Balenos Territory",
@@ -8822,7 +8822,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1055": {
+    {
         "id": 1055,
         "name": "Narvo Island",
         "territory": "Balenos Territory",
@@ -8842,7 +8842,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1056": {
+    {
         "id": 1056,
         "name": "Albresser Island",
         "territory": "Calpheon Territory",
@@ -8864,7 +8864,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1057": {
+    {
         "id": 1057,
         "name": "Eberdeen Island",
         "territory": "Calpheon Territory",
@@ -8884,7 +8884,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1058": {
+    {
         "id": 1058,
         "name": "Oben Island",
         "territory": "Calpheon Territory",
@@ -8906,7 +8906,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1059": {
+    {
         "id": 1059,
         "name": "Daton Island",
         "territory": "Calpheon Territory",
@@ -8927,7 +8927,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1060": {
+    {
         "id": 1060,
         "name": "Dunde Island",
         "territory": "Calpheon Territory",
@@ -8945,7 +8945,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1061": {
+    {
         "id": 1061,
         "name": "Barater Island",
         "territory": "Calpheon Territory",
@@ -8966,7 +8966,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1062": {
+    {
         "id": 1062,
         "name": "Randis Island",
         "territory": "Calpheon Territory",
@@ -8988,7 +8988,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1063": {
+    {
         "id": 1063,
         "name": "Serca Island",
         "territory": "Calpheon Territory",
@@ -9008,7 +9008,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1064": {
+    {
         "id": 1064,
         "name": "Baeza Island",
         "territory": "Calpheon Territory",
@@ -9028,7 +9028,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1065": {
+    {
         "id": 1065,
         "name": "Modric Island",
         "territory": "Calpheon Territory",
@@ -9049,7 +9049,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1066": {
+    {
         "id": 1066,
         "name": "Theonil Island",
         "territory": "Calpheon Territory",
@@ -9069,7 +9069,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1067": {
+    {
         "id": 1067,
         "name": "Teyamal Island",
         "territory": "Calpheon Territory",
@@ -9089,7 +9089,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1068": {
+    {
         "id": 1068,
         "name": "Rameda Island",
         "territory": "Calpheon Territory",
@@ -9107,7 +9107,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1069": {
+    {
         "id": 1069,
         "name": "Ginburrey Island",
         "territory": "Calpheon Territory",
@@ -9126,7 +9126,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1070": {
+    {
         "id": 1070,
         "name": "Netnume Island",
         "territory": "Calpheon Territory",
@@ -9144,7 +9144,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1071": {
+    {
         "id": 1071,
         "name": "Fish Drying Yard",
         "territory": "Calpheon Territory",
@@ -9188,7 +9188,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1072": {
+    {
         "id": 1072,
         "name": "Fish Drying Yard",
         "territory": "Calpheon Territory",
@@ -9232,7 +9232,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1073": {
+    {
         "id": 1073,
         "name": "Fish Drying Yard",
         "territory": "Calpheon Territory",
@@ -9276,7 +9276,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1074": {
+    {
         "id": 1074,
         "name": "Fish Drying Yard 1",
         "territory": "Calpheon Territory",
@@ -9320,7 +9320,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1075": {
+    {
         "id": 1075,
         "name": "Fish Drying Yard 2",
         "territory": "Calpheon Territory",
@@ -9364,7 +9364,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1076": {
+    {
         "id": 1076,
         "name": "Fish Drying Yard 1",
         "territory": "Calpheon Territory",
@@ -9408,7 +9408,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1077": {
+    {
         "id": 1077,
         "name": "Fish Drying Yard",
         "territory": "Calpheon Territory",
@@ -9452,7 +9452,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1078": {
+    {
         "id": 1078,
         "name": "Fish Drying Yard 2",
         "territory": "Calpheon Territory",
@@ -9496,7 +9496,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1079": {
+    {
         "id": 1079,
         "name": "Fish Drying Yard 1",
         "territory": "Calpheon Territory",
@@ -9540,7 +9540,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1080": {
+    {
         "id": 1080,
         "name": "Fish Drying Yard 2",
         "territory": "Calpheon Territory",
@@ -9584,7 +9584,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1081": {
+    {
         "id": 1081,
         "name": "Fish Drying Yard 1",
         "territory": "Calpheon Territory",
@@ -9628,7 +9628,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1082": {
+    {
         "id": 1082,
         "name": "Fish Drying Yard 2",
         "territory": "Calpheon Territory",
@@ -9672,7 +9672,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1083": {
+    {
         "id": 1083,
         "name": "Fish Drying Yard",
         "territory": "Calpheon Territory",
@@ -9716,7 +9716,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1084": {
+    {
         "id": 1084,
         "name": "Fish Drying Yard 1",
         "territory": "Balenos Territory",
@@ -9760,7 +9760,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1085": {
+    {
         "id": 1085,
         "name": "Fish Drying Yard 2",
         "territory": "Balenos Territory",
@@ -9804,7 +9804,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1086": {
+    {
         "id": 1086,
         "name": "Fish Drying Yard 1",
         "territory": "Balenos Territory",
@@ -9848,7 +9848,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1087": {
+    {
         "id": 1087,
         "name": "Fish Drying Yard 2",
         "territory": "Balenos Territory",
@@ -9892,7 +9892,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1088": {
+    {
         "id": 1088,
         "name": "Fish Drying Yard",
         "territory": "Balenos Territory",
@@ -9936,7 +9936,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1089": {
+    {
         "id": 1089,
         "name": "Fish Drying Yard",
         "territory": "Balenos Territory",
@@ -9980,7 +9980,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1090": {
+    {
         "id": 1090,
         "name": "Fish Drying Yard 2",
         "territory": "Balenos Territory",
@@ -10024,7 +10024,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1091": {
+    {
         "id": 1091,
         "name": "Kuit Islands",
         "territory": "Calpheon Territory",
@@ -10043,7 +10043,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1092": {
+    {
         "id": 1092,
         "name": "Almai Island",
         "territory": "Calpheon Territory",
@@ -10061,7 +10061,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1093": {
+    {
         "id": 1093,
         "name": "Padix Island",
         "territory": "Calpheon Territory",
@@ -10082,7 +10082,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1094": {
+    {
         "id": 1094,
         "name": "Teste Island",
         "territory": "Calpheon Territory",
@@ -10101,7 +10101,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1095": {
+    {
         "id": 1095,
         "name": "Arita Island",
         "territory": "Calpheon Territory",
@@ -10122,7 +10122,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1096": {
+    {
         "id": 1096,
         "name": "Shasha Island",
         "territory": "Balenos Territory",
@@ -10141,7 +10141,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1097": {
+    {
         "id": 1097,
         "name": "Rosevan Island",
         "territory": "Balenos Territory",
@@ -10161,7 +10161,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1098": {
+    {
         "id": 1098,
         "name": "Portanen Island",
         "territory": "Balenos Territory",
@@ -10180,7 +10180,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1099": {
+    {
         "id": 1099,
         "name": "Tinberra Island",
         "territory": "Balenos Territory",
@@ -10201,7 +10201,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1100": {
+    {
         "id": 1100,
         "name": "Lerao Island",
         "territory": "Balenos Territory",
@@ -10221,7 +10221,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1101": {
+    {
         "id": 1101,
         "name": "Altinova",
         "territory": "Mediah Territory",
@@ -10245,7 +10245,7 @@
         "type": "City",
         "monopoly": false
     },
-    "1131": {
+    {
         "id": 1131,
         "name": "Mediah Northern Gateway",
         "territory": "Mediah Territory",
@@ -10264,7 +10264,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1132": {
+    {
         "id": 1132,
         "name": "Sausan Garrison",
         "territory": "Mediah Territory",
@@ -10285,7 +10285,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1133": {
+    {
         "id": 1133,
         "name": "Stonetail Wasteland",
         "territory": "Mediah Territory",
@@ -10306,7 +10306,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1134": {
+    {
         "id": 1134,
         "name": "Mediah Northern Highlands",
         "territory": "Mediah Territory",
@@ -10329,7 +10329,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1135": {
+    {
         "id": 1135,
         "name": "Rumbling Land",
         "territory": "Mediah Territory",
@@ -10348,7 +10348,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1136": {
+    {
         "id": 1136,
         "name": "Kamasylve Temple",
         "territory": "Mediah Territory",
@@ -10371,7 +10371,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1137": {
+    {
         "id": 1137,
         "name": "Manes Hideout",
         "territory": "Mediah Territory",
@@ -10390,7 +10390,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1138": {
+    {
         "id": 1138,
         "name": "Asula Highlands",
         "territory": "Mediah Territory",
@@ -10411,7 +10411,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1139": {
+    {
         "id": 1139,
         "name": "Wandering Rogue Den",
         "territory": "Mediah Territory",
@@ -10430,7 +10430,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1140": {
+    {
         "id": 1140,
         "name": "Altinova Entrance",
         "territory": "Mediah Territory",
@@ -10452,7 +10452,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1141": {
+    {
         "id": 1141,
         "name": "Tarif",
         "territory": "Mediah Territory",
@@ -10473,7 +10473,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1143": {
+    {
         "id": 1143,
         "name": "Alumn Rock Valley",
         "territory": "Mediah Territory",
@@ -10495,7 +10495,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1144": {
+    {
         "id": 1144,
         "name": "Abandoned Iron Mine",
         "territory": "Mediah Territory",
@@ -10517,7 +10517,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1145": {
+    {
         "id": 1145,
         "name": "Abun",
         "territory": "Mediah Territory",
@@ -10538,7 +10538,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1146": {
+    {
         "id": 1146,
         "name": "Marni's 2nd Lab",
         "territory": "Mediah Territory",
@@ -10558,7 +10558,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1147": {
+    {
         "id": 1147,
         "name": "Stonebeak Shore",
         "territory": "Mediah Territory",
@@ -10577,7 +10577,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1148": {
+    {
         "id": 1148,
         "name": "Soldier's Cemetery",
         "territory": "Mediah Territory",
@@ -10597,7 +10597,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1149": {
+    {
         "id": 1149,
         "name": "Omar Lava Cave",
         "territory": "Mediah Territory",
@@ -10620,7 +10620,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1150": {
+    {
         "id": 1150,
         "name": "The Mausoleum",
         "territory": "Mediah Territory",
@@ -10639,7 +10639,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1151": {
+    {
         "id": 1151,
         "name": "Sarma Outpost",
         "territory": "Mediah Territory",
@@ -10659,7 +10659,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1152": {
+    {
         "id": 1152,
         "name": "Mediah Castle",
         "territory": "Mediah Territory",
@@ -10677,7 +10677,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1153": {
+    {
         "id": 1153,
         "name": "Kusha",
         "territory": "Mediah Territory",
@@ -10698,7 +10698,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1154": {
+    {
         "id": 1154,
         "name": "Canyon of Corruption",
         "territory": "Mediah Territory",
@@ -10719,7 +10719,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1155": {
+    {
         "id": 1155,
         "name": "Elric Shrine",
         "territory": "Mediah Territory",
@@ -10740,7 +10740,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1156": {
+    {
         "id": 1156,
         "name": "Ancient Ruins Excavation Site",
         "territory": "Mediah Territory",
@@ -10761,7 +10761,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1157": {
+    {
         "id": 1157,
         "name": "Helms Post",
         "territory": "Mediah Territory",
@@ -10780,7 +10780,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1158": {
+    {
         "id": 1158,
         "name": "Stonetail Horse Ranch",
         "territory": "Mediah Territory",
@@ -10801,7 +10801,7 @@
         "type": "Trade",
         "monopoly": false
     },
-    "1159": {
+    {
         "id": 1159,
         "name": "Ahto Farm",
         "territory": "Mediah Territory",
@@ -10824,7 +10824,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1160": {
+    {
         "id": 1160,
         "name": "Shuri Farm",
         "territory": "Mediah Territory",
@@ -10846,7 +10846,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1161": {
+    {
         "id": 1161,
         "name": "Kasula Farm",
         "territory": "Mediah Territory",
@@ -10869,7 +10869,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1162": {
+    {
         "id": 1162,
         "name": "Ancient Fissure",
         "territory": "Mediah Territory",
@@ -10891,7 +10891,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1163": {
+    {
         "id": 1163,
         "name": "Mediah Shore",
         "territory": "Mediah Territory",
@@ -10912,7 +10912,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1164": {
+    {
         "id": 1164,
         "name": "Highland Junction",
         "territory": "Mediah Territory",
@@ -10932,7 +10932,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1165": {
+    {
         "id": 1165,
         "name": "Splashing Point",
         "territory": "Mediah Territory",
@@ -10951,7 +10951,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1166": {
+    {
         "id": 1166,
         "name": "Sausan Garrison Wharf",
         "territory": "Mediah Territory",
@@ -10970,7 +10970,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1167": {
+    {
         "id": 1167,
         "name": "Abandoned Iron Mine Rhutum District",
         "territory": "Mediah Territory",
@@ -10989,7 +10989,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1168": {
+    {
         "id": 1168,
         "name": "Abandoned Iron Mine Saunil District",
         "territory": "Mediah Territory",
@@ -11009,7 +11009,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1169": {
+    {
         "id": 1169,
         "name": "Abandoned Iron Mine Entrance",
         "territory": "Mediah Territory",
@@ -11028,7 +11028,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1170": {
+    {
         "id": 1170,
         "name": "Awakening Bell",
         "territory": "Mediah Territory",
@@ -11047,7 +11047,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1171": {
+    {
         "id": 1171,
         "name": "Tungrad Forest",
         "territory": "Mediah Territory",
@@ -11066,7 +11066,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1172": {
+    {
         "id": 1172,
         "name": "Hasrah Cliff",
         "territory": "Mediah Territory",
@@ -11085,7 +11085,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1189": {
+    {
         "id": 1189,
         "name": "Zigmund Investment Bank",
         "territory": "Mediah Territory",
@@ -11112,7 +11112,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1190": {
+    {
         "id": 1190,
         "name": "Gulabi Investment Bank",
         "territory": "Mediah Territory",
@@ -11139,7 +11139,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1191": {
+    {
         "id": 1191,
         "name": "Quina Investment Bank",
         "territory": "Mediah Territory",
@@ -11166,7 +11166,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1192": {
+    {
         "id": 1192,
         "name": "Neruda Shen Investment Bank",
         "territory": "Mediah Territory",
@@ -11193,7 +11193,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1193": {
+    {
         "id": 1193,
         "name": "Specialties",
         "territory": "Mediah Territory",
@@ -11216,7 +11216,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1194": {
+    {
         "id": 1194,
         "name": "Specialties",
         "territory": "Mediah Territory",
@@ -11239,7 +11239,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1195": {
+    {
         "id": 1195,
         "name": "Specialties",
         "territory": "Mediah Territory",
@@ -11262,7 +11262,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1196": {
+    {
         "id": 1196,
         "name": "Specialties",
         "territory": "Mediah Territory",
@@ -11285,7 +11285,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1197": {
+    {
         "id": 1197,
         "name": "Specialties",
         "territory": "Mediah Territory",
@@ -11308,7 +11308,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1198": {
+    {
         "id": 1198,
         "name": "Specialties",
         "territory": "Mediah Territory",
@@ -11331,7 +11331,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1199": {
+    {
         "id": 1199,
         "name": "Specialties",
         "territory": "Mediah Territory",
@@ -11354,7 +11354,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1200": {
+    {
         "id": 1200,
         "name": "Specialties",
         "territory": "Mediah Territory",
@@ -11377,7 +11377,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1201": {
+    {
         "id": 1201,
         "name": "Cotton Farming",
         "territory": "Mediah Territory",
@@ -11409,7 +11409,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1202": {
+    {
         "id": 1202,
         "name": "Aloe Farming",
         "territory": "Mediah Territory",
@@ -11437,7 +11437,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1203": {
+    {
         "id": 1203,
         "name": "Mining",
         "territory": "Mediah Territory",
@@ -11473,7 +11473,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1204": {
+    {
         "id": 1204,
         "name": "Mining",
         "territory": "Mediah Territory",
@@ -11509,7 +11509,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1205": {
+    {
         "id": 1205,
         "name": "Sweet Potato Farming",
         "territory": "Mediah Territory",
@@ -11545,7 +11545,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1206": {
+    {
         "id": 1206,
         "name": "Cotton Farming",
         "territory": "Mediah Territory",
@@ -11577,7 +11577,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1207": {
+    {
         "id": 1207,
         "name": "Cinnamon Farming",
         "territory": "Mediah Territory",
@@ -11605,7 +11605,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1208": {
+    {
         "id": 1208,
         "name": "Mining",
         "territory": "Mediah Territory",
@@ -11641,7 +11641,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1209": {
+    {
         "id": 1209,
         "name": "Mining",
         "territory": "Mediah Territory",
@@ -11677,7 +11677,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1210": {
+    {
         "id": 1210,
         "name": "Gathering",
         "territory": "Mediah Territory",
@@ -11709,7 +11709,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1211": {
+    {
         "id": 1211,
         "name": "Gathering",
         "territory": "Mediah Territory",
@@ -11741,7 +11741,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1212": {
+    {
         "id": 1212,
         "name": "Lumbering",
         "territory": "Mediah Territory",
@@ -11793,7 +11793,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1213": {
+    {
         "id": 1213,
         "name": "Mining",
         "territory": "Mediah Territory",
@@ -11829,7 +11829,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1214": {
+    {
         "id": 1214,
         "name": "Gathering",
         "territory": "Mediah Territory",
@@ -11861,7 +11861,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1215": {
+    {
         "id": 1215,
         "name": "Lumbering",
         "territory": "Mediah Territory",
@@ -11913,7 +11913,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1216": {
+    {
         "id": 1216,
         "name": "Lumbering",
         "territory": "Mediah Territory",
@@ -11965,7 +11965,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1217": {
+    {
         "id": 1217,
         "name": "Gathering",
         "territory": "Mediah Territory",
@@ -11997,7 +11997,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1218": {
+    {
         "id": 1218,
         "name": "Mining",
         "territory": "Mediah Territory",
@@ -12033,7 +12033,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1219": {
+    {
         "id": 1219,
         "name": "Lumbering",
         "territory": "Mediah Territory",
@@ -12085,7 +12085,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1220": {
+    {
         "id": 1220,
         "name": "Excavation",
         "territory": "Mediah Territory",
@@ -12133,7 +12133,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1221": {
+    {
         "id": 1221,
         "name": "Flax Farming",
         "territory": "Mediah Territory",
@@ -12165,7 +12165,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1301": {
+    {
         "id": 1301,
         "name": "Valencia City",
         "territory": "Valencia Territory",
@@ -12188,7 +12188,7 @@
         "type": "City",
         "monopoly": false
     },
-    "1302": {
+    {
         "id": 1302,
         "name": "Altinova Gateway",
         "territory": "Valencia Territory",
@@ -12207,7 +12207,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1303": {
+    {
         "id": 1303,
         "name": "Rock Post",
         "territory": "Valencia Territory",
@@ -12227,7 +12227,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1304": {
+    {
         "id": 1304,
         "name": "Gorgo Rock Belt",
         "territory": "Valencia Territory",
@@ -12248,7 +12248,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1305": {
+    {
         "id": 1305,
         "name": "Veteran's Canyon",
         "territory": "Valencia Territory",
@@ -12269,7 +12269,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1306": {
+    {
         "id": 1306,
         "name": "Cadry Ruins",
         "territory": "Valencia Territory",
@@ -12289,7 +12289,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1307": {
+    {
         "id": 1307,
         "name": "Kunid's Vacation Spot",
         "territory": "Valencia Territory",
@@ -12308,7 +12308,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1308": {
+    {
         "id": 1308,
         "name": "Leical Falls",
         "territory": "Valencia Territory",
@@ -12329,7 +12329,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1309": {
+    {
         "id": 1309,
         "name": "Pujiya Canyon",
         "territory": "Valencia Territory",
@@ -12349,7 +12349,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1310": {
+    {
         "id": 1310,
         "name": "Bashim Base",
         "territory": "Valencia Territory",
@@ -12369,7 +12369,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1311": {
+    {
         "id": 1311,
         "name": "Waragon Nest",
         "territory": "Valencia Territory",
@@ -12387,7 +12387,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1312": {
+    {
         "id": 1312,
         "name": "Deserted City of Runn",
         "territory": "Valencia Territory",
@@ -12406,7 +12406,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1313": {
+    {
         "id": 1313,
         "name": "Runn Gateway Intersection",
         "territory": "Valencia Territory",
@@ -12427,7 +12427,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1314": {
+    {
         "id": 1314,
         "name": "Shakatu",
         "territory": "Valencia Territory",
@@ -12452,7 +12452,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1315": {
+    {
         "id": 1315,
         "name": "Taphtar Plain",
         "territory": "Valencia Territory",
@@ -12474,7 +12474,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1316": {
+    {
         "id": 1316,
         "name": "Basilisk Den",
         "territory": "Valencia Territory",
@@ -12494,7 +12494,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1317": {
+    {
         "id": 1317,
         "name": "Barhan Gateway",
         "territory": "Valencia Territory",
@@ -12513,7 +12513,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1318": {
+    {
         "id": 1318,
         "name": "Capotia",
         "territory": "Valencia Territory",
@@ -12534,7 +12534,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1319": {
+    {
         "id": 1319,
         "name": "Sand Grain Bazaar",
         "territory": "Valencia Territory",
@@ -12557,7 +12557,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1321": {
+    {
         "id": 1321,
         "name": "Yalt Canyon",
         "territory": "Valencia Territory",
@@ -12576,7 +12576,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1322": {
+    {
         "id": 1322,
         "name": "Desert Naga Temple",
         "territory": "Valencia Territory",
@@ -12595,7 +12595,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1324": {
+    {
         "id": 1324,
         "name": "Pila Fe",
         "territory": "Valencia Territory",
@@ -12613,7 +12613,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1325": {
+    {
         "id": 1325,
         "name": "Pilgrim's Haven",
         "territory": "Valencia Territory",
@@ -12634,7 +12634,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1326": {
+    {
         "id": 1326,
         "name": "Hope Pier",
         "territory": "Valencia Territory",
@@ -12652,7 +12652,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1327": {
+    {
         "id": 1327,
         "name": "Gahaz Bandits' Lair",
         "territory": "Valencia Territory",
@@ -12671,7 +12671,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1328": {
+    {
         "id": 1328,
         "name": "Bambu Valley",
         "territory": "Valencia Territory",
@@ -12691,7 +12691,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1329": {
+    {
         "id": 1329,
         "name": "Iris Canyon",
         "territory": "Valencia Territory",
@@ -12712,7 +12712,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1330": {
+    {
         "id": 1330,
         "name": "Kmach Canyon",
         "territory": "Valencia Territory",
@@ -12733,7 +12733,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1331": {
+    {
         "id": 1331,
         "name": "Ibellab Oasis",
         "territory": "Valencia Territory",
@@ -12751,7 +12751,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1332": {
+    {
         "id": 1332,
         "name": "Pilgrim's Sanctum: Obedience",
         "territory": "Valencia Territory",
@@ -12770,7 +12770,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1333": {
+    {
         "id": 1333,
         "name": "Pilgrim's Sanctum: Abstinence",
         "territory": "Valencia Territory",
@@ -12789,7 +12789,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1334": {
+    {
         "id": 1334,
         "name": "Pilgrim's Sanctum: Sharing",
         "territory": "Valencia Territory",
@@ -12808,7 +12808,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1335": {
+    {
         "id": 1335,
         "name": "Pilgrim's Sanctum: Sincerity",
         "territory": "Valencia Territory",
@@ -12828,7 +12828,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1336": {
+    {
         "id": 1336,
         "name": "Pilgrim's Sanctum: Humility",
         "territory": "Valencia Territory",
@@ -12850,7 +12850,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1337": {
+    {
         "id": 1337,
         "name": "Pilgrim's Sanctum: Purity",
         "territory": "Valencia Territory",
@@ -12870,7 +12870,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1338": {
+    {
         "id": 1338,
         "name": "Pilgrim's Sanctum: Fast",
         "territory": "Valencia Territory",
@@ -12888,7 +12888,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1339": {
+    {
         "id": 1339,
         "name": "Rakshan Observatory",
         "territory": "Valencia Territory",
@@ -12907,7 +12907,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1340": {
+    {
         "id": 1340,
         "name": "Scarlet Sand Chamber",
         "territory": "Valencia Territory",
@@ -12925,7 +12925,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1342": {
+    {
         "id": 1342,
         "name": "Valencia Castle",
         "territory": "Valencia Territory",
@@ -12943,7 +12943,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1343": {
+    {
         "id": 1343,
         "name": "Ancado Inner Harbor",
         "territory": "Valencia Territory",
@@ -12964,7 +12964,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1344": {
+    {
         "id": 1344,
         "name": "Aakman",
         "territory": "Valencia Territory",
@@ -12985,7 +12985,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1345": {
+    {
         "id": 1345,
         "name": "Crescent Shrine",
         "territory": "Valencia Territory",
@@ -13005,7 +13005,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1346": {
+    {
         "id": 1346,
         "name": "Crescent Mountains",
         "territory": "Valencia Territory",
@@ -13027,7 +13027,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1347": {
+    {
         "id": 1347,
         "name": "Titium Valley",
         "territory": "Valencia Territory",
@@ -13050,7 +13050,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1350": {
+    {
         "id": 1350,
         "name": "Valencia Western Highlands",
         "territory": "Valencia Territory",
@@ -13069,7 +13069,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1351": {
+    {
         "id": 1351,
         "name": "Bazaar Farmland",
         "territory": "Valencia Territory",
@@ -13091,7 +13091,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1352": {
+    {
         "id": 1352,
         "name": "Shakatu Farmland",
         "territory": "Valencia Territory",
@@ -13113,7 +13113,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1353": {
+    {
         "id": 1353,
         "name": "Altas Farmland",
         "territory": "Valencia Territory",
@@ -13135,7 +13135,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1354": {
+    {
         "id": 1354,
         "name": "Erdal Farm",
         "territory": "Valencia Territory",
@@ -13157,7 +13157,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1355": {
+    {
         "id": 1355,
         "name": "Valencia Plantation",
         "territory": "Valencia Territory",
@@ -13181,7 +13181,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1356": {
+    {
         "id": 1356,
         "name": "Fohalam Farm",
         "territory": "Valencia Territory",
@@ -13202,7 +13202,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1364": {
+    {
         "id": 1364,
         "name": "Sokota Island",
         "territory": "Valencia Territory",
@@ -13221,7 +13221,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1365": {
+    {
         "id": 1365,
         "name": "Riyed Island",
         "territory": "Valencia Territory",
@@ -13240,7 +13240,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1366": {
+    {
         "id": 1366,
         "name": "Esfah Island",
         "territory": "Valencia Territory",
@@ -13259,7 +13259,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1367": {
+    {
         "id": 1367,
         "name": "Tigris Island",
         "territory": "Valencia Territory",
@@ -13278,7 +13278,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1368": {
+    {
         "id": 1368,
         "name": "Shirna Island",
         "territory": "Valencia Territory",
@@ -13298,7 +13298,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1369": {
+    {
         "id": 1369,
         "name": "Halmad Island",
         "territory": "Valencia Territory",
@@ -13318,7 +13318,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1370": {
+    {
         "id": 1370,
         "name": "Kashuma Island",
         "territory": "Valencia Territory",
@@ -13337,7 +13337,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1371": {
+    {
         "id": 1371,
         "name": "Orisha Island",
         "territory": "Valencia Territory",
@@ -13357,7 +13357,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1372": {
+    {
         "id": 1372,
         "name": "Boa Island",
         "territory": "Valencia Territory",
@@ -13376,7 +13376,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1373": {
+    {
         "id": 1373,
         "name": "Kisleev Crag",
         "territory": "Valencia Territory",
@@ -13394,7 +13394,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1374": {
+    {
         "id": 1374,
         "name": "Valencia Castle Site",
         "territory": "Valencia Territory",
@@ -13413,7 +13413,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1375": {
+    {
         "id": 1375,
         "name": "Ancado Coast",
         "territory": "Valencia Territory",
@@ -13433,7 +13433,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1376": {
+    {
         "id": 1376,
         "name": "Derko Island",
         "territory": "Valencia Territory",
@@ -13452,7 +13452,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1377": {
+    {
         "id": 1377,
         "name": "Shakatu Abandoned Pier",
         "territory": "Valencia Territory",
@@ -13470,7 +13470,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1378": {
+    {
         "id": 1378,
         "name": "Red Battlefield",
         "territory": null,
@@ -13483,7 +13483,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1379": {
+    {
         "id": 1379,
         "name": "Areha Palm Forest",
         "territory": "Valencia Territory",
@@ -13504,7 +13504,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1380": {
+    {
         "id": 1380,
         "name": "Arehaza",
         "territory": "Valencia Territory",
@@ -13525,7 +13525,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1381": {
+    {
         "id": 1381,
         "name": "Muiquun",
         "territory": "Valencia Territory",
@@ -13545,7 +13545,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1382": {
+    {
         "id": 1382,
         "name": "Central Cantusa",
         "territory": "Valencia Territory",
@@ -13564,7 +13564,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1383": {
+    {
         "id": 1383,
         "name": "Cantusa Desert",
         "territory": "Valencia Territory",
@@ -13585,7 +13585,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1384": {
+    {
         "id": 1384,
         "name": "Pila Ku Jail",
         "territory": "Valencia Territory",
@@ -13603,7 +13603,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1385": {
+    {
         "id": 1385,
         "name": "Northern Sand Dune",
         "territory": "Valencia Territory",
@@ -13623,7 +13623,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1387": {
+    {
         "id": 1387,
         "name": "Gavinya Volcano Zone",
         "territory": "Valencia Territory",
@@ -13644,7 +13644,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1388": {
+    {
         "id": 1388,
         "name": "Gavinya Great Crater",
         "territory": "Valencia Territory",
@@ -13667,7 +13667,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1389": {
+    {
         "id": 1389,
         "name": "Gavinya Coastal Cliff",
         "territory": "Valencia Territory",
@@ -13688,7 +13688,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1390": {
+    {
         "id": 1390,
         "name": "Roud Sulfur Works",
         "territory": "Valencia Territory",
@@ -13707,7 +13707,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1391": {
+    {
         "id": 1391,
         "name": "Ivory Wasteland",
         "territory": "Valencia Territory",
@@ -13727,7 +13727,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1392": {
+    {
         "id": 1392,
         "name": "Ivero Cliff",
         "territory": "Valencia Territory",
@@ -13746,7 +13746,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1393": {
+    {
         "id": 1393,
         "name": "Dona Rocky Mountain",
         "territory": "Valencia Territory",
@@ -13764,7 +13764,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1394": {
+    {
         "id": 1394,
         "name": "Hakoven Island",
         "territory": "Valencia Territory",
@@ -13782,7 +13782,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1395": {
+    {
         "id": 1395,
         "name": "Port Ratt",
         "territory": "The Great Ocean",
@@ -13795,7 +13795,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1396": {
+    {
         "id": 1396,
         "name": "Kingdom of Haso",
         "territory": null,
@@ -13808,7 +13808,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1397": {
+    {
         "id": 1397,
         "name": "Zagam Island",
         "territory": "The Great Ocean",
@@ -13821,7 +13821,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1398": {
+    {
         "id": 1398,
         "name": "Mariul Island",
         "territory": "The Great Ocean",
@@ -13834,7 +13834,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1399": {
+    {
         "id": 1399,
         "name": "Nada Island",
         "territory": "The Great Ocean",
@@ -13847,7 +13847,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1400": {
+    {
         "id": 1400,
         "name": "Ross Sea",
         "territory": "The Great Ocean",
@@ -13867,7 +13867,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1401": {
+    {
         "id": 1401,
         "name": "Ross Sea",
         "territory": "The Great Ocean",
@@ -13888,7 +13888,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1402": {
+    {
         "id": 1402,
         "name": "Ross Sea",
         "territory": "The Great Ocean",
@@ -13909,7 +13909,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1403": {
+    {
         "id": 1403,
         "name": "Ross Sea",
         "territory": "The Great Ocean",
@@ -13930,7 +13930,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1404": {
+    {
         "id": 1404,
         "name": "Ross Sea",
         "territory": "The Great Ocean",
@@ -13951,7 +13951,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1405": {
+    {
         "id": 1405,
         "name": "Ross Sea",
         "territory": "The Great Ocean",
@@ -13972,7 +13972,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1406": {
+    {
         "id": 1406,
         "name": "Ross Sea",
         "territory": "The Great Ocean",
@@ -13991,7 +13991,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1407": {
+    {
         "id": 1407,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14011,7 +14011,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1408": {
+    {
         "id": 1408,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14033,7 +14033,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1409": {
+    {
         "id": 1409,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14054,7 +14054,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1410": {
+    {
         "id": 1410,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14075,7 +14075,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1411": {
+    {
         "id": 1411,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14096,7 +14096,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1412": {
+    {
         "id": 1412,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14117,7 +14117,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1413": {
+    {
         "id": 1413,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14137,7 +14137,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1414": {
+    {
         "id": 1414,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14157,7 +14157,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1415": {
+    {
         "id": 1415,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14178,7 +14178,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1416": {
+    {
         "id": 1416,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14199,7 +14199,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1417": {
+    {
         "id": 1417,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14220,7 +14220,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1418": {
+    {
         "id": 1418,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14241,7 +14241,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1419": {
+    {
         "id": 1419,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14262,7 +14262,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1420": {
+    {
         "id": 1420,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14282,7 +14282,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1421": {
+    {
         "id": 1421,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14302,7 +14302,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1422": {
+    {
         "id": 1422,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14323,7 +14323,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1423": {
+    {
         "id": 1423,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14344,7 +14344,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1424": {
+    {
         "id": 1424,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14365,7 +14365,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1425": {
+    {
         "id": 1425,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14386,7 +14386,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1426": {
+    {
         "id": 1426,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14407,7 +14407,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1427": {
+    {
         "id": 1427,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14427,7 +14427,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1428": {
+    {
         "id": 1428,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14447,7 +14447,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1429": {
+    {
         "id": 1429,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14468,7 +14468,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1430": {
+    {
         "id": 1430,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14489,7 +14489,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1431": {
+    {
         "id": 1431,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14510,7 +14510,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1432": {
+    {
         "id": 1432,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14531,7 +14531,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1433": {
+    {
         "id": 1433,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14552,7 +14552,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1434": {
+    {
         "id": 1434,
         "name": "Margoria",
         "territory": "The Great Ocean",
@@ -14572,7 +14572,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1435": {
+    {
         "id": 1435,
         "name": "Juur Sea",
         "territory": "The Great Ocean",
@@ -14592,7 +14592,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1436": {
+    {
         "id": 1436,
         "name": "Juur Sea",
         "territory": "The Great Ocean",
@@ -14613,7 +14613,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1437": {
+    {
         "id": 1437,
         "name": "Juur Sea",
         "territory": "The Great Ocean",
@@ -14634,7 +14634,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1438": {
+    {
         "id": 1438,
         "name": "Juur Sea",
         "territory": "The Great Ocean",
@@ -14654,7 +14654,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1439": {
+    {
         "id": 1439,
         "name": "Juur Sea",
         "territory": "The Great Ocean",
@@ -14674,7 +14674,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1440": {
+    {
         "id": 1440,
         "name": "Juur Sea",
         "territory": "The Great Ocean",
@@ -14696,7 +14696,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1441": {
+    {
         "id": 1441,
         "name": "Juur Sea",
         "territory": "The Great Ocean",
@@ -14716,7 +14716,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1442": {
+    {
         "id": 1442,
         "name": "Vadabin",
         "territory": "The Great Ocean",
@@ -14735,7 +14735,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1443": {
+    {
         "id": 1443,
         "name": "Vadabin",
         "territory": "The Great Ocean",
@@ -14756,7 +14756,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1444": {
+    {
         "id": 1444,
         "name": "Vadabin",
         "territory": "The Great Ocean",
@@ -14775,7 +14775,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1445": {
+    {
         "id": 1445,
         "name": "Vadabin",
         "territory": "The Great Ocean",
@@ -14795,7 +14795,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1446": {
+    {
         "id": 1446,
         "name": "Vadabin",
         "territory": "The Great Ocean",
@@ -14815,7 +14815,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1447": {
+    {
         "id": 1447,
         "name": "Vadabin",
         "territory": "The Great Ocean",
@@ -14836,7 +14836,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1448": {
+    {
         "id": 1448,
         "name": "Vadabin",
         "territory": "The Great Ocean",
@@ -14855,7 +14855,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1449": {
+    {
         "id": 1449,
         "name": "Vadabin",
         "territory": "The Great Ocean",
@@ -14875,7 +14875,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1450": {
+    {
         "id": 1450,
         "name": "Fish Drying Yard 1",
         "territory": null,
@@ -14918,7 +14918,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1451": {
+    {
         "id": 1451,
         "name": "Fish Drying Yard 2",
         "territory": null,
@@ -14961,7 +14961,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1452": {
+    {
         "id": 1452,
         "name": "Margoria (Vell's Realm)",
         "territory": "The Great Ocean",
@@ -14979,7 +14979,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1501": {
+    {
         "id": 1501,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15007,7 +15007,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1502": {
+    {
         "id": 1502,
         "name": "Lumbering",
         "territory": "Valencia Territory",
@@ -15059,7 +15059,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1503": {
+    {
         "id": 1503,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -15077,7 +15077,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1504": {
+    {
         "id": 1504,
         "name": "Lumbering",
         "territory": "Valencia Territory",
@@ -15129,7 +15129,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1505": {
+    {
         "id": 1505,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15161,7 +15161,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1506": {
+    {
         "id": 1506,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15193,7 +15193,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1507": {
+    {
         "id": 1507,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -15229,7 +15229,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1508": {
+    {
         "id": 1508,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -15265,7 +15265,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1509": {
+    {
         "id": 1509,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15293,7 +15293,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1510": {
+    {
         "id": 1510,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -15329,7 +15329,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1512": {
+    {
         "id": 1512,
         "name": "Lumbering",
         "territory": "Valencia Territory",
@@ -15381,7 +15381,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1513": {
+    {
         "id": 1513,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -15417,7 +15417,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1514": {
+    {
         "id": 1514,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15445,7 +15445,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1515": {
+    {
         "id": 1515,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15473,7 +15473,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1516": {
+    {
         "id": 1516,
         "name": "Lumbering",
         "territory": "Valencia Territory",
@@ -15525,7 +15525,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1517": {
+    {
         "id": 1517,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -15561,7 +15561,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1518": {
+    {
         "id": 1518,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15589,7 +15589,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1519": {
+    {
         "id": 1519,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15617,7 +15617,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1520": {
+    {
         "id": 1520,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15645,7 +15645,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1521": {
+    {
         "id": 1521,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -15681,7 +15681,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1522": {
+    {
         "id": 1522,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -15717,7 +15717,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1523": {
+    {
         "id": 1523,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -15753,7 +15753,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1524": {
+    {
         "id": 1524,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15781,7 +15781,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1525": {
+    {
         "id": 1525,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -15809,7 +15809,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1526": {
+    {
         "id": 1526,
         "name": "Lumbering",
         "territory": "Valencia Territory",
@@ -15861,7 +15861,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1527": {
+    {
         "id": 1527,
         "name": "Nutmeg",
         "territory": "Valencia Territory",
@@ -15889,7 +15889,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1528": {
+    {
         "id": 1528,
         "name": "Teff",
         "territory": "Valencia Territory",
@@ -15917,7 +15917,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1529": {
+    {
         "id": 1529,
         "name": "Fig",
         "territory": "Valencia Territory",
@@ -15945,7 +15945,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1530": {
+    {
         "id": 1530,
         "name": "Fig",
         "territory": "Valencia Territory",
@@ -15973,7 +15973,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1531": {
+    {
         "id": 1531,
         "name": "Star Anise",
         "territory": "Valencia Territory",
@@ -16001,7 +16001,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1532": {
+    {
         "id": 1532,
         "name": "Teff",
         "territory": "Valencia Territory",
@@ -16029,7 +16029,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1533": {
+    {
         "id": 1533,
         "name": "Teff",
         "territory": "Valencia Territory",
@@ -16057,7 +16057,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1534": {
+    {
         "id": 1534,
         "name": "Pistachio",
         "territory": "Valencia Territory",
@@ -16085,7 +16085,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1535": {
+    {
         "id": 1535,
         "name": "Date Palm",
         "territory": "Valencia Territory",
@@ -16113,7 +16113,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1536": {
+    {
         "id": 1536,
         "name": "Pistachio",
         "territory": "Valencia Territory",
@@ -16141,7 +16141,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1537": {
+    {
         "id": 1537,
         "name": "Date Palm",
         "territory": "Valencia Territory",
@@ -16169,7 +16169,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1538": {
+    {
         "id": 1538,
         "name": "Freekeh",
         "territory": "Valencia Territory",
@@ -16197,7 +16197,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1539": {
+    {
         "id": 1539,
         "name": "Teff",
         "territory": "Valencia Territory",
@@ -16225,7 +16225,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1540": {
+    {
         "id": 1540,
         "name": "Teff",
         "territory": "Valencia Territory",
@@ -16253,7 +16253,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1541": {
+    {
         "id": 1541,
         "name": "Specialties",
         "territory": "Valencia Territory",
@@ -16276,7 +16276,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1542": {
+    {
         "id": 1542,
         "name": "Specialties",
         "territory": "Valencia Territory",
@@ -16299,7 +16299,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1543": {
+    {
         "id": 1543,
         "name": "Specialties",
         "territory": "Valencia Territory",
@@ -16322,7 +16322,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1544": {
+    {
         "id": 1544,
         "name": "Specialties",
         "territory": "Valencia Territory",
@@ -16345,7 +16345,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1545": {
+    {
         "id": 1545,
         "name": "Specialties",
         "territory": "Valencia Territory",
@@ -16368,7 +16368,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1546": {
+    {
         "id": 1546,
         "name": "Specialties",
         "territory": "Valencia Territory",
@@ -16391,7 +16391,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1547": {
+    {
         "id": 1547,
         "name": "Atui Balacs Investment Bank",
         "territory": "Valencia Territory",
@@ -16418,7 +16418,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1548": {
+    {
         "id": 1548,
         "name": "Godul Lateman Investment Bank",
         "territory": "Valencia Territory",
@@ -16445,7 +16445,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1549": {
+    {
         "id": 1549,
         "name": "Taphtar Investment Bank",
         "territory": "Valencia Territory",
@@ -16472,7 +16472,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1550": {
+    {
         "id": 1550,
         "name": "Valgon Investment Bank",
         "territory": "Valencia Territory",
@@ -16499,7 +16499,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1551": {
+    {
         "id": 1551,
         "name": "Yis Kunjamin Investment Bank",
         "territory": "Valencia Territory",
@@ -16526,7 +16526,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1552": {
+    {
         "id": 1552,
         "name": "Zahad Investment Bank",
         "territory": "Valencia Territory",
@@ -16553,7 +16553,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1553": {
+    {
         "id": 1553,
         "name": "Excavation",
         "territory": "Valencia Territory",
@@ -16593,7 +16593,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1554": {
+    {
         "id": 1554,
         "name": "Lumbering",
         "territory": "Valencia Territory",
@@ -16645,7 +16645,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1555": {
+    {
         "id": 1555,
         "name": "Lumbering",
         "territory": "Valencia Territory",
@@ -16697,7 +16697,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1556": {
+    {
         "id": 1556,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -16733,7 +16733,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1557": {
+    {
         "id": 1557,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -16765,7 +16765,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1558": {
+    {
         "id": 1558,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -16801,7 +16801,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1559": {
+    {
         "id": 1559,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -16837,7 +16837,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1560": {
+    {
         "id": 1560,
         "name": "Gathering",
         "territory": "Valencia Territory",
@@ -16889,7 +16889,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1561": {
+    {
         "id": 1561,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -16925,7 +16925,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1562": {
+    {
         "id": 1562,
         "name": "Mining",
         "territory": "Valencia Territory",
@@ -16961,7 +16961,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1563": {
+    {
         "id": 1563,
         "name": "Specialties",
         "territory": "Valencia Territory",
@@ -16984,7 +16984,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1564": {
+    {
         "id": 1564,
         "name": "Specialties",
         "territory": "Valencia Territory",
@@ -17002,7 +17002,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1565": {
+    {
         "id": 1565,
         "name": "Silk Culture",
         "territory": "Valencia Territory",
@@ -17038,7 +17038,7 @@
         "type": "Production",
         "monopoly": false
     },
-    "1566": {
+    {
         "id": 1566,
         "name": "Excavation",
         "territory": "Valencia Territory",
@@ -17078,7 +17078,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1600": {
+    {
         "id": 1600,
         "name": "Kamasylvia Vicinity",
         "territory": "Kamasylvia",
@@ -17097,7 +17097,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1601": {
+    {
         "id": 1601,
         "name": "Lemoria Guard Post",
         "territory": "Kamasylvia",
@@ -17117,7 +17117,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1602": {
+    {
         "id": 1602,
         "name": "Atanis Pond",
         "territory": "Kamasylvia",
@@ -17138,7 +17138,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1603": {
+    {
         "id": 1603,
         "name": "Caduil Forest",
         "territory": "Kamasylvia",
@@ -17158,7 +17158,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1604": {
+    {
         "id": 1604,
         "name": "Old Wisdom Tree",
         "territory": "Kamasylvia",
@@ -17177,7 +17177,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1605": {
+    {
         "id": 1605,
         "name": "Shady Tree Forest",
         "territory": "Kamasylvia",
@@ -17199,7 +17199,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1606": {
+    {
         "id": 1606,
         "name": "Navarn Steppe",
         "territory": "Kamasylvia",
@@ -17218,7 +17218,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1607": {
+    {
         "id": 1607,
         "name": "Central Lemoria Camp",
         "territory": "Kamasylvia",
@@ -17239,7 +17239,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1608": {
+    {
         "id": 1608,
         "name": "Manshaum Forest",
         "territory": "Kamasylvia",
@@ -17258,7 +17258,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1609": {
+    {
         "id": 1609,
         "name": "Holo Forest",
         "territory": "Kamasylvia",
@@ -17279,7 +17279,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1610": {
+    {
         "id": 1610,
         "name": "Viv Foretta Hamlet",
         "territory": "Kamasylvia",
@@ -17299,7 +17299,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1611": {
+    {
         "id": 1611,
         "name": "Valtarra Mountains",
         "territory": "Kamasylvia",
@@ -17318,7 +17318,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1612": {
+    {
         "id": 1612,
         "name": "Valtarra - Altar of Training",
         "territory": "Kamasylvia",
@@ -17337,7 +17337,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1613": {
+    {
         "id": 1613,
         "name": "Mirumok Ruins",
         "territory": "Kamasylvia",
@@ -17356,7 +17356,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1614": {
+    {
         "id": 1614,
         "name": "Lemoria Beacon Towers",
         "territory": "Kamasylvia",
@@ -17374,7 +17374,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1615": {
+    {
         "id": 1615,
         "name": "Kamasylvia Castle",
         "territory": "Kamasylvia",
@@ -17392,7 +17392,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1616": {
+    {
         "id": 1616,
         "name": "Western Valtarra Mountains",
         "territory": "Kamasylvia",
@@ -17413,7 +17413,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1617": {
+    {
         "id": 1617,
         "name": "Acher Guard Post",
         "territory": "Kamasylvia",
@@ -17432,7 +17432,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1618": {
+    {
         "id": 1618,
         "name": "Loopy Tree Forest",
         "territory": "Kamasylvia",
@@ -17454,7 +17454,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1619": {
+    {
         "id": 1619,
         "name": "Tooth Fairy Forest",
         "territory": "Kamasylvia",
@@ -17475,7 +17475,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1620": {
+    {
         "id": 1620,
         "name": "Tooth Fairy Cabin",
         "territory": "Kamasylvia",
@@ -17493,7 +17493,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1621": {
+    {
         "id": 1621,
         "name": "White Wood Forest",
         "territory": "Kamasylvia",
@@ -17514,7 +17514,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1622": {
+    {
         "id": 1622,
         "name": "Lake Flondor",
         "territory": "Kamasylvia",
@@ -17534,7 +17534,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1623": {
+    {
         "id": 1623,
         "name": "Grána",
         "territory": "Kamasylvia",
@@ -17558,7 +17558,7 @@
         "type": "City",
         "monopoly": false
     },
-    "1624": {
+    {
         "id": 1624,
         "name": "Polly's Forest",
         "territory": "Kamasylvia",
@@ -17578,7 +17578,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1625": {
+    {
         "id": 1625,
         "name": "Southern Kamasylvia",
         "territory": "Kamasylvia",
@@ -17598,7 +17598,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1626": {
+    {
         "id": 1626,
         "name": "Gyfin Rhasia Temple",
         "territory": "Kamasylvia",
@@ -17616,7 +17616,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1627": {
+    {
         "id": 1627,
         "name": "Krogdalo's Trace",
         "territory": "Kamasylvia",
@@ -17636,7 +17636,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1628": {
+    {
         "id": 1628,
         "name": "Looney Cabin",
         "territory": "Kamasylvia",
@@ -17655,7 +17655,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1629": {
+    {
         "id": 1629,
         "name": "Weenie Cabin",
         "territory": "Kamasylvia",
@@ -17674,7 +17674,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1630": {
+    {
         "id": 1630,
         "name": "Ash Forest",
         "territory": "Kamasylvia",
@@ -17693,7 +17693,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1631": {
+    {
         "id": 1631,
         "name": "Yianaros's Field",
         "territory": "Kamasylvia",
@@ -17711,7 +17711,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1632": {
+    {
         "id": 1632,
         "name": "Okiara River",
         "territory": "Kamasylvia",
@@ -17729,7 +17729,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1633": {
+    {
         "id": 1633,
         "name": "Farming",
         "territory": "Kamasylvia",
@@ -17761,7 +17761,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1634": {
+    {
         "id": 1634,
         "name": "Specialty(?)",
         "territory": "Kamasylvia",
@@ -17784,7 +17784,7 @@
         "type": "Specialties",
         "monopoly": true
     },
-    "1635": {
+    {
         "id": 1635,
         "name": "Lumbering",
         "territory": "Kamasylvia",
@@ -17836,7 +17836,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1636": {
+    {
         "id": 1636,
         "name": "Mining",
         "territory": "Kamasylvia",
@@ -17868,7 +17868,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1637": {
+    {
         "id": 1637,
         "name": "Excavation",
         "territory": "Kamasylvia",
@@ -17904,7 +17904,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1638": {
+    {
         "id": 1638,
         "name": "Lumbering",
         "territory": "Kamasylvia",
@@ -17956,7 +17956,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1639": {
+    {
         "id": 1639,
         "name": "Gathering",
         "territory": "Kamasylvia",
@@ -17988,7 +17988,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1640": {
+    {
         "id": 1640,
         "name": "Grow Mushroom",
         "territory": "Kamasylvia",
@@ -18020,7 +18020,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1641": {
+    {
         "id": 1641,
         "name": "Grow Mushroom",
         "territory": "Kamasylvia",
@@ -18052,7 +18052,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1642": {
+    {
         "id": 1642,
         "name": "Mining",
         "territory": "Kamasylvia",
@@ -18084,7 +18084,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1643": {
+    {
         "id": 1643,
         "name": "Investment Bank",
         "territory": "Kamasylvia",
@@ -18136,7 +18136,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1644": {
+    {
         "id": 1644,
         "name": "Investment Bank",
         "territory": "Kamasylvia",
@@ -18188,7 +18188,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1645": {
+    {
         "id": 1645,
         "name": "Mining",
         "territory": "Kamasylvia",
@@ -18220,7 +18220,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1646": {
+    {
         "id": 1646,
         "name": "Acher Western Camp",
         "territory": "Kamasylvia",
@@ -18238,7 +18238,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1647": {
+    {
         "id": 1647,
         "name": "Acher Southern Camp",
         "territory": "Kamasylvia",
@@ -18258,7 +18258,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1648": {
+    {
         "id": 1648,
         "name": "Roud Sulfur Mine",
         "territory": "Valencia Territory",
@@ -18276,7 +18276,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1649": {
+    {
         "id": 1649,
         "name": "Duvencrune",
         "territory": "Drieghan",
@@ -18300,7 +18300,7 @@
         "type": "City",
         "monopoly": false
     },
-    "1650": {
+    {
         "id": 1650,
         "name": "Duvencrune Farmland",
         "territory": "Drieghan",
@@ -18320,7 +18320,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1651": {
+    {
         "id": 1651,
         "name": "Duvencrune",
         "territory": "Drieghan",
@@ -18338,7 +18338,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1652": {
+    {
         "id": 1652,
         "name": "Ahib Conflict Zone",
         "territory": "Drieghan",
@@ -18358,7 +18358,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1653": {
+    {
         "id": 1653,
         "name": "Akum Rocky Mountain",
         "territory": "Drieghan",
@@ -18378,7 +18378,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1654": {
+    {
         "id": 1654,
         "name": "Khalk Canyon",
         "territory": "Drieghan",
@@ -18400,7 +18400,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1655": {
+    {
         "id": 1655,
         "name": "Sherekhan Necropolis",
         "territory": "Drieghan",
@@ -18421,7 +18421,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1656": {
+    {
         "id": 1656,
         "name": "Garmoth's Nest",
         "territory": "Drieghan",
@@ -18441,7 +18441,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1657": {
+    {
         "id": 1657,
         "name": "Harak's Shelter",
         "territory": "Drieghan",
@@ -18460,7 +18460,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1658": {
+    {
         "id": 1658,
         "name": "Morning Fog Post",
         "territory": "Drieghan",
@@ -18481,7 +18481,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1659": {
+    {
         "id": 1659,
         "name": "Night Crow Post",
         "territory": "Drieghan",
@@ -18502,7 +18502,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1660": {
+    {
         "id": 1660,
         "name": "Windy Peak",
         "territory": "Drieghan",
@@ -18521,7 +18521,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1661": {
+    {
         "id": 1661,
         "name": "Marcha Outpost",
         "territory": "Drieghan",
@@ -18540,7 +18540,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1662": {
+    {
         "id": 1662,
         "name": "Gayak Altar",
         "territory": "Drieghan",
@@ -18559,7 +18559,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1663": {
+    {
         "id": 1663,
         "name": "Fountain of Origin",
         "territory": "Drieghan",
@@ -18579,7 +18579,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1664": {
+    {
         "id": 1664,
         "name": "Gervish Mountains",
         "territory": "Drieghan",
@@ -18600,7 +18600,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1665": {
+    {
         "id": 1665,
         "name": "Dormann Lumber Camp",
         "territory": "Drieghan",
@@ -18620,7 +18620,7 @@
         "type": "Trade",
         "monopoly": false
     },
-    "1666": {
+    {
         "id": 1666,
         "name": "Khimut Lumber Camp",
         "territory": "Drieghan",
@@ -18643,7 +18643,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1667": {
+    {
         "id": 1667,
         "name": "Forgotten Gateway",
         "territory": "Drieghan",
@@ -18661,7 +18661,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1668": {
+    {
         "id": 1668,
         "name": "Tshira Ruins",
         "territory": "Drieghan",
@@ -18683,7 +18683,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1669": {
+    {
         "id": 1669,
         "name": "Blood Wolf Settlement",
         "territory": "Drieghan",
@@ -18701,7 +18701,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1670": {
+    {
         "id": 1670,
         "name": "Marak Farm",
         "territory": "Drieghan",
@@ -18721,7 +18721,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1671": {
+    {
         "id": 1671,
         "name": "Farming",
         "territory": "Drieghan",
@@ -18749,7 +18749,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1672": {
+    {
         "id": 1672,
         "name": "Farming",
         "territory": "Drieghan",
@@ -18777,7 +18777,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1673": {
+    {
         "id": 1673,
         "name": "Farming",
         "territory": "Drieghan",
@@ -18805,7 +18805,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1674": {
+    {
         "id": 1674,
         "name": "Farming",
         "territory": "Drieghan",
@@ -18833,7 +18833,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1675": {
+    {
         "id": 1675,
         "name": "Gathering",
         "territory": "Drieghan",
@@ -18861,7 +18861,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1676": {
+    {
         "id": 1676,
         "name": "Gathering",
         "territory": "Drieghan",
@@ -18889,7 +18889,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1677": {
+    {
         "id": 1677,
         "name": "Gathering",
         "territory": "Drieghan",
@@ -18917,7 +18917,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1678": {
+    {
         "id": 1678,
         "name": "Gathering",
         "territory": "Drieghan",
@@ -18945,7 +18945,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1679": {
+    {
         "id": 1679,
         "name": "Mining",
         "territory": "Drieghan",
@@ -18977,7 +18977,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1680": {
+    {
         "id": 1680,
         "name": "Mining",
         "territory": "Drieghan",
@@ -19009,7 +19009,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1681": {
+    {
         "id": 1681,
         "name": "Mining",
         "territory": "Drieghan",
@@ -19041,7 +19041,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1682": {
+    {
         "id": 1682,
         "name": "Mining",
         "territory": "Drieghan",
@@ -19073,7 +19073,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1683": {
+    {
         "id": 1683,
         "name": "Lumbering",
         "territory": "Drieghan",
@@ -19125,7 +19125,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1684": {
+    {
         "id": 1684,
         "name": "Lumbering",
         "territory": "Drieghan",
@@ -19177,7 +19177,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1685": {
+    {
         "id": 1685,
         "name": "Lumbering",
         "territory": "Drieghan",
@@ -19229,7 +19229,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1686": {
+    {
         "id": 1686,
         "name": "Lumbering",
         "territory": "Drieghan",
@@ -19281,7 +19281,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1687": {
+    {
         "id": 1687,
         "name": "Excavation",
         "territory": "Drieghan",
@@ -19321,7 +19321,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1688": {
+    {
         "id": 1688,
         "name": "Excavation",
         "territory": "Drieghan",
@@ -19361,7 +19361,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1689": {
+    {
         "id": 1689,
         "name": "Investment Bank",
         "territory": "Drieghan",
@@ -19388,7 +19388,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1690": {
+    {
         "id": 1690,
         "name": "Investment Bank",
         "territory": "Drieghan",
@@ -19415,7 +19415,7 @@
         "type": "Investment Bank",
         "monopoly": true
     },
-    "1691": {
+    {
         "id": 1691,
         "name": "O'draxxia",
         "territory": "O'dyllita",
@@ -19436,7 +19436,7 @@
         "type": "City",
         "monopoly": false
     },
-    "1692": {
+    {
         "id": 1692,
         "name": "O'dyllita Castle",
         "territory": "O'dyllita",
@@ -19454,7 +19454,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1693": {
+    {
         "id": 1693,
         "name": "Thornwood Forest",
         "territory": "O'dyllita",
@@ -19475,7 +19475,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1694": {
+    {
         "id": 1694,
         "name": "Crypt of Resting Thoughts",
         "territory": "O'dyllita",
@@ -19495,7 +19495,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1695": {
+    {
         "id": 1695,
         "name": "Narcion",
         "territory": "O'dyllita",
@@ -19515,7 +19515,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1696": {
+    {
         "id": 1696,
         "name": "Talibahr's Rope",
         "territory": "O'dyllita",
@@ -19534,7 +19534,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1697": {
+    {
         "id": 1697,
         "name": "La O'delle",
         "territory": "O'dyllita",
@@ -19554,7 +19554,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1698": {
+    {
         "id": 1698,
         "name": "Starry Midnight Port",
         "territory": "O'dyllita",
@@ -19574,7 +19574,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1699": {
+    {
         "id": 1699,
         "name": "O'dyllita Castle Vicinity",
         "territory": "O'dyllita",
@@ -19593,7 +19593,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1700": {
+    {
         "id": 1700,
         "name": "Tunkuta",
         "territory": "O'dyllita",
@@ -19612,7 +19612,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1701": {
+    {
         "id": 1701,
         "name": "Salun's Border",
         "territory": "O'dyllita",
@@ -19631,7 +19631,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1702": {
+    {
         "id": 1702,
         "name": "Bahit Sanctum",
         "territory": "O'dyllita",
@@ -19651,7 +19651,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1703": {
+    {
         "id": 1703,
         "name": "Olun's Valley",
         "territory": "O'dyllita",
@@ -19672,7 +19672,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1704": {
+    {
         "id": 1704,
         "name": "Star's End",
         "territory": "Calpheon Territory",
@@ -19693,7 +19693,7 @@
         "type": "Danger Zone",
         "monopoly": false
     },
-    "1705": {
+    {
         "id": 1705,
         "name": "Calpheon Northwestern Outpost",
         "territory": "Calpheon Territory",
@@ -19713,7 +19713,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1706": {
+    {
         "id": 1706,
         "name": "UnKnown",
         "territory": "O'dyllita",
@@ -19731,7 +19731,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1707": {
+    {
         "id": 1707,
         "name": "Grape Farming",
         "territory": "O'dyllita",
@@ -19759,7 +19759,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1708": {
+    {
         "id": 1708,
         "name": "Potato Farming",
         "territory": "O'dyllita",
@@ -19787,7 +19787,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1709": {
+    {
         "id": 1709,
         "name": "Excavation",
         "territory": "O'dyllita",
@@ -19823,7 +19823,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1710": {
+    {
         "id": 1710,
         "name": "Mining",
         "territory": "O'dyllita",
@@ -19855,7 +19855,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1711": {
+    {
         "id": 1711,
         "name": "Mining",
         "territory": "O'dyllita",
@@ -19887,7 +19887,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1712": {
+    {
         "id": 1712,
         "name": "Lumbering",
         "territory": "O'dyllita",
@@ -19935,7 +19935,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1713": {
+    {
         "id": 1713,
         "name": "Chicken Meat Production",
         "territory": "O'dyllita",
@@ -19971,7 +19971,7 @@
         "type": "Production",
         "monopoly": false
     },
-    "1714": {
+    {
         "id": 1714,
         "name": "Fish Drying Yard",
         "territory": "O'dyllita",
@@ -20015,7 +20015,7 @@
         "type": "Fish Drying Yard",
         "monopoly": false
     },
-    "1715": {
+    {
         "id": 1715,
         "name": "Lumbering",
         "territory": "O'dyllita",
@@ -20063,7 +20063,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1716": {
+    {
         "id": 1716,
         "name": "Excavation",
         "territory": "O'dyllita",
@@ -20099,7 +20099,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1717": {
+    {
         "id": 1717,
         "name": "Mining",
         "territory": "Calpheon Territory",
@@ -20135,7 +20135,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1718": {
+    {
         "id": 1718,
         "name": "Brellin Farm",
         "territory": "Calpheon Territory",
@@ -20154,7 +20154,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1719": {
+    {
         "id": 1719,
         "name": "Outpost Supply Port",
         "territory": "Calpheon Territory",
@@ -20172,7 +20172,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1720": {
+    {
         "id": 1720,
         "name": "Excavation",
         "territory": "Calpheon Territory",
@@ -20212,7 +20212,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1727": {
+    {
         "id": 1727,
         "name": "Oquilla's Eye",
         "territory": "The Great Ocean",
@@ -20231,7 +20231,7 @@
         "type": "City",
         "monopoly": false
     },
-    "1734": {
+    {
         "id": 1734,
         "name": "Chiro's Cannon Workshop",
         "territory": "Balenos Territory",
@@ -20267,7 +20267,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1735": {
+    {
         "id": 1735,
         "name": "Chiro's Sail Workshop",
         "territory": "Balenos Territory",
@@ -20303,7 +20303,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1736": {
+    {
         "id": 1736,
         "name": "Chiro's Figurehead Workshop",
         "territory": "Balenos Territory",
@@ -20339,7 +20339,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1737": {
+    {
         "id": 1737,
         "name": "Chiro's Black Plating Workshop",
         "territory": "Balenos Territory",
@@ -20375,7 +20375,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1738": {
+    {
         "id": 1738,
         "name": "Grándiha",
         "territory": "Kamasylvia",
@@ -20394,7 +20394,7 @@
         "type": "Trade",
         "monopoly": false
     },
-    "1739": {
+    {
         "id": 1739,
         "name": "Papua Crinea",
         "territory": "Kamasylvia",
@@ -20412,7 +20412,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1740": {
+    {
         "id": 1740,
         "name": "Forgotten Mountain",
         "territory": "O'dyllita",
@@ -20432,7 +20432,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1741": {
+    {
         "id": 1741,
         "name": "Salanar Pond",
         "territory": "O'dyllita",
@@ -20451,7 +20451,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1742": {
+    {
         "id": 1742,
         "name": "Delmira Plantation",
         "territory": "O'dyllita",
@@ -20472,7 +20472,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1743": {
+    {
         "id": 1743,
         "name": "Mountain of Division",
         "territory": "O'dyllita",
@@ -20491,7 +20491,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1744": {
+    {
         "id": 1744,
         "name": "Shiv Valley Road",
         "territory": "O'dyllita",
@@ -20510,7 +20510,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1745": {
+    {
         "id": 1745,
         "name": "Pit of the Undying",
         "territory": "Balenos Territory",
@@ -20526,7 +20526,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1746": {
+    {
         "id": 1746,
         "name": "Crow's Nest",
         "territory": "The Great Ocean",
@@ -20544,7 +20544,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1747": {
+    {
         "id": 1747,
         "name": "Awina's Tail",
         "territory": "Mountain of Eternal Winter",
@@ -20563,7 +20563,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1748": {
+    {
         "id": 1748,
         "name": "Wind Nol's Perch",
         "territory": "Mountain of Eternal Winter",
@@ -20583,7 +20583,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1749": {
+    {
         "id": 1749,
         "name": "Erethea's Belt",
         "territory": "Mountain of Eternal Winter",
@@ -20602,7 +20602,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1750": {
+    {
         "id": 1750,
         "name": "Eilton",
         "territory": "Mountain of Eternal Winter",
@@ -20623,7 +20623,7 @@
         "type": "City",
         "monopoly": false
     },
-    "1751": {
+    {
         "id": 1751,
         "name": "Maslan's Yulas Citron Orchard",
         "territory": "Mountain of Eternal Winter",
@@ -20642,7 +20642,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1752": {
+    {
         "id": 1752,
         "name": "Snowstorm Guard Post",
         "territory": "Mountain of Eternal Winter",
@@ -20661,7 +20661,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1753": {
+    {
         "id": 1753,
         "name": "Mountain of Eternal Winter",
         "territory": "Mountain of Eternal Winter",
@@ -20681,7 +20681,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1754": {
+    {
         "id": 1754,
         "name": "Bronte's Bolt",
         "territory": "Mountain of Eternal Winter",
@@ -20700,7 +20700,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1755": {
+    {
         "id": 1755,
         "name": "Jade Starlight Forest",
         "territory": "Mountain of Eternal Winter",
@@ -20721,7 +20721,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1756": {
+    {
         "id": 1756,
         "name": "Mountain Top Guard Post",
         "territory": "Mountain of Eternal Winter",
@@ -20742,7 +20742,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1757": {
+    {
         "id": 1757,
         "name": "Tori Woods",
         "territory": "Mountain of Eternal Winter",
@@ -20762,7 +20762,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1759": {
+    {
         "id": 1759,
         "name": "Sherekhan Iron Mine",
         "territory": "Mountain of Eternal Winter",
@@ -20783,7 +20783,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1760": {
+    {
         "id": 1760,
         "name": "Derelict Trade Post",
         "territory": "Mountain of Eternal Winter",
@@ -20802,7 +20802,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1761": {
+    {
         "id": 1761,
         "name": "Shrine of Silent Prayers",
         "territory": "Mountain of Eternal Winter",
@@ -20821,7 +20821,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1762": {
+    {
         "id": 1762,
         "name": "Zvier Highlands",
         "territory": "Mountain of Eternal Winter",
@@ -20843,7 +20843,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1763": {
+    {
         "id": 1763,
         "name": "Camp Balacs",
         "territory": "Mountain of Eternal Winter",
@@ -20863,7 +20863,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1764": {
+    {
         "id": 1764,
         "name": "Charbonneau Villa",
         "territory": "Mountain of Eternal Winter",
@@ -20881,7 +20881,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1766": {
+    {
         "id": 1766,
         "name": "Pilgrim's End",
         "territory": "Mountain of Eternal Winter",
@@ -20902,7 +20902,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1767": {
+    {
         "id": 1767,
         "name": "Mining",
         "territory": "Mountain of Eternal Winter",
@@ -20934,7 +20934,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1768": {
+    {
         "id": 1768,
         "name": "Gathering",
         "territory": "Mountain of Eternal Winter",
@@ -20962,7 +20962,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1769": {
+    {
         "id": 1769,
         "name": "Mining",
         "territory": "Mountain of Eternal Winter",
@@ -20990,7 +20990,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1770": {
+    {
         "id": 1770,
         "name": "Excavation",
         "territory": "Mountain of Eternal Winter",
@@ -21026,7 +21026,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1771": {
+    {
         "id": 1771,
         "name": "Lumbering",
         "territory": "Mountain of Eternal Winter",
@@ -21074,7 +21074,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1772": {
+    {
         "id": 1772,
         "name": "Mining",
         "territory": "Mountain of Eternal Winter",
@@ -21102,7 +21102,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1773": {
+    {
         "id": 1773,
         "name": "Gathering",
         "territory": "Mountain of Eternal Winter",
@@ -21134,7 +21134,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1774": {
+    {
         "id": 1774,
         "name": "Gathering",
         "territory": "Mountain of Eternal Winter",
@@ -21166,7 +21166,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1775": {
+    {
         "id": 1775,
         "name": "Excavation",
         "territory": "Mountain of Eternal Winter",
@@ -21194,7 +21194,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1776": {
+    {
         "id": 1776,
         "name": "Gathering",
         "territory": "Mountain of Eternal Winter",
@@ -21222,7 +21222,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1777": {
+    {
         "id": 1777,
         "name": "Lumbering",
         "territory": "Mountain of Eternal Winter",
@@ -21270,7 +21270,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1778": {
+    {
         "id": 1778,
         "name": "Excavation",
         "territory": "Mountain of Eternal Winter",
@@ -21306,7 +21306,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1779": {
+    {
         "id": 1779,
         "name": "Honey Production",
         "territory": "Mountain of Eternal Winter",
@@ -21334,7 +21334,7 @@
         "type": "Production",
         "monopoly": false
     },
-    "1780": {
+    {
         "id": 1780,
         "name": "Lumbering",
         "territory": "Mountain of Eternal Winter",
@@ -21382,7 +21382,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1781": {
+    {
         "id": 1781,
         "name": "Dalbeol Village",
         "territory": "Land of the Morning Light",
@@ -21403,7 +21403,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1782": {
+    {
         "id": 1782,
         "name": "Hanji County",
         "territory": "Land of the Morning Light",
@@ -21423,7 +21423,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1783": {
+    {
         "id": 1783,
         "name": "Shimnidae Forest",
         "territory": "Land of the Morning Light",
@@ -21445,7 +21445,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1784": {
+    {
         "id": 1784,
         "name": "Nampo Gate",
         "territory": "Land of the Morning Light",
@@ -21464,7 +21464,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1785": {
+    {
         "id": 1785,
         "name": "Nampo's Moodle Village",
         "territory": "Land of the Morning Light",
@@ -21487,7 +21487,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1786": {
+    {
         "id": 1786,
         "name": "Solgaji Forest",
         "territory": "Land of the Morning Light",
@@ -21508,7 +21508,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1787": {
+    {
         "id": 1787,
         "name": "Cheongsan Institute",
         "territory": "Land of the Morning Light",
@@ -21528,7 +21528,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1788": {
+    {
         "id": 1788,
         "name": "Dokkebi Forest",
         "territory": "Land of the Morning Light",
@@ -21549,7 +21549,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1789": {
+    {
         "id": 1789,
         "name": "Golden Pig Cave",
         "territory": "Land of the Morning Light",
@@ -21570,7 +21570,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1790": {
+    {
         "id": 1790,
         "name": "Gowun Plateau",
         "territory": "Land of the Morning Light",
@@ -21593,7 +21593,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1791": {
+    {
         "id": 1791,
         "name": "Drybranch Village",
         "territory": "Land of the Morning Light",
@@ -21612,7 +21612,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1792": {
+    {
         "id": 1792,
         "name": "Bomnae County",
         "territory": "Land of the Morning Light",
@@ -21633,7 +21633,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1793": {
+    {
         "id": 1793,
         "name": "Honglim Base",
         "territory": "Land of the Morning Light",
@@ -21656,7 +21656,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1794": {
+    {
         "id": 1794,
         "name": "Yeowoo Pass",
         "territory": "Land of the Morning Light",
@@ -21677,7 +21677,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1795": {
+    {
         "id": 1795,
         "name": "Nopsae's Byeot County",
         "territory": "Land of the Morning Light",
@@ -21702,7 +21702,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1796": {
+    {
         "id": 1796,
         "name": "Bari Forest",
         "territory": "Land of the Morning Light",
@@ -21723,7 +21723,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1797": {
+    {
         "id": 1797,
         "name": "Beombawi Valley",
         "territory": "Land of the Morning Light",
@@ -21746,7 +21746,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1798": {
+    {
         "id": 1798,
         "name": "Beombawi Gate",
         "territory": "Land of the Morning Light",
@@ -21765,7 +21765,7 @@
         "type": "Gateway",
         "monopoly": false
     },
-    "1799": {
+    {
         "id": 1799,
         "name": "Haemo Island",
         "territory": "Land of the Morning Light",
@@ -21786,7 +21786,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1800": {
+    {
         "id": 1800,
         "name": "Byukgye Island",
         "territory": "Land of the Morning Light",
@@ -21807,7 +21807,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1801": {
+    {
         "id": 1801,
         "name": "UnKnown",
         "territory": "Land of the Morning Light",
@@ -21825,7 +21825,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1802": {
+    {
         "id": 1802,
         "name": "UnKnown",
         "territory": "Land of the Morning Light",
@@ -21843,7 +21843,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1803": {
+    {
         "id": 1803,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -21871,7 +21871,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1804": {
+    {
         "id": 1804,
         "name": "UnKnown",
         "territory": null,
@@ -21884,7 +21884,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1805": {
+    {
         "id": 1805,
         "name": "UnKnown",
         "territory": null,
@@ -21897,7 +21897,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1806": {
+    {
         "id": 1806,
         "name": "UnKnown",
         "territory": null,
@@ -21910,7 +21910,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1807": {
+    {
         "id": 1807,
         "name": "Excavation",
         "territory": "Land of the Morning Light",
@@ -21958,7 +21958,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1808": {
+    {
         "id": 1808,
         "name": "Excavation",
         "territory": "Land of the Morning Light",
@@ -22002,7 +22002,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1809": {
+    {
         "id": 1809,
         "name": "Excavation",
         "territory": "Land of the Morning Light",
@@ -22046,7 +22046,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1810": {
+    {
         "id": 1810,
         "name": "UnKnown",
         "territory": null,
@@ -22059,7 +22059,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1811": {
+    {
         "id": 1811,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22087,7 +22087,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1812": {
+    {
         "id": 1812,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22115,7 +22115,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1813": {
+    {
         "id": 1813,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -22163,7 +22163,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1814": {
+    {
         "id": 1814,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22191,7 +22191,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1815": {
+    {
         "id": 1815,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -22239,7 +22239,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1816": {
+    {
         "id": 1816,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22267,7 +22267,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1817": {
+    {
         "id": 1817,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22295,7 +22295,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1818": {
+    {
         "id": 1818,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22323,7 +22323,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1819": {
+    {
         "id": 1819,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22351,7 +22351,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1820": {
+    {
         "id": 1820,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -22399,7 +22399,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1821": {
+    {
         "id": 1821,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -22451,7 +22451,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1822": {
+    {
         "id": 1822,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22479,7 +22479,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1823": {
+    {
         "id": 1823,
         "name": "Excavation",
         "territory": "Land of the Morning Light",
@@ -22515,7 +22515,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1824": {
+    {
         "id": 1824,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22543,7 +22543,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1825": {
+    {
         "id": 1825,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22571,7 +22571,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1826": {
+    {
         "id": 1826,
         "name": "Farming",
         "territory": "Land of the Morning Light",
@@ -22599,7 +22599,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1827": {
+    {
         "id": 1827,
         "name": "Farming",
         "territory": "Land of the Morning Light",
@@ -22627,7 +22627,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1828": {
+    {
         "id": 1828,
         "name": "Farming",
         "territory": "Land of the Morning Light",
@@ -22655,7 +22655,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1829": {
+    {
         "id": 1829,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -22687,7 +22687,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1830": {
+    {
         "id": 1830,
         "name": "Excavation",
         "territory": "Land of the Morning Light",
@@ -22727,7 +22727,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1831": {
+    {
         "id": 1831,
         "name": "UnKnown",
         "territory": "Balenos Territory",
@@ -22770,7 +22770,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1832": {
+    {
         "id": 1832,
         "name": "Dallae Pier",
         "territory": "Land of the Morning Light",
@@ -22789,7 +22789,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1833": {
+    {
         "id": 1833,
         "name": "Dallae Pier Quarry",
         "territory": "Land of the Morning Light",
@@ -22837,7 +22837,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1834": {
+    {
         "id": 1834,
         "name": "Asparkan",
         "territory": "Ulukita",
@@ -22857,7 +22857,7 @@
         "type": "City",
         "monopoly": false
     },
-    "1835": {
+    {
         "id": 1835,
         "name": "Atessahra",
         "territory": "Ulukita",
@@ -22877,7 +22877,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1836": {
+    {
         "id": 1836,
         "name": "Sezec Mercenary Camp",
         "territory": "Ulukita",
@@ -22896,7 +22896,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1837": {
+    {
         "id": 1837,
         "name": "City of the Dead",
         "territory": "Ulukita",
@@ -22915,7 +22915,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1838": {
+    {
         "id": 1838,
         "name": "Tungrad Ruins",
         "territory": "Ulukita",
@@ -22934,7 +22934,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1839": {
+    {
         "id": 1839,
         "name": "UnKnown",
         "territory": "Balenos Territory",
@@ -22985,7 +22985,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1840": {
+    {
         "id": 1840,
         "name": "Neruda Plain",
         "territory": "Ulukita",
@@ -23004,7 +23004,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1841": {
+    {
         "id": 1841,
         "name": "Tremorin Hill",
         "territory": "Ulukita",
@@ -23024,7 +23024,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1842": {
+    {
         "id": 1842,
         "name": "Kermelun Wilds",
         "territory": "Ulukita",
@@ -23043,7 +23043,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1843": {
+    {
         "id": 1843,
         "name": "Muzgar",
         "territory": "Ulukita",
@@ -23063,7 +23063,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1844": {
+    {
         "id": 1844,
         "name": "Aakshrad Mountains",
         "territory": "Ulukita",
@@ -23082,7 +23082,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1845": {
+    {
         "id": 1845,
         "name": "Yzrahid Highlands",
         "territory": "Ulukita",
@@ -23101,7 +23101,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1846": {
+    {
         "id": 1846,
         "name": "Darkseekers' Retreat",
         "territory": "Ulukita",
@@ -23120,7 +23120,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1847": {
+    {
         "id": 1847,
         "name": "Karasi Canyon",
         "territory": "Ulukita",
@@ -23140,7 +23140,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1848": {
+    {
         "id": 1848,
         "name": "Barhan Camp",
         "territory": "Ulukita",
@@ -23159,7 +23159,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1849": {
+    {
         "id": 1849,
         "name": "Shakhtar Wilds",
         "territory": "Ulukita",
@@ -23179,7 +23179,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1850": {
+    {
         "id": 1850,
         "name": "Velandir",
         "territory": "Ulukita",
@@ -23198,7 +23198,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1851": {
+    {
         "id": 1851,
         "name": "Stofbir",
         "territory": "Ulukita",
@@ -23216,7 +23216,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1852": {
+    {
         "id": 1852,
         "name": "Seoul",
         "territory": "Land of the Morning Light",
@@ -23238,7 +23238,7 @@
         "type": "City",
         "monopoly": false
     },
-    "1853": {
+    {
         "id": 1853,
         "name": "Yukjo Street",
         "territory": "Land of the Morning Light",
@@ -23258,7 +23258,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1854": {
+    {
         "id": 1854,
         "name": "Unjongga Street",
         "territory": "Land of the Morning Light",
@@ -23278,7 +23278,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1855": {
+    {
         "id": 1855,
         "name": "Yuunru",
         "territory": "Land of the Morning Light",
@@ -23298,7 +23298,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1856": {
+    {
         "id": 1856,
         "name": "Chowon Gardens",
         "territory": "Land of the Morning Light",
@@ -23317,7 +23317,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1857": {
+    {
         "id": 1857,
         "name": "Godu Village",
         "territory": "Land of the Morning Light",
@@ -23342,7 +23342,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1858": {
+    {
         "id": 1858,
         "name": "Bukpo",
         "territory": "Land of the Morning Light",
@@ -23365,7 +23365,7 @@
         "type": "Town",
         "monopoly": false
     },
-    "1859": {
+    {
         "id": 1859,
         "name": "Wonjin Palace",
         "territory": "Land of the Morning Light",
@@ -23385,7 +23385,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1860": {
+    {
         "id": 1860,
         "name": "Myeonggyun Hall",
         "territory": "Land of the Morning Light",
@@ -23405,7 +23405,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1861": {
+    {
         "id": 1861,
         "name": "Secret Society",
         "territory": "Land of the Morning Light",
@@ -23424,7 +23424,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1862": {
+    {
         "id": 1862,
         "name": "Taehak",
         "territory": "Land of the Morning Light",
@@ -23442,7 +23442,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1863": {
+    {
         "id": 1863,
         "name": "Dang Forest",
         "territory": "Land of the Morning Light",
@@ -23462,7 +23462,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1864": {
+    {
         "id": 1864,
         "name": "Geogugwi Cave",
         "territory": "Land of the Morning Light",
@@ -23483,7 +23483,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1865": {
+    {
         "id": 1865,
         "name": "Holbon",
         "territory": "Land of the Morning Light",
@@ -23503,7 +23503,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1866": {
+    {
         "id": 1866,
         "name": "Cloud Pier",
         "territory": "Land of the Morning Light",
@@ -23521,7 +23521,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1867": {
+    {
         "id": 1867,
         "name": "Hwasun Valley",
         "territory": "Land of the Morning Light",
@@ -23540,7 +23540,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1868": {
+    {
         "id": 1868,
         "name": "Dume Ridges",
         "territory": "Land of the Morning Light",
@@ -23562,7 +23562,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1869": {
+    {
         "id": 1869,
         "name": "Mongryong's Exile",
         "territory": "Land of the Morning Light",
@@ -23580,7 +23580,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1870": {
+    {
         "id": 1870,
         "name": "Mount Ahshi",
         "territory": "Land of the Morning Light",
@@ -23600,7 +23600,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1871": {
+    {
         "id": 1871,
         "name": "Sky Altar",
         "territory": "Land of the Morning Light",
@@ -23618,7 +23618,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1872": {
+    {
         "id": 1872,
         "name": "Martial God Tournament",
         "territory": "Land of the Morning Light",
@@ -23636,7 +23636,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1873": {
+    {
         "id": 1873,
         "name": "Seoryeon Corps",
         "territory": "Land of the Morning Light",
@@ -23654,7 +23654,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1874": {
+    {
         "id": 1874,
         "name": "Byeolli Forest",
         "territory": "Land of the Morning Light",
@@ -23677,7 +23677,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1875": {
+    {
         "id": 1875,
         "name": "Motgol Village",
         "territory": "Land of the Morning Light",
@@ -23698,7 +23698,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1876": {
+    {
         "id": 1876,
         "name": "Flower-sunken Swamp",
         "territory": "Land of the Morning Light",
@@ -23717,7 +23717,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1877": {
+    {
         "id": 1877,
         "name": "Dongmakgol Village",
         "territory": "Land of the Morning Light",
@@ -23738,7 +23738,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1878": {
+    {
         "id": 1878,
         "name": "Dungryong Cave",
         "territory": "Land of the Morning Light",
@@ -23758,7 +23758,7 @@
         "type": "Connection",
         "monopoly": false
     },
-    "1879": {
+    {
         "id": 1879,
         "name": "Farming",
         "territory": "Land of the Morning Light",
@@ -23786,7 +23786,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1880": {
+    {
         "id": 1880,
         "name": "Farming",
         "territory": "Land of the Morning Light",
@@ -23814,7 +23814,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1881": {
+    {
         "id": 1881,
         "name": "Farming",
         "territory": "Land of the Morning Light",
@@ -23842,7 +23842,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1882": {
+    {
         "id": 1882,
         "name": "Farming",
         "territory": "Land of the Morning Light",
@@ -23870,7 +23870,7 @@
         "type": "Farming",
         "monopoly": false
     },
-    "1883": {
+    {
         "id": 1883,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -23918,7 +23918,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1884": {
+    {
         "id": 1884,
         "name": "Excavation",
         "territory": "Land of the Morning Light",
@@ -23950,7 +23950,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1885": {
+    {
         "id": 1885,
         "name": "Mining",
         "territory": "Land of the Morning Light",
@@ -23986,7 +23986,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1886": {
+    {
         "id": 1886,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -24034,7 +24034,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1887": {
+    {
         "id": 1887,
         "name": "Mining",
         "territory": "Land of the Morning Light",
@@ -24070,7 +24070,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1888": {
+    {
         "id": 1888,
         "name": "Gathering",
         "territory": "Land of the Morning Light",
@@ -24098,7 +24098,7 @@
         "type": "Gathering",
         "monopoly": false
     },
-    "1889": {
+    {
         "id": 1889,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -24146,7 +24146,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1890": {
+    {
         "id": 1890,
         "name": "Excavation",
         "territory": "Land of the Morning Light",
@@ -24178,7 +24178,7 @@
         "type": "Excavation",
         "monopoly": false
     },
-    "1891": {
+    {
         "id": 1891,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -24230,7 +24230,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1892": {
+    {
         "id": 1892,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -24282,7 +24282,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1893": {
+    {
         "id": 1893,
         "name": "Mining",
         "territory": "Land of the Morning Light",
@@ -24318,7 +24318,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1894": {
+    {
         "id": 1894,
         "name": "Lumbering",
         "territory": "Land of the Morning Light",
@@ -24366,7 +24366,7 @@
         "type": "Lumbering",
         "monopoly": false
     },
-    "1895": {
+    {
         "id": 1895,
         "name": "Mining",
         "territory": "Land of the Morning Light",
@@ -24402,7 +24402,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1896": {
+    {
         "id": 1896,
         "name": "Mining",
         "territory": "Land of the Morning Light",
@@ -24438,7 +24438,7 @@
         "type": "Mining",
         "monopoly": false
     },
-    "1897": {
+    {
         "id": 1897,
         "name": "Mining",
         "territory": "Land of the Morning Light",
@@ -24474,4 +24474,4 @@
         "type": "Mining",
         "monopoly": false
     }
-}
+]

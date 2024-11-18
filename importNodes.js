@@ -25,13 +25,13 @@ const NODE_TYPES = [
     let response = await fetch(url);
     let { data } = await response.json();
 
-    let result = {};
+    let result = [];
 
     for (let d of data) {
         let [coords] = d.coordinates;
         let [x, z, y] = coords || [];
 
-        result[d.id] = {
+        result.push({
             id: d.id,
             name: d.name,
             territory: d.territory_name,
@@ -43,7 +43,7 @@ const NODE_TYPES = [
             neighbors: d.connections,
             type: NODE_TYPES[d.node_kind],
             monopoly: d.node_kind == 10 || d.node_kind == 13,
-        };
+        });
     }
 
     let json = JSON.stringify(result);
