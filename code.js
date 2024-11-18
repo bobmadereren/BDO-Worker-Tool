@@ -17,33 +17,52 @@ let svg = d3.select("body")
     .append("g")
     .attr("width", width)
     .attr("height", height)
-    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-let gx = svg.append("g")
+let xAxis = svg.append("g")
     .attr("class", "x-axis")
     .attr("transform", `translate(0, ${height})`)
     .call(d3.axisBottom(x));
 
-let gy = svg.append("g")
+let yAxis = svg.append("g")
     .attr("class", "y-axis")
     .call(d3.axisLeft(y));
 
+let tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "node-tooltip")
+    .style("position", "absolute")
+    .style("width", "240px")
+    .style("height", "2.5em")
+    .style("color", "white")
+    .style("background", "grey")
+    .append("text", "hei")
+    .style("hidden", true);
 
-let circles = svg.append("g")
+function updateTooltip(e, d) {
+    tooltip.html(d.name + ", " + d.type)
+        .stype("left", e.pageX + "px", e.pageY + "px")
+        .style("hidden", false);
+}
+
+let nodes = svg.append("g")
     .attr("class", "nodes")
     .selectAll(".node")
     .data(data)
     .enter()
     .append("g")
-    .attr("class", "node");
+    .attr("class", "node")
+    .on("click", updateTooltip);
 
-circles.append("circle")
+
+
+nodes.append("circle")
     .attr("r", 5)
     .attr("cx", d => x(d.pos.x))
     .attr("cy", d => y(d.pos.y))
-    .style("fill", d => color(d.type))
+    .style("fill", d => color(d.type));
 
-circles.append("text")
+nodes.append("text")
     .attr("x", d => x(d.pos.x))
     .attr("y", d => y(d.pos.y))
     .style("fill", d => color(d.type))
@@ -51,7 +70,9 @@ circles.append("text")
 
 console.log(color.domain());
 
-let legend = svg.selectAll(".legend")
+let legend = svg.append("g")
+    .attr("class", "legends")
+    .selectAll(".lengends")
     .data(color.domain())
     .enter()
     .append("g")
@@ -69,4 +90,5 @@ legend.append("text")
     .attr("y", 9)
     .attr("dy", ".35em")
     .style("text-anchor", "end")
+    .style("fill", color)
     .text(d => d);
