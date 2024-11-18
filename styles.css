@@ -5,6 +5,11 @@ body {
     transition: background-color 0.5s, color 0.5s;
 }
 
+.light-mode {
+    background-color: #ffffff;
+    color: #121212;
+}
+
 .dark-mode-toggle {
     position: fixed;
     top: 1rem;

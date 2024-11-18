@@ -10,7 +10,20 @@
 </head>
 
 <body>
+    <button class="dark-mode-toggle" id="darkModeToggle">Switch to Light Mode</button>
     <script type="module" src="code.js"></script>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                darkModeToggle.textContent = 'Switch to Dark Mode';
+            } else {
+                darkModeToggle.textContent = 'Switch to Light Mode';
+            }
+        });
+    </script>
 </body>
 
 </html>
