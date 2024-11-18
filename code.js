@@ -37,16 +37,16 @@ let tooltip = d3.select("body")
     .style("width", "240px")
     .style("height", "2.5em")
     .style("color", "white")
-    .style("background", "grey");
+    .style("background", "grey")
+    .style("opacity", 0);
 
-tooltip.append("text", "hei")
-    .style("hidden", true);
+tooltip.append("text", "hei");
 
 function updateTooltip(e, d) {
     tooltip.html(d.name + ", " + d.type)
         .style("left", e.pageX + "px")
         .style("top", e.pageY + "px")
-        .style("hidden", false);
+        .style("opacity", 1);
 }
 
 let nodes = svg.append("g")
@@ -56,7 +56,8 @@ let nodes = svg.append("g")
     .enter()
     .append("g")
     .attr("class", "node")
-    .on("click", updateTooltip);
+    .on("mouseover", updateTooltip)
+    .on("mouseout", () => tooltip.style("opacity", 0));
 
 
 nodes.append("circle")
@@ -97,7 +98,3 @@ legend.append("text")
     .style("text-anchor", "end")
     .style("fill", color)
     .text(d => d);
-
-
-
-    
