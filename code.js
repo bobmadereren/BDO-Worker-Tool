@@ -38,15 +38,17 @@ let tooltip = d3.select("body")
     .style("height", "2.5em")
     .style("color", "white")
     .style("background", "grey")
-    .style("opacity", 0);
+    .style("visibility", "hidden");
 
-tooltip.append("text", "hei");
+tooltip.append("text");
 
 function updateTooltip(e, d) {
     tooltip.html(d.name + ", " + d.type)
-        .style("left", e.pageX + "px")
-        .style("top", e.pageY + "px")
-        .style("opacity", 1);
+        .style("left", (e.pageX + 9) + "px")
+        .style("top", (e.pageY - 43) + "px")
+        .style("visibility", "visible")
+        .style("user-select", "none");
+    console.log("Over");
 }
 
 let nodes = svg.append("g")
@@ -55,16 +57,7 @@ let nodes = svg.append("g")
     .data(data)
     .enter()
     .append("g")
-    .attr("class", "node")
-    .on("mouseover", updateTooltip)
-    .on("mouseout", () => tooltip.style("opacity", 0));
-
-
-nodes.append("circle")
-    .attr("r", 5)
-    .attr("cx", d => x(d.pos.x))
-    .attr("cy", d => y(d.pos.y))
-    .style("fill", d => color(d.type));
+    .attr("class", "node");
 
 nodes.append("text")
     .attr("x", d => x(d.pos.x))
@@ -72,9 +65,19 @@ nodes.append("text")
     .style("fill", d => color(d.type))
     .attr("text-anchor", "middle")  // Center the text horizontally
     .attr("dy", "-0.7em")  // Position the text above the circle
+    .style("user-select", "none")
     .text(({ name }) => name);
 
-console.log(color.domain());
+let circles = nodes.append("circle")
+    .attr("r", 5)
+    .attr("cx", d => x(d.pos.x))
+    .attr("cy", d => y(d.pos.y))
+    .style("fill", d => color(d.type))
+    .on("mouseover", updateTooltip)
+    .on("mousemove", updateTooltip)
+    .on("mouseout", () => tooltip.style("visibility", "hidden") );
+
+
 
 let legend = svg.append("g")
     .attr("class", "legends")
