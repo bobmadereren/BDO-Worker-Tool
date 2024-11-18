@@ -35,13 +35,15 @@ let tooltip = d3.select("body")
     .style("width", "240px")
     .style("height", "2.5em")
     .style("color", "white")
-    .style("background", "grey")
-    .append("text", "hei")
+    .style("background", "grey");
+    
+tooltip.append("text", "hei")
     .style("hidden", true);
 
 function updateTooltip(e, d) {
     tooltip.html(d.name + ", " + d.type)
-        .stype("left", e.pageX + "px", e.pageY + "px")
+        .style("left", e.pageX + "px")
+        .style("top", e.pageY + "px")
         .style("hidden", false);
 }
 
@@ -53,7 +55,6 @@ let nodes = svg.append("g")
     .append("g")
     .attr("class", "node")
     .on("click", updateTooltip);
-
 
 
 nodes.append("circle")
