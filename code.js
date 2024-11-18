@@ -2,7 +2,7 @@ import dataa from './nodes.json' with {type: 'json'};
 
 let data = dataa.filter(({ type }) => type == "Town" || type == "City");
 
-let margin = { top: 150, right: 80, bottom: 20, left: 80 };  // Further increased top margin for more spacing
+let margin = { top: 150, right: 80, bottom: 20, left: 80 };  // Increased top margin for more spacing. 
 let width = 1500 - margin.left - margin.right;
 let height = 800 - margin.top - margin.bottom;
 
