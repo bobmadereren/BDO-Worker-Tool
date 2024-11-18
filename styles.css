@@ -1,27 +1,32 @@
+/* Set styles for the body element */
 body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    transition: background-color 0.5s, color 0.5s;
+    background-color: #121212; /* Dark background for dark mode */
+    color: #ffffff; /* Light text color for contrast */
+    font-family: Arial, sans-serif; /* Use Arial as the primary font */
+    font-size: 10px; /* Defines the base font size as 10 pixels */
+    transition: background-color 0.5s, color 0.5s; /* Smooth transition for color changes */
 }
 
+/* Set styles for light mode */
 .light-mode {
-    background-color: #ffffff;
-    color: #121212;
+    background-color: #ffffff; /* Light background for light mode */
+    color: #121212; /* Dark text color for contrast */
 }
 
+/* Style the dark mode toggle button */
 .dark-mode-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #444444;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    position: fixed; /* Keep button fixed on screen */
+    top: 1rem; /* Position from the top */
+    right: 1rem; /* Position from the right */
+    padding: 0.5rem 1rem; /* Add padding for better clickability */
+    background-color: #444444; /* Dark gray background */
+    color: #ffffff; /* White text color */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Show pointer to indicate it's clickable */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
 }
 
+/* Change background color of toggle button on hover */
 .dark-mode-toggle:hover {
-    background-color: #333333;
+    background-color: #333333; /* Slightly darker gray for hover effect */
 }
