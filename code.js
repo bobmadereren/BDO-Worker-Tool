@@ -98,7 +98,7 @@ let edges = svg.append("g")
     .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
 
 // Create nodes
-let nodes = svg.append("g") // TODO double click to buy
+let nodes = svg.append("g") // TODO double click to buy // TODO highlight cheapest path (in CP) to an owned node using Breath First Search (BFS)
     .attr("class", "nodes")
     .selectAll(".node")
     .data(nodeData, ({ id }) => id)
