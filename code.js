@@ -123,6 +123,8 @@ function hideTooltip() {
     tooltip.classed("visible", false);
 }
 
+// TODO Fix zoom bug
+
 // Flag to track node name visibility
 let nodeNamesVisible = true;
 
