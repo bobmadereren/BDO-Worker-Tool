@@ -200,7 +200,7 @@ legend.append("text")
     .style("text-anchor", "start")
     .style("font-size", "14px")
     .style("font-weight", "bold")
-    .style("fill", "#0066cc") // Adjust text color if necessary
+    .style("fill", "#FFFFFF") // Adjust text color if necessary
     .text(d => d); // Display the type names
 
     function draw({ transform }) {
