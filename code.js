@@ -139,11 +139,6 @@ legend.append("text")
     .style("fill", "#0066cc") // Adjust text color if necessary
     .text(d => d); // Display the type names
 
-// create side panel
-function showSidePanel() {
-    // TODO show a GUI with some details for the node
-}
-
 function doZoom({ transform }) {
     let x = transform.rescaleX(X);
     let y = transform.rescaleY(Y);
