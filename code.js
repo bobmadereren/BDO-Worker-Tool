@@ -17,8 +17,8 @@ let Y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
 let line = d3.line();
 
 let zoom = d3.zoom()
-    .translateExtent([[0, 0], [width, height]])
-    .scaleExtent([1, 40])
+    .translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]])
+    .scaleExtent([1, 500])
     .on("zoom", draw);
 
 // Define a custom color palette
