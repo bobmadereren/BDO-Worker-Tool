@@ -10,8 +10,8 @@ let width = 1500 - margin.left - margin.right;
 let height = 800 - margin.top - margin.bottom;
 
 // x and y transformations from data points to canvas
-let x = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]);
-let y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]);
+let x = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]).nice();
+let y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
 
 // color categories
 let color = d3.scaleOrdinal(nodeData.map(({ type }) => type), d3.schemePaired); // TODO replace d3.schemePaired with a suitable array of colors
