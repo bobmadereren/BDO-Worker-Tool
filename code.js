@@ -2,7 +2,7 @@ import nodeData from './nodes.json' with {type: 'json'};
 
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
 
-let edgeData = nodeData.flatMap(d => d.neighbors.map(id => ({ source: d, target: nodeMap.get(id) })));
+let edgeData = nodeData.flatMap(d => d.neighbors.filter(id => id > d.id).map(id => ({ source: d, target: nodeMap.get(id) })));
 
 let margin = { top: 150, right: 80, bottom: 20, left: 80 };
 let width = 1500 - margin.left - margin.right;
