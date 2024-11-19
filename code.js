@@ -13,6 +13,9 @@ let height = 800 - margin.top - margin.bottom;
 let X = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]).nice();
 let Y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
 
+// Edge lines
+let line = d3.line();
+
 let zoom = d3.zoom()
     .translateExtent([[0, 0], [width, height]])
     .scaleExtent([1, 40])
@@ -72,6 +75,19 @@ function hideTooltip() {
     tooltip.classed("visible", false);
 }
 
+// Create edges
+let edges = svg.append("g")
+    .attr("class", "edges")
+    .selectAll(".edge")
+    .data(edgeData, d => d.source.id + '-' + d.target.id)
+    .enter()
+    .append("path")
+    .attr("class", "edge")
+    .attr("stroke", "white")
+    .attr("fill", "none")
+    .on("mouseover", e => d3.select(e.target).attr("stroke", "#ffaa00").attr("stroke-width", 4))
+    .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
+
 // Create nodes
 let nodes = svg.append("g")
     .attr("class", "nodes")
@@ -94,19 +110,6 @@ nodes.append("circle")
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
     .on("mouseout", hideTooltip);
-
-// Create edges
-let edges = svg.append("g")
-    .attr("class", "edges")
-    .selectAll(".edge")
-    .data(edgeData, d => d.source.id + '-' + d.target.id)
-    .enter()
-    .append("path")
-    .attr("class", "edge")
-    .attr("stroke", "white")
-    .attr("fill", "none")
-    .on("mouseover", e => d3.select(e.target).attr("stroke", "#ffaa00").attr("stroke-width", 4))
-    .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
 
 // Draw legend
 let legend = svg.append("g")
@@ -134,8 +137,6 @@ legend.append("text")
     .style("font-weight", "bold")
     .style("fill", "#0066cc") // Adjust text color if necessary
     .text(d => d); // Display the type names
-
-let line = d3.line();
 
 function draw({ transform }) {
     let x = transform.rescaleX(X);
