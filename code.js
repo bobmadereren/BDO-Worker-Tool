@@ -165,3 +165,30 @@ function doZoom({ transform }) {
 
 
 }
+
+function showSidePanel(d) {
+    let sidePanel = d3.select("#side-panel");
+    sidePanel.classed("hidden", false);
+
+    d3.select("#side-panel-content").html(`
+            <div><strong>Name:</strong> ${d.name}</div>
+            <div><strong>Type:</strong> ${d.type}</div>
+            <div><strong>Territory:</strong> ${d.territory}</div>
+            <div><strong>Control Points:</strong> ${d.cp}</div>
+        `);
+}
+
+function hideSidePanel() {
+    d3.select("#side-panel").classed("hidden", true);
+}
+
+// Attach event handlers to nodes
+nodes.on("click", (e, d) => showSidePanel(d));
+
+// Optional: Hide panel when clicking outside of nodes
+d3.select("body").on("click", function (e) {
+    if (!e.target.closest(".node")) {
+        hideSidePanel();
+    }
+});
+
