@@ -62,15 +62,18 @@ tooltip.append("br");
 tooltip.append("text").attr("id", "cp");
 
 function updateTooltip(e, d) {
-    tooltip.style("left", (e.pageX + 9) + "px")
-        .style("top", (e.pageY - 43) + "px")
+    tooltip.style("left", `${e.pageX + 10}px`)
+        .style("top", `${e.pageY - 50}px`)
         .style("visibility", "visible");
 
-    tooltip.select("#name").text(d.name);
-    tooltip.select("#type").text("Type: " + d.type);
-    tooltip.select("#territory").text("Territory: " + d.territory);
-    tooltip.select("#cp").text("CP: " + d.cp);
+    tooltip.html(`
+        <div><strong>${d.name}</strong></div>
+        <div>Type: ${d.type}</div>
+        <div>Territory: ${d.territory}</div>
+        <div>CP: ${d.cp}</div>
+    `);
 }
+
 
 // create side panel
 function showSidePanel() {

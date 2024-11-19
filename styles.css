@@ -30,3 +30,23 @@ body {
 .dark-mode-toggle:hover {
     background-color: #333333; /* Slightly darker gray for hover effect */
 }
+
+.node-tooltip {
+    position: absolute;
+    max-width: 300px; /* Set a limit for dynamic width */
+    padding: 12px 15px; /* Increase padding for more space */
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 1.5; /* Adjust line spacing */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    pointer-events: none;
+    box-sizing: border-box; /* Include padding and border in size calculations */
+    word-wrap: break-word; /* Handle long words */
+    white-space: normal; /* Allow text wrapping */
+}
+
+
