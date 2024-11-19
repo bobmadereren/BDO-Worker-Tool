@@ -32,8 +32,7 @@ const NODE_TYPES = [
     let result = [];
 
     for (let d of data) {
-        let [coords] = d.coordinates;
-        let [x, z, y] = coords || [];
+        let [[x, z, y]] = d.coordinates;
 
         result.push({
             id: d.id,
