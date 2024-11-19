@@ -2,51 +2,65 @@
 body {
     background-color: #121212; /* Dark background for dark mode */
     color: #ffffff; /* Light text color for contrast */
-    font-family: Arial, sans-serif; /* Use Arial as the primary font */
-    font-size: 10px; /* Defines the base font size as 10 pixels */
-    transition: background-color 0.5s, color 0.5s; /* Smooth transition for color changes */
+    font-family: 'Arial', sans-serif; /* Arial as the primary font */
+    font-size: 14px; /* Slightly larger base font size for readability */
+    line-height: 1.6; /* Improved readability with better line height */
+    margin: 0; /* Remove default body margin */
+    padding: 0;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for theme changes */
 }
 
-/* Set styles for light mode */
+/* Light mode styles */
 .light-mode {
-    background-color: #ffffff; /* Light background for light mode */
-    color: #121212; /* Dark text color for contrast */
+    background-color: #ffffff;
+    color: #121212;
 }
 
-/* Style the dark mode toggle button */
+/* Dark mode toggle button */
 .dark-mode-toggle {
-    position: fixed; /* Keep button fixed on screen */
-    top: 1rem; /* Position from the top */
-    right: 1rem; /* Position from the right */
-    padding: 0.5rem 1rem; /* Add padding for better clickability */
-    background-color: #444444; /* Dark gray background */
-    color: #ffffff; /* White text color */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Show pointer to indicate it's clickable */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.6rem 1.2rem; /* Slightly larger padding for better clickability */
+    background-color: #555; /* Softer gray for the button */
+    color: #ffffff;
+    border-radius: 8px; /* Rounded corners for modern look */
+    border: 1px solid #333; /* Add subtle border */
+    cursor: pointer;
+    font-size: 12px; /* Larger font size for accessibility */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Change background color of toggle button on hover */
+/* Dark mode toggle hover effect */
 .dark-mode-toggle:hover {
-    background-color: #333333; /* Slightly darker gray for hover effect */
+    background-color: #444;
+    color: #eaeaea; /* Slightly lighter text for hover */
 }
 
+/* Tooltip styles */
 .node-tooltip {
     position: absolute;
-    max-width: 300px; /* Set a limit for dynamic width */
-    padding: 12px 15px; /* Increase padding for more space */
+    max-width: 320px; /* Increased max width for better layout */
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.9); /* Darker tooltip background for better contrast */
     color: #fff;
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid #444;
-    border-radius: 5px;
-    font-size: 12px;
-    line-height: 1.5; /* Adjust line spacing */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 13px; /* Larger font size for better readability */
+    line-height: 1.6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     visibility: hidden;
     pointer-events: none;
-    box-sizing: border-box; /* Include padding and border in size calculations */
-    word-wrap: break-word; /* Handle long words */
-    white-space: normal; /* Allow text wrapping */
+    box-sizing: border-box;
+    word-wrap: break-word;
+    white-space: normal;
+    z-index: 9999; /* Ensure the tooltip is above other elements */
 }
 
-
+/* Light mode tooltip adjustment */
+.light-mode .node-tooltip {
+    background: rgba(255, 255, 255, 0.95);
+    color: #121212;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
