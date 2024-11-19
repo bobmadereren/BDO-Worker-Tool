@@ -14,7 +14,8 @@ let x = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]);
 let y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]);
 
 // color categories
-let color = d3.scaleOrdinal(nodeData.map(({ type }) => type), d3.schemePaired);
+let color = d3.scaleOrdinal(nodeData.map(({ type }) => type), d3.schemePaired); // TODO replace d3.schemePaired with a suitable array of colors
+console.log(color.range());
 
 // define the link that generator
 let link = d3.link(d3.curveBumpX);
