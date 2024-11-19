@@ -71,6 +71,11 @@ function updateTooltip(e, d) {
     tooltip.select("#cp").text("CP: " + d.cp);
 }
 
+// create side panel
+function showSidePanel(){
+    // TODO show a GUI with some details for the node
+}
+
 // draw nodes
 let nodes = svg.append("g")
     .attr("class", "nodes")
@@ -96,7 +101,8 @@ nodes.append("circle")
     .style("fill", d => color(d.type))
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
-    .on("mouseout", () => tooltip.style("visibility", "hidden"));
+    .on("mouseout", () => tooltip.style("visibility", "hidden"))
+    .on("click", showSidePanel());
 
 // draw edges
 let edges = svg.append("g")
