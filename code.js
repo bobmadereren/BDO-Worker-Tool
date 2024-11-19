@@ -36,9 +36,28 @@ let margin = { top: 150, right: 200, bottom: 20, left: 80 }; // Increased right 
 let width = 1500 - margin.left - margin.right + 150; // Increased width for legend
 let height = 800 - margin.top - margin.bottom;
 
-// x and y transformations from data points to canvas
-let X = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]).nice(); //TODO remove squeezing VLOG, likely requires linear algebra
-let Y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
+const xRange = d3.extent(nodeData, d => d.pos.x);
+const yRange = d3.extent(nodeData, d => d.pos.y);
+
+const xScale = (xRange[1] - xRange[0]) / width;
+const yScale = (yRange[1] - yRange[0]) / height;
+
+const scaleFactor = Math.max(xScale, yScale);
+
+let xExtent = d3.extent(nodeData, d => d.pos.x);
+let paddingFactor = 0.1; // 10% compression on each side
+let adjustedDomain = [
+    xExtent[0] - (xExtent[1] - xExtent[0]) * paddingFactor,
+    xExtent[1] + (xExtent[1] - xExtent[0]) * paddingFactor
+];
+
+let X = d3.scaleLinear(adjustedDomain, [0, width]).nice();
+
+
+let Y = d3.scaleLinear()
+    .domain([yRange[0], yRange[0] + scaleFactor * height])
+    .range([height, 0]);
+
 
 // Edge lines
 let line = d3.line();
