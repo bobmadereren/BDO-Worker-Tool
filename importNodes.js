@@ -25,6 +25,8 @@ const NODE_TYPES = [
     let response = await fetch(url);
     let { data } = await response.json();
 
+    data = data.filter(({ coordinates }) => coordinates.length > 0);
+
     let idSet = new Set(data.map(({ id }) => id));
 
     let result = [];
