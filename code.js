@@ -15,7 +15,7 @@ let Y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
 
 let zoom = d3.zoom()
     .scaleExtent([1, 40])
-    .on("zoom", doZoom);
+    .on("zoom", ({ transform }) => draw(transform.rescaleX(X), transform.rescaleY(Y)));
 
 // Define a custom color palette
 let customColors = [
@@ -43,12 +43,10 @@ let svg = d3.select("body")
 // Add axes
 let xAxis = svg.append("g")
     .attr("class", "x-axis")
-    .attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(X));
+    .attr("transform", `translate(0, ${height})`);
 
 let yAxis = svg.append("g")
-    .attr("class", "y-axis")
-    .call(d3.axisLeft(Y));
+    .attr("class", "y-axis");
 
 // Create tooltip
 let tooltip = d3.select("body")
@@ -72,14 +70,15 @@ function hideTooltip() {
     tooltip.classed("visible", false);
 }
 
-// Draw nodes
+// Create nodes
 let nodes = svg.append("g")
     .attr("class", "nodes")
     .selectAll(".node")
     .data(nodeData, ({ id }) => id)
     .enter()
     .append("g")
-    .attr("class", "node");
+    .attr("class", "node")
+    .style("fill", d => color(d.type)); // Use the same color scale
 
 nodes.append("text")
     .style("fill", d => color(d.type))
@@ -93,7 +92,6 @@ nodes.append("circle")
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
     .on("mouseout", hideTooltip);
-
 
 // Draw edges
 let edges = svg.append("g")
@@ -139,10 +137,7 @@ legend.append("text")
     .style("fill", "#0066cc") // Adjust text color if necessary
     .text(d => d); // Display the type names
 
-function doZoom({ transform }) {
-    let x = transform.rescaleX(X);
-    let y = transform.rescaleY(Y);
-
+function draw(x = X, y = Y) {
     xAxis.call(d3.axisBottom(x));
     yAxis.call(d3.axisLeft(y));
 
@@ -153,12 +148,9 @@ function doZoom({ transform }) {
     nodes.selectAll("circle")
         .attr("cx", d => x(d.pos.x))
         .attr("cy", d => y(d.pos.y))
-        .style("fill", d => color(d.type)); // Use the same color scale
 
     edges.selectAll("edge")
         .attr("d", d => d3.line()([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
-
-
 }
 
 function showSidePanel(d) {
@@ -178,7 +170,7 @@ function hideSidePanel() {
 }
 
 // Attach event handlers to nodes
-nodes.on("click", (e, d) => showSidePanel(d));
+nodes.on("click", (_, d) => showSidePanel(d));
 
 // Optional: Hide panel when clicking outside of nodes
 d3.select("body").on("click", function (e) {
@@ -187,3 +179,5 @@ d3.select("body").on("click", function (e) {
     }
 });
 
+
+draw();
