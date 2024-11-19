@@ -11,17 +11,24 @@
 
 <body>
     <button class="dark-mode-toggle" id="darkModeToggle">Switch to Light Mode</button>
+    <button class="high-contrast-toggle" id="highContrastToggle">Enable High Contrast Mode</button>
     <script type="module" src="code.js"></script>
     <script>
         const darkModeToggle = document.getElementById('darkModeToggle');
+        const highContrastToggle = document.getElementById('highContrastToggle');
 
         darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
-            if (document.body.classList.contains('light-mode')) {
-                darkModeToggle.textContent = 'Switch to Dark Mode';
-            } else {
-                darkModeToggle.textContent = 'Switch to Light Mode';
-            }
+            darkModeToggle.textContent = document.body.classList.contains('light-mode')
+                ? 'Switch to Dark Mode'
+                : 'Switch to Light Mode';
+        });
+
+        highContrastToggle.addEventListener('click', () => {
+            document.body.classList.toggle('high-contrast-mode');
+            highContrastToggle.textContent = document.body.classList.contains('high-contrast-mode')
+                ? 'Disable High Contrast Mode'
+                : 'Enable High Contrast Mode';
         });
     </script>
 </body>

@@ -1,10 +1,10 @@
 import nodeData from './nodes.json' with {type: 'json'};
 
-// generate edge data
+// Generate edge data
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
 let edgeData = nodeData.flatMap(d => d.neighbors.filter(id => id > d.id).map(id => ({ source: d, target: nodeMap.get(id) })));
 
-// dimensions and margins
+// Dimensions and margins
 let margin = { top: 150, right: 80, bottom: 20, left: 80 };
 let width = 1500 - margin.left - margin.right;
 let height = 800 - margin.top - margin.bottom;
@@ -13,14 +13,10 @@ let height = 800 - margin.top - margin.bottom;
 let x = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]).nice();
 let y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
 
-// color categories
-let color = d3.scaleOrdinal(nodeData.map(({ type }) => type), d3.schemePaired); // TODO replace d3.schemePaired with a suitable array of colors
-console.log(color.range());
+// Color categories
+let color = d3.scaleOrdinal(nodeData.map(({ type }) => type), d3.schemePaired);
 
-// define the link that generator
-let link = d3.link(d3.curveBumpX);
-
-// create svg
+// Create SVG
 let svg = d3.select("body")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -32,7 +28,7 @@ let svg = d3.select("body")
     .attr("height", height)
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// add axes
+// Add axes
 let xAxis = svg.append("g")
     .attr("class", "x-axis")
     .attr("transform", `translate(0, ${height})`)
@@ -42,40 +38,29 @@ let yAxis = svg.append("g")
     .attr("class", "y-axis")
     .call(d3.axisLeft(y));
 
-// create tooltip
+// Create tooltip
 let tooltip = d3.select("body")
     .append("div")
-    .attr("class", "node-tooltip")
-    .style("visibility", "hidden");
-
-tooltip.append("text").attr("id", "name");
-tooltip.append("br");
-tooltip.append("text").attr("id", "type");
-tooltip.append("br");
-tooltip.append("text").attr("id", "territory");
-tooltip.append("br");
-tooltip.append("text").attr("id", "cp");
+    .attr("class", "node-tooltip");
 
 function updateTooltip(e, d) {
-    tooltip.style("left", `${e.pageX + 10}px`)
+    tooltip
+        .style("left", `${e.pageX + 10}px`)
         .style("top", `${e.pageY - 50}px`)
-        .style("visibility", "visible");
-
-    tooltip.html(`
-        <div><strong>${d.name}</strong></div>
-        <div>Type: ${d.type}</div>
-        <div>Territory: ${d.territory}</div>
-        <div>CP: ${d.cp}</div>
-    `);
+        .classed("visible", true)
+        .html(`
+            <div><strong>${d.name}</strong></div>
+            <div>Type: ${d.type}</div>
+            <div>Territory: ${d.territory}</div>
+            <div>CP: ${d.cp}</div>
+        `);
 }
 
-
-// create side panel
-function showSidePanel() {
-    // TODO show a GUI with some details for the node
+function hideTooltip() {
+    tooltip.classed("visible", false);
 }
 
-// draw nodes
+// Draw nodes
 let nodes = svg.append("g")
     .attr("class", "nodes")
     .selectAll(".node")
@@ -88,8 +73,8 @@ nodes.append("text")
     .attr("x", d => x(d.pos.x))
     .attr("y", d => y(d.pos.y))
     .style("fill", d => color(d.type))
-    .attr("text-anchor", "middle")  // Center the text horizontally
-    .attr("dy", "-0.7em")  // Position the text above the circle
+    .attr("text-anchor", "middle")
+    .attr("dy", "-0.7em")
     .style("user-select", "none")
     .text(({ name }) => name);
 
@@ -100,42 +85,22 @@ nodes.append("circle")
     .style("fill", d => color(d.type))
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
-    .on("mouseout", () => tooltip.style("visibility", "hidden"))
-    .on("click", showSidePanel());
+    .on("mouseout", hideTooltip);
 
-// draw edges
+// Draw edges
 let edges = svg.append("g")
     .attr("class", "edges")
     .selectAll(".edge")
     .data(edgeData, d => d.source.id + '-' + d.target.id)
     .enter()
-    .append("g")
-    .attr("class", "edge")
     .append("path")
-    .attr("d", d => link({ source: [x(d.source.pos.x), y(d.source.pos.y)], target: [x(d.target.pos.x), y(d.target.pos.y)] }))
+    .attr("class", "edge")
+    .attr("d", d => d3.line()([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]))
+    .attr("stroke", "white")
     .attr("fill", "none")
-    .attr("stroke", "white");
-
-// draw legend
-let legend = svg.append("g")
-    .attr("class", "legends")
-    .selectAll(".lengends")
-    .data(color.domain())
-    .enter()
-    .append("g")
-    .attr("class", "legend")
-    .attr("transform", (_, i) => `translate(0, ${i * 20})`);
-
-legend.append("rect")
-    .attr("x", width - 18)
-    .attr("width", 18)
-    .attr("height", 18)
-    .style("fill", color);
-
-legend.append("text")
-    .attr("x", width - 24)
-    .attr("y", 9)
-    .attr("dy", ".35em")
-    .style("text-anchor", "end")
-    .style("fill", color)
-    .text(d => d);
+    .on("mouseover", function () {
+        d3.select(this).attr("stroke", "#ffaa00").attr("stroke-width", 4);
+    })
+    .on("mouseout", function () {
+        d3.select(this).attr("stroke", "white").attr("stroke-width", 2);
+    });

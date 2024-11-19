@@ -37,30 +37,80 @@ body {
     color: #eaeaea; /* Slightly lighter text for hover */
 }
 
-/* Tooltip styles */
+/* Tooltip Styles */
 .node-tooltip {
     position: absolute;
-    max-width: 320px; /* Increased max width for better layout */
+    max-width: 320px;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.9); /* Darker tooltip background for better contrast */
+    background: rgba(0, 0, 0, 0.9);
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
-    font-size: 13px; /* Larger font size for better readability */
+    font-size: 13px;
     line-height: 1.6;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    pointer-events: auto;
+    opacity: 0;
     visibility: hidden;
-    pointer-events: none;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    white-space: normal;
-    z-index: 9999; /* Ensure the tooltip is above other elements */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
 }
 
-/* Light mode tooltip adjustment */
-.light-mode .node-tooltip {
-    background: rgba(255, 255, 255, 0.95);
-    color: #121212;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.node-tooltip.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Focus Indicators */
+.dark-mode-toggle:focus,
+.node:hover circle {
+    outline: 3px solid #ffaa00;
+    outline-offset: 2px;
+}
+
+.node-tooltip:focus {
+    border: 2px solid #ffaa00;
+    box-shadow: 0 0 10px #ffaa00;
+}
+
+/* High Contrast Mode */
+.high-contrast-mode body {
+    background-color: #000;
+    color: #fff;
+}
+
+.high-contrast-mode .dark-mode-toggle {
+    background-color: #000;
+    color: #ffaa00;
+    border-color: #ffaa00;
+}
+
+.high-contrast-mode .node-tooltip {
+    background: #000;
+    color: #fff;
+    border: 1px solid #ffaa00;
+    box-shadow: 0 0 10px #ffaa00;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .dark-mode-toggle {
+        font-size: 10px;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .node-tooltip {
+        font-size: 11px;
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .node:hover circle {
+        stroke-width: 3px;
+    }
+}
+
+/* Transitions */
+body, .dark-mode-toggle, .node-tooltip {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
