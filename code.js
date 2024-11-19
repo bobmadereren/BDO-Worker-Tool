@@ -3,7 +3,7 @@ import nodeData from './nodes.json' with {type: 'json'};
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
 
 let edgeData = nodeData.flatMap(d => d.neighbors.map(id => ({ source: d, target: nodeMap.get(id) })));
-console.log(edgeData);
+
 let margin = { top: 150, right: 80, bottom: 20, left: 80 };
 let width = 1500 - margin.left - margin.right;
 let height = 800 - margin.top - margin.bottom;
@@ -89,8 +89,6 @@ nodes.append("circle")
 
 let link = d3.link(d3.curveBumpX);
 
-console.log(edgeData.filter(({source: {name}}) => name == "Northwestern Gateway"));
-
 let edges = svg.append("g")
     .attr("class", "edges")
     .selectAll(".edge")
@@ -99,10 +97,7 @@ let edges = svg.append("g")
     .append("g")
     .attr("class", "edge")
     .append("path")
-    .attr("d", d => {
-        console.log(d);
-        link({ source: [d.source.pos.x, d.source.pos.y], target: [d.target.pos.x, d.target.pos.y] });
-    })
+    .attr("d", d => link({ source: [x(d.source.pos.x), y(d.source.pos.y)], target: [x(d.target.pos.x), y(d.target.pos.y)] }))
     .attr("fill", "none")
     .attr("stroke", "white");
 
