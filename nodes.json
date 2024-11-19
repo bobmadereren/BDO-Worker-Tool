@@ -2132,7 +2132,6 @@
         "neighbors": [
             302,
             307,
-            342,
             347,
             374
         ],
@@ -12420,9 +12419,7 @@
         "isMain": true,
         "neighbors": [
             1312,
-            1314,
-            1320,
-            1323
+            1314
         ],
         "type": "Gateway",
         "monopoly": false
@@ -12441,7 +12438,6 @@
         "isMain": true,
         "neighbors": [
             1313,
-            1320,
             1321,
             1326,
             1352,
@@ -12589,8 +12585,7 @@
         },
         "isMain": true,
         "neighbors": [
-            1319,
-            1323
+            1319
         ],
         "type": "Danger Zone",
         "monopoly": false

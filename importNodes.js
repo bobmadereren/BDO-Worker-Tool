@@ -25,6 +25,8 @@ const NODE_TYPES = [
     let response = await fetch(url);
     let { data } = await response.json();
 
+    let idSet = new Set(data.map(({ id }) => id));
+
     let result = [];
 
     for (let d of data) {
@@ -40,7 +42,7 @@ const NODE_TYPES = [
             luckYield: (d.node_luck_yields_items || []).map(({ id, name }) => ({ id, name })),
             pos: { x, y },
             isMain: d.is_main_node,
-            neighbors: d.connections,
+            neighbors: d.connections.filter(id => idSet.has(id)),
             type: NODE_TYPES[d.node_kind],
             monopoly: d.node_kind == 10 || d.node_kind == 13,
         });
