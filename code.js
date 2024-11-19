@@ -123,6 +123,20 @@ function hideTooltip() {
     tooltip.classed("visible", false);
 }
 
+// Flag to track node name visibility
+let nodeNamesVisible = true;
+
+// Function to toggle node name visibility
+function toggleNodeNames() {
+    nodeNamesVisible = !nodeNamesVisible;
+    nodes.selectAll("text")
+        .style("visibility", nodeNamesVisible ? "visible" : "hidden");
+}
+
+// Attach event listener to the toggle button
+document.getElementById('toggleNodeNames').addEventListener('click', toggleNodeNames);
+
+
 // Create edges
 let edges = svg.append("g")
     .attr("class", "edges")
@@ -136,15 +150,14 @@ let edges = svg.append("g")
     .on("mouseover", e => d3.select(e.target).attr("stroke", "#ffaa00").attr("stroke-width", 4))
     .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
 
-// Create nodes
-let nodes = svg.append("g") // TODO double click to buy // TODO highlight cheapest path (in CP) to an owned node using Breath First Search (BFS)
+    // Create nodes with persistent names
+let nodes = svg.append("g")
     .attr("class", "nodes")
     .selectAll(".node")
     .data(nodeData, ({ id }) => id)
     .enter()
     .append("g")
-    .attr("class", "node")
-    .style("fill", d => color(d.type)); // TODO highlight depending on whether it is owned
+    .attr("class", "node");
 
 nodes.append("text")
     .style("fill", d => color(d.type))
@@ -155,9 +168,11 @@ nodes.append("text")
 
 nodes.append("circle")
     .attr("r", 5) // TODO use symbols depending on type instead of circles
+    .style("fill", d => (owned.has(d.id) ? "#ffaa00" : color(d.type)))
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
-    .on("mouseout", hideTooltip);
+    .on("mouseout", hideTooltip)
+    .on('dblclick', (e, d) => buy(e, d));
 
 // Draw legend
 let legend = svg.append("g")
@@ -186,32 +201,25 @@ legend.append("text")
     .style("fill", "#0066cc") // Adjust text color if necessary
     .text(d => d); // Display the type names
 
-function draw({ transform }) {
-    let x = transform.rescaleX(X);
-    let y = transform.rescaleY(Y);
-
-    xAxis.call(d3.axisBottom(x));
-    yAxis.call(d3.axisLeft(y));
-
-    nodes.selectAll("node"); // TODO dynamic filtering of nodes and edges using a GUI
-
-    nodes.selectAll("text") // TODO hide text to prevent clutter, allow the user to adjust the zoom threshhold for when to show the text
-        .attr("x", d => x(d.pos.x))
-        .attr("y", d => y(d.pos.y));
-
-        nodes.selectAll('circle')
-        .attr("r", 5) // Set radius for circles
-        .attr("cx", d => x(d.pos.x)) // Set x position
-        .attr("cy", d => y(d.pos.y)) // Set y position
-        .on("mouseover", updateTooltip) // Attach tooltip on hover
-        .on("mousemove", updateTooltip) // Update tooltip position
-        .on("mouseout", hideTooltip) // Hide tooltip on mouse out
-        .on('dblclick', (e, d) => buy(e, d)); // Attach the double-click event
+    function draw({ transform }) {
+        let x = transform.rescaleX(X);
+        let y = transform.rescaleY(Y);
     
-
-    edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
-}
-
+        xAxis.call(d3.axisBottom(x));
+        yAxis.call(d3.axisLeft(y));
+    
+        nodes.selectAll("text")
+            .attr("x", d => x(d.pos.x))
+            .attr("y", d => y(d.pos.y))
+            .style("visibility", () => transform.k > 2 ? "visible" : "hidden"); // Show names only when zoom > 2
+    
+        nodes.selectAll('circle')
+            .attr("r", 5)
+            .attr("cx", d => x(d.pos.x))
+            .attr("cy", d => y(d.pos.y));
+    
+        edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
+    }
 function showSidePanel(d) {
     let sidePanel = d3.select("#side-panel");
     sidePanel.classed("hidden", false);
