@@ -104,3 +104,16 @@ let edges = svg.append("g")
     .on("mouseout", function () {
         d3.select(this).attr("stroke", "white").attr("stroke-width", 2);
     });
+
+/*
+
+    // create side panel
+function showSidePanel() {
+    // TODO show a GUI with some details for the node
+}
+
+// color categories
+let color = d3.scaleOrdinal(nodeData.map(({ type }) => type), d3.schemePaired); // TODO replace d3.schemePaired with a suitable array of colors
+console.log(color.range());
+
+*/
