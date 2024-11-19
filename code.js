@@ -16,6 +16,9 @@ let y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]);
 // color categories
 let color = d3.scaleOrdinal(nodeData.map(({ type }) => type), d3.schemePaired);
 
+// define the link that generator
+let link = d3.link(d3.curveBumpX);
+
 // create svg
 let svg = d3.select("body")
     .append("svg")
@@ -28,6 +31,7 @@ let svg = d3.select("body")
     .attr("height", height)
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+// add axes
 let xAxis = svg.append("g")
     .attr("class", "x-axis")
     .attr("transform", `translate(0, ${height})`)
@@ -37,6 +41,7 @@ let yAxis = svg.append("g")
     .attr("class", "y-axis")
     .call(d3.axisLeft(y));
 
+// create tooltip
 let tooltip = d3.select("body")
     .append("div")
     .attr("class", "node-tooltip")
@@ -66,6 +71,7 @@ function updateTooltip(e, d) {
     tooltip.select("#cp").text("CP: " + d.cp);
 }
 
+// draw nodes
 let nodes = svg.append("g")
     .attr("class", "nodes")
     .selectAll(".node")
@@ -92,8 +98,7 @@ nodes.append("circle")
     .on("mousemove", updateTooltip)
     .on("mouseout", () => tooltip.style("visibility", "hidden"));
 
-let link = d3.link(d3.curveBumpX);
-
+// draw edges
 let edges = svg.append("g")
     .attr("class", "edges")
     .selectAll(".edge")
@@ -106,7 +111,7 @@ let edges = svg.append("g")
     .attr("fill", "none")
     .attr("stroke", "white");
 
-
+// draw legend
 let legend = svg.append("g")
     .attr("class", "legends")
     .selectAll(".lengends")
