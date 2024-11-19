@@ -1,194 +1,165 @@
-/* Set styles for the body element */
+/* General Body Styling */
 body {
     background-color: #121212; /* Dark background for dark mode */
-    color: #ffffff; /* Light text color for contrast */
-    font-family: 'Arial', sans-serif; /* Arial as the primary font */
-    font-size: 14px; /* Slightly larger base font size for readability */
-    line-height: 1.6; /* Improved readability with better line height */
-    margin: 0; /* Remove default body margin */
+    color: #ffffff; /* Light text color for readability */
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    font-size: 14px; /* Standard font size for readability */
+    line-height: 1.6; /* Line height for better spacing */
+    margin: 0; /* Remove default margin for a clean layout */
     padding: 0;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for theme changes */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transitions for theme changes */
 }
 
-#toggleNodeNames {
-    position: fixed;
-    top: 8.5rem; /* Adjust as needed */
-    right: 1rem;
-    width: 200px;
-    height: 50px;
-    background-color: #555;
-    color: #fff;
-    border-radius: 8px;
-    border: 1px solid #333;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* General Button Styling */
+button {
+    position: fixed; /* Keep buttons fixed in place */
+    width: 200px; /* Uniform width for all buttons */
+    height: 50px; /* Uniform height for all buttons */
+    display: flex; /* Center button content horizontally and vertically */
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove default padding */
+    background-color: #555; /* Neutral background color */
+    color: #ffffff; /* Default text color */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    border: 1px solid #333; /* Subtle border for visual separation */
+    cursor: pointer; /* Pointer cursor to indicate interactivity */
+    font-size: 14px; /* Standard font size */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effects */
 }
 
-#toggleNodeNames:hover {
-    background-color: #444;
-    color: #eaeaea;
+/* Hover Effect for Buttons */
+button:hover {
+    background-color: #444; /* Slightly darker on hover */
+    color: #eaeaea; /* Lighter text for hover state */
 }
 
-
-/* Light mode styles */
-.light-mode {
-    background-color: #ffffff;
-    color: #121212;
-}
-
-/* Dark mode and high contrast toggle buttons */
-.dark-mode-toggle,
-.high-contrast-toggle {
-    position: fixed;
-    width: 200px; /* Uniform button width */
-    height: 50px; /* Uniform button height */
-    display: flex;
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
-    padding: 0; /* Remove additional padding */
-    background-color: #555; /* Softer gray for the button */
-    color: #ffffff; /* Uniform text color */
-    border-radius: 8px; /* Rounded corners for modern look */
-    border: 1px solid #333; /* Add subtle border */
-    cursor: pointer;
-    font-size: 14px; /* Adjust font size for better readability */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode-toggle:hover,
-.high-contrast-toggle:hover {
-    background-color: #444;
-    color: #eaeaea; /* Slightly lighter text for hover */
-}
-
-/* Specific positioning */
+/* Dark Mode Toggle Button Position */
 .dark-mode-toggle {
-    top: 1rem;
-    right: 1rem;
+    top: 1rem; /* Top margin from the edge */
+    right: 1rem; /* Right margin from the edge */
 }
 
+/* High Contrast Toggle Button Position */
 .high-contrast-toggle {
-    top: 4rem; /* Positioned below the dark mode button */
+    top: calc(1rem + 60px); /* Positioned below the dark mode toggle */
     right: 1rem;
 }
 
-/* Tooltip Styles */
+/* Toggle Node Names Button Position */
+#toggleNodeNames {
+    top: calc(1rem + 120px); /* Positioned below the high contrast toggle */
+    right: 1rem;
+}
+
+/* Tooltip Styling */
 .node-tooltip {
     position: absolute;
     max-width: 320px;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 6px;
-    font-size: 13px;
-    line-height: 1.6;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    pointer-events: auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 9999;
+    background: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
+    color: #fff; /* Text color */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 6px; /* Rounded corners */
+    font-size: 13px; /* Smaller font size */
+    line-height: 1.6; /* Line height for readability */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+    pointer-events: auto; /* Allow pointer events */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade-in/out */
+    z-index: 9999; /* Ensure it appears above other elements */
 }
 
+/* Tooltip Visibility */
 .node-tooltip.visible {
     visibility: visible;
     opacity: 1;
 }
 
 /* Focus Indicators */
-.dark-mode-toggle:focus,
+button:focus,
 .node:hover circle {
-    outline: 3px solid #ffaa00;
-    outline-offset: 2px;
+    outline: 3px solid #ffaa00; /* High-visibility outline */
+    outline-offset: 2px; /* Spaced from the element */
 }
 
+/* Tooltip Focus Styling */
 .node-tooltip:focus {
     border: 2px solid #ffaa00;
     box-shadow: 0 0 10px #ffaa00;
 }
 
-/* High Contrast Mode */
+/* High Contrast Mode Styling */
 .high-contrast-mode body {
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Black background for maximum contrast */
+    color: #fff; /* White text for readability */
 }
 
-.high-contrast-mode .dark-mode-toggle,
-.high-contrast-mode .high-contrast-toggle {
-    background-color: #000;
-    color: #ffaa00;
-    border-color: #ffaa00;
+/* High Contrast Mode Button Styling */
+.high-contrast-mode button {
+    background-color: #000; /* Black background */
+    color: #ffaa00; /* Bright yellow for contrast */
+    border-color: #ffaa00; /* Matching border */
 }
 
+/* High Contrast Mode Hover Effect */
+.high-contrast-mode button:hover {
+    background-color: #ffaa00; /* Yellow background */
+    color: #000; /* Black text for contrast */
+}
+
+/* Tooltip in High Contrast Mode */
 .high-contrast-mode .node-tooltip {
-    background: #000;
-    color: #fff;
-    border: 1px solid #ffaa00;
-    box-shadow: 0 0 10px #ffaa00;
+    background: #000; /* Black background */
+    color: #fff; /* White text */
+    border: 1px solid #ffaa00; /* Bright border */
+    box-shadow: 0 0 10px #ffaa00; /* Highlighted glow */
 }
 
-.dark-mode-toggle {
-    top: 1rem;
-    right: 1rem;
+/* Light Mode Styling */
+.light-mode {
+    background-color: #ffffff; /* White background */
+    color: #121212; /* Dark text for readability */
 }
 
-.high-contrast-toggle {
-    top: calc(1rem + 50px + 10px); /* Add 10px spacing below the dark mode button */
-    right: 1rem;
-}
-
-.legend text {
-    font-family: Arial, sans-serif;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
+/* Side Panel Styling */
 #side-panel {
-    position: absolute;
-    top: 150px; /* Match the top margin of the SVG */
-    right: 50px;
-    width: 250px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-family: Arial, sans-serif;
-    z-index: 1000;
+    position: absolute; /* Fixed position */
+    top: 150px; /* Aligned with SVG top margin */
+    right: 50px; /* Right margin */
+    width: 250px; /* Fixed width */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #fff; /* White text */
+    padding: 15px; /* Padding for content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    font-family: Arial, sans-serif; /* Font consistency */
+    z-index: 1000; /* Higher stacking order */
 }
 
+/* Hidden Side Panel */
 #side-panel.hidden {
     display: none;
 }
 
+/* Side Panel Header */
 #side-panel h3 {
     margin: 0 0 10px;
     font-size: 18px;
-    color: #ffaa00;
+    color: #ffaa00; /* Highlighted header */
 }
-
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .dark-mode-toggle,
-    .high-contrast-toggle {
-        font-size: 10px;
-        padding: 0.4rem 0.8rem;
+    button {
+        font-size: 10px; /* Smaller font for compact screens */
+        padding: 0.4rem 0.8rem; /* Adjust padding */
     }
 
     .node-tooltip {
-        font-size: 11px;
-        max-width: 90%;
-        padding: 10px;
+        font-size: 11px; /* Smaller font for tooltips */
+        max-width: 90%; /* Adjust width */
+        padding: 10px; /* Smaller padding */
     }
-
-    .node:hover circle {
-        stroke-width: 3px;
-    }
-}
-
-/* Transitions */
-body, .dark-mode-toggle, .high-contrast-toggle, .node-tooltip {
-    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
