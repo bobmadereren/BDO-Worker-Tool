@@ -3,9 +3,29 @@ import ownedArray from './owned.json' with {type: 'json'};
 
 let owned = new Set(ownedArray);
 
-function buy(e, d){
-    // TODO buy house, only if a neighbor is owned
+function buy(e, d) {
+    // Check if at least one neighbor is owned
+    const hasOwnedNeighbor = d.neighbors.some(neighborId => owned.has(neighborId));
+
+    if (!hasOwnedNeighbor) {
+        alert('You can only buy a house if at least one neighbor is owned.');
+        return;
+    }
+
+    // Add the current node to the owned set
+    owned.add(d.id);
+
+    // Update the visualization
+    d3.select(e.target) // Assuming the target is the node element
+        .select('circle') // Update the node's circle
+        .style('fill', '#ffaa00'); // Example: Change color to indicate ownership
+
+    // Optional: Update the tooltip
+    updateTooltip(e, d);
+
+    alert(`House bought at ${d.name}!`);
 }
+
 
 // Generate edge data
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
@@ -160,11 +180,15 @@ function draw({ transform }) {
         .attr("x", d => x(d.pos.x))
         .attr("y", d => y(d.pos.y));
 
-    nodes.selectAll("circle")
-        .attr("cx", d => x(d.pos.x))
-        .attr("cy", d => y(d.pos.y));
-
-
+        nodes.selectAll('circle')
+        .attr("r", 5) // Set radius for circles
+        .attr("cx", d => x(d.pos.x)) // Set x position
+        .attr("cy", d => y(d.pos.y)) // Set y position
+        .on("mouseover", updateTooltip) // Attach tooltip on hover
+        .on("mousemove", updateTooltip) // Update tooltip position
+        .on("mouseout", hideTooltip) // Hide tooltip on mouse out
+        .on('dblclick', (e, d) => buy(e, d)); // Attach the double-click event
+    
 
     edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
 }
