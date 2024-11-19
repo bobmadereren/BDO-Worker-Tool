@@ -2,7 +2,7 @@ import dataa from './nodes.json' with {type: 'json'};
 
 let data = dataa.filter(({ type }) => type == "Town" || type == "City");
 
-let margin = { top: 150, right: 80, bottom: 20, left: 80 };  // Increased top margin for more spacing. 
+let margin = { top: 150, right: 80, bottom: 20, left: 80 };
 let width = 1500 - margin.left - margin.right;
 let height = 800 - margin.top - margin.bottom;
 
@@ -35,20 +35,28 @@ let tooltip = d3.select("body")
     .attr("class", "node-tooltip")
     .style("position", "absolute")
     .style("width", "240px")
-    .style("height", "2.5em")
+    .style("height", "4.5em")
     .style("color", "white")
     .style("background", "grey")
     .style("visibility", "hidden");
 
-tooltip.append("text");
+tooltip.append("text").attr("id", "name");
+tooltip.append("br");
+tooltip.append("text").attr("id", "type");
+tooltip.append("br");
+tooltip.append("text").attr("id", "territory");
+tooltip.append("br");
+tooltip.append("text").attr("id", "cp");
 
 function updateTooltip(e, d) {
-    tooltip.html(d.name + ", " + d.type)
-        .style("left", (e.pageX + 9) + "px")
+    tooltip.style("left", (e.pageX + 9) + "px")
         .style("top", (e.pageY - 43) + "px")
-        .style("visibility", "visible")
-        .style("user-select", "none");
-    console.log("Over");
+        .style("visibility", "visible");
+
+    tooltip.select("#name").text(d.name);
+    tooltip.select("#type").text("Type: " + d.type);
+    tooltip.select("#territory").text("Territory: " + d.territory);
+    tooltip.select("#cp").text("CP: " + d.cp);
 }
 
 let nodes = svg.append("g")
@@ -68,7 +76,7 @@ nodes.append("text")
     .style("user-select", "none")
     .text(({ name }) => name);
 
-let circles = nodes.append("circle")
+nodes.append("circle")
     .attr("r", 5)
     .attr("cx", d => x(d.pos.x))
     .attr("cy", d => y(d.pos.y))
@@ -76,8 +84,6 @@ let circles = nodes.append("circle")
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
     .on("mouseout", () => tooltip.style("visibility", "hidden") );
-
-
 
 let legend = svg.append("g")
     .attr("class", "legends")
