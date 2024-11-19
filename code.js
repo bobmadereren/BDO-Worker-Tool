@@ -73,7 +73,7 @@ function updateTooltip(e, d) {
 }
 
 // create side panel
-function showSidePanel(){
+function showSidePanel() {
     // TODO show a GUI with some details for the node
 }
 
@@ -81,7 +81,7 @@ function showSidePanel(){
 let nodes = svg.append("g")
     .attr("class", "nodes")
     .selectAll(".node")
-    .data(nodeData)
+    .data(nodeData, ({ id }) => id)
     .enter()
     .append("g")
     .attr("class", "node");
@@ -109,7 +109,7 @@ nodes.append("circle")
 let edges = svg.append("g")
     .attr("class", "edges")
     .selectAll(".edge")
-    .data(edgeData)
+    .data(edgeData, d => d.source.id + '-' + d.target.id)
     .enter()
     .append("g")
     .attr("class", "edge")
