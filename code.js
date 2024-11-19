@@ -10,8 +10,12 @@ let width = 1500 - margin.left - margin.right + 150; // Increased width for lege
 let height = 800 - margin.top - margin.bottom;
 
 // x and y transformations from data points to canvas
-let x = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]).nice();
-let y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
+let X = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]).nice();
+let Y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
+
+let zoom = d3.zoom()
+    .scaleExtent([1, 40])
+    .on("zoom", doZoom);
 
 // Define a custom color palette
 let customColors = [
@@ -23,8 +27,6 @@ let customColors = [
 let types = [...new Set(nodeData.map(({ type }) => type))]; // Unique types
 let color = d3.scaleOrdinal(types, customColors); // Ensure the scale matches the dataset
 
-
-
 // Create SVG
 let svg = d3.select("body")
     .append("svg")
@@ -35,17 +37,18 @@ let svg = d3.select("body")
     .append("g")
     .attr("width", width)
     .attr("height", height)
-    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .call(zoom);
 
 // Add axes
 let xAxis = svg.append("g")
     .attr("class", "x-axis")
     .attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(x));
+    .call(d3.axisBottom(X));
 
 let yAxis = svg.append("g")
     .attr("class", "y-axis")
-    .call(d3.axisLeft(y));
+    .call(d3.axisLeft(Y));
 
 // Create tooltip
 let tooltip = d3.select("body")
@@ -79,19 +82,14 @@ let nodes = svg.append("g")
     .attr("class", "node");
 
 nodes.append("text")
-    .attr("x", d => x(d.pos.x))
-    .attr("y", d => y(d.pos.y))
     .style("fill", d => color(d.type))
     .attr("text-anchor", "middle")
     .attr("dy", "-0.7em")
     .style("user-select", "none")
     .text(({ name }) => name);
 
-    nodes.append("circle")
+nodes.append("circle")
     .attr("r", 5)
-    .attr("cx", d => x(d.pos.x))
-    .attr("cy", d => y(d.pos.y))
-    .style("fill", d => color(d.type)) // Use the same color scale
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
     .on("mouseout", hideTooltip);
@@ -105,7 +103,6 @@ let edges = svg.append("g")
     .enter()
     .append("path")
     .attr("class", "edge")
-    .attr("d", d => d3.line()([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]))
     .attr("stroke", "white")
     .attr("fill", "none")
     .on("mouseover", function () {
@@ -115,8 +112,6 @@ let edges = svg.append("g")
         d3.select(this).attr("stroke", "white").attr("stroke-width", 2);
     });
 
-
-    
 // Draw legend
 let legend = svg.append("g")
     .attr("class", "legends")
@@ -144,13 +139,29 @@ legend.append("text")
     .style("fill", "#0066cc") // Adjust text color if necessary
     .text(d => d); // Display the type names
 
-
-
-
-
-
-/*
-    // create side panel
+// create side panel
 function showSidePanel() {
     // TODO show a GUI with some details for the node
-} */
+}
+
+function doZoom({ transform }) {
+    let x = transform.rescaleX(X);
+    let y = transform.rescaleY(Y);
+
+    xAxis.call(d3.axisBottom(x));
+    yAxis.call(d3.axisLeft(y));
+
+    nodes.selectAll("text")
+        .attr("x", d => x(d.pos.x))
+        .attr("y", d => y(d.pos.y));
+
+    nodes.selectAll("circle")
+        .attr("cx", d => x(d.pos.x))
+        .attr("cy", d => y(d.pos.y))
+        .style("fill", d => color(d.type)); // Use the same color scale
+
+    edges.selectAll("edge")
+        .attr("d", d => d3.line()([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
+
+
+}
