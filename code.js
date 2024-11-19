@@ -1,23 +1,28 @@
 import nodeData from './nodes.json' with {type: 'json'};
 
+// generate edge data
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
-
 let edgeData = nodeData.flatMap(d => d.neighbors.filter(id => id > d.id).map(id => ({ source: d, target: nodeMap.get(id) })));
 
+// dimensions and margins
 let margin = { top: 150, right: 80, bottom: 20, left: 80 };
 let width = 1500 - margin.left - margin.right;
 let height = 800 - margin.top - margin.bottom;
 
+// x and y transformations from data points to canvas
 let x = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]);
 let y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]);
+
+// color categories
 let color = d3.scaleOrdinal(nodeData.map(({ type }) => type), d3.schemePaired);
 
+// create svg
 let svg = d3.select("body")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-    .style("display", "block")  // Make the SVG block element
-    .style("margin", "0 auto")  // Center the block element
+    .style("display", "block")
+    .style("margin", "0 auto")
     .append("g")
     .attr("width", width)
     .attr("height", height)
