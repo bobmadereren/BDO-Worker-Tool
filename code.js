@@ -14,8 +14,9 @@ let X = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]).nice();
 let Y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
 
 let zoom = d3.zoom()
+    .translateExtent([[0, 0], [width, height]])
     .scaleExtent([1, 40])
-    .on("zoom", ({ transform }) => draw(transform.rescaleX(X), transform.rescaleY(Y)));
+    .on("zoom", draw);
 
 // Define a custom color palette
 let customColors = [
@@ -34,11 +35,12 @@ let svg = d3.select("body")
     .attr("height", height + margin.top + margin.bottom)
     .style("display", "block")
     .style("margin", "0 auto")
+    .style("cursor", "crosshair")
+    .call(zoom)
     .append("g")
     .attr("width", width)
     .attr("height", height)
-    .attr("transform", `translate(${margin.left}, ${margin.top})`)
-    .call(zoom);
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Add axes
 let xAxis = svg.append("g")
@@ -93,7 +95,7 @@ nodes.append("circle")
     .on("mousemove", updateTooltip)
     .on("mouseout", hideTooltip);
 
-// Draw edges
+// Create edges
 let edges = svg.append("g")
     .attr("class", "edges")
     .selectAll(".edge")
@@ -103,12 +105,8 @@ let edges = svg.append("g")
     .attr("class", "edge")
     .attr("stroke", "white")
     .attr("fill", "none")
-    .on("mouseover", function () {
-        d3.select(this).attr("stroke", "#ffaa00").attr("stroke-width", 4);
-    })
-    .on("mouseout", function () {
-        d3.select(this).attr("stroke", "white").attr("stroke-width", 2);
-    });
+    .on("mouseover", e => d3.select(e.target).attr("stroke", "#ffaa00").attr("stroke-width", 4))
+    .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
 
 // Draw legend
 let legend = svg.append("g")
@@ -137,7 +135,12 @@ legend.append("text")
     .style("fill", "#0066cc") // Adjust text color if necessary
     .text(d => d); // Display the type names
 
-function draw(x = X, y = Y) {
+let line = d3.line();
+
+function draw({ transform }) {
+    let x = transform.rescaleX(X);
+    let y = transform.rescaleY(Y);
+
     xAxis.call(d3.axisBottom(x));
     yAxis.call(d3.axisLeft(y));
 
@@ -147,10 +150,9 @@ function draw(x = X, y = Y) {
 
     nodes.selectAll("circle")
         .attr("cx", d => x(d.pos.x))
-        .attr("cy", d => y(d.pos.y))
+        .attr("cy", d => y(d.pos.y));
 
-    edges.selectAll("edge")
-        .attr("d", d => d3.line()([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
+    edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
 }
 
 function showSidePanel(d) {
@@ -179,5 +181,5 @@ d3.select("body").on("click", function (e) {
     }
 });
 
-
-draw();
+// Initial render
+svg.call(zoom.transform, d3.zoomIdentity);
