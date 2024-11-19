@@ -1,4 +1,11 @@
 import nodeData from './nodes.json' with {type: 'json'};
+import ownedArray from './owned.json' with {type: 'json'};
+
+let owned = new Set(ownedArray);
+
+function buy(e, d){
+    // TODO buy house, only if a neighbor is owned
+}
 
 // Generate edge data
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
@@ -10,7 +17,7 @@ let width = 1500 - margin.left - margin.right + 150; // Increased width for lege
 let height = 800 - margin.top - margin.bottom;
 
 // x and y transformations from data points to canvas
-let X = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]).nice();
+let X = d3.scaleLinear(d3.extent(nodeData, d => d.pos.x), [0, width]).nice(); //TODO remove squeezing VLOG, likely requires linear algebra
 let Y = d3.scaleLinear(d3.extent(nodeData, d => d.pos.y), [height, 0]).nice();
 
 // Edge lines
@@ -68,6 +75,8 @@ function updateTooltip(e, d) {
             <div>Type: ${d.type}</div>
             <div>Territory: ${d.territory}</div>
             <div>CP: ${d.cp}</div>
+            <div>Owned: ${owned.has(d.id)}</div>
+            <div>Double click to buy</div>
         `);
 }
 
@@ -81,7 +90,7 @@ let edges = svg.append("g")
     .selectAll(".edge")
     .data(edgeData, d => d.source.id + '-' + d.target.id)
     .enter()
-    .append("path")
+    .append("path") // TODO style depending on whether none, one or both nodes are owned
     .attr("class", "edge")
     .attr("stroke", "white")
     .attr("fill", "none")
@@ -89,14 +98,14 @@ let edges = svg.append("g")
     .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
 
 // Create nodes
-let nodes = svg.append("g")
+let nodes = svg.append("g") // TODO double click to buy
     .attr("class", "nodes")
     .selectAll(".node")
     .data(nodeData, ({ id }) => id)
     .enter()
     .append("g")
     .attr("class", "node")
-    .style("fill", d => color(d.type)); // Use the same color scale
+    .style("fill", d => color(d.type)); // TODO highlight depending on whether it is owned
 
 nodes.append("text")
     .style("fill", d => color(d.type))
@@ -106,7 +115,7 @@ nodes.append("text")
     .text(({ name }) => name);
 
 nodes.append("circle")
-    .attr("r", 5)
+    .attr("r", 5) // TODO use symbols depending on type instead of circles
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
     .on("mouseout", hideTooltip);
@@ -145,7 +154,9 @@ function draw({ transform }) {
     xAxis.call(d3.axisBottom(x));
     yAxis.call(d3.axisLeft(y));
 
-    nodes.selectAll("text")
+    nodes.selectAll("node"); // TODO dynamic filtering of nodes and edges using a GUI
+
+    nodes.selectAll("text") // TODO hide text to prevent clutter, allow the user to adjust the zoom threshhold for when to show the text
         .attr("x", d => x(d.pos.x))
         .attr("y", d => y(d.pos.y));
 
@@ -153,13 +164,15 @@ function draw({ transform }) {
         .attr("cx", d => x(d.pos.x))
         .attr("cy", d => y(d.pos.y));
 
+
+
     edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
 }
 
 function showSidePanel(d) {
     let sidePanel = d3.select("#side-panel");
     sidePanel.classed("hidden", false);
-
+    // TODO option to buy from house from side panel
     d3.select("#side-panel-content").html(`
             <div><strong>Name:</strong> ${d.name}</div>
             <div><strong>Type:</strong> ${d.type}</div>
