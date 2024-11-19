@@ -46,11 +46,6 @@ let yAxis = svg.append("g")
 let tooltip = d3.select("body")
     .append("div")
     .attr("class", "node-tooltip")
-    .style("position", "absolute")
-    .style("width", "240px")
-    .style("height", "4.5em")
-    .style("color", "white")
-    .style("background", "grey")
     .style("visibility", "hidden");
 
 tooltip.append("text").attr("id", "name");
