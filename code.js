@@ -173,11 +173,12 @@ function showSidePanel(d) {
     let sidePanel = d3.select("#side-panel");
     sidePanel.classed("hidden", false);
     // TODO option to buy from house from side panel
+    // TODO display yield, luckYield and whether it is a subnode (=not mainNode) and whether it is a monopoly node.
     d3.select("#side-panel-content").html(`
             <div><strong>Name:</strong> ${d.name}</div>
             <div><strong>Type:</strong> ${d.type}</div>
             <div><strong>Territory:</strong> ${d.territory}</div>
-            <div><strong>Control Points:</strong> ${d.cp}</div>
+            <div><strong>Contribution Points:</strong> ${d.cp}</div>
         `);
 }
 
