@@ -32,32 +32,16 @@ let nodeMap = new Map(nodeData.map(d => [d.id, d]));
 let edgeData = nodeData.flatMap(d => d.neighbors.filter(id => id > d.id).map(id => ({ source: d, target: nodeMap.get(id) })));
 
 // Adjust dimensions and margins
-let margin = { top: 150, right: 200, bottom: 20, left: 80 }; // Increased right margin
-let width = 1500 - margin.left - margin.right + 150; // Increased width for legend
-let height = 800 - margin.top - margin.bottom;
+let margin = { top: 20, right: 20, bottom: 20, left: 20 };
+let width = window.innerWidth - margin.left - margin.right;
+let height = window.innerHeight - margin.top - margin.bottom;
 
-const xRange = d3.extent(nodeData, d => d.pos.x);
-const yRange = d3.extent(nodeData, d => d.pos.y);
-
-const xScale = (xRange[1] - xRange[0]) / width;
-const yScale = (yRange[1] - yRange[0]) / height;
-
-const scaleFactor = Math.max(xScale, yScale);
-
-let xExtent = d3.extent(nodeData, d => d.pos.x);
-let paddingFactor = 0.1; // 10% compression on each side
-let adjustedDomain = [
-    xExtent[0] - (xExtent[1] - xExtent[0]) * paddingFactor,
-    xExtent[1] + (xExtent[1] - xExtent[0]) * paddingFactor
-];
-
-let X = d3.scaleLinear(adjustedDomain, [0, width]).nice();
-
-
-let Y = d3.scaleLinear()
-    .domain([yRange[0], yRange[0] + scaleFactor * height])
-    .range([height, 0]);
-
+// Define the affine transformation sending the world to the svg
+let [x0, x1] = d3.extent(nodeData, d => d.pos.x);
+let [y0, y1] = d3.extent(nodeData, d => d.pos.y);
+let k = Math.min(width / (x1 - x0), height / (y1 - y0));
+let X = x => (x - (x0 + x1) / 2) * k + width / 2;
+let Y = y => (y - (y0 + y1) / 2) * (-1) * k + height / 2;
 
 // Edge lines
 let line = d3.line();
@@ -152,7 +136,7 @@ let edges = svg.append("g")
     .on("mouseover", e => d3.select(e.target).attr("stroke", "#ffaa00").attr("stroke-width", 4))
     .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
 
-    // Create nodes with persistent names
+// Create nodes with persistent names
 let nodes = svg.append("g")
     .attr("class", "nodes")
     .selectAll(".node")
@@ -184,7 +168,7 @@ let legend = svg.append("g")
     .enter()
     .append("g")
     .attr("class", "legend")
-    .attr("transform", (_, i) => `translate(${width + 30}, ${i * 25})`); // Position legend to the right
+    .attr("transform", (_, i) => `translate(${width - 100}, ${i * 25})`); // Position legend to the right
 
 // Add colored rectangles for the legend
 legend.append("rect")
@@ -203,25 +187,25 @@ legend.append("text")
     .style("fill", "#FFFFFF") // Adjust text color if necessary
     .text(d => d); // Display the type names
 
-    function draw({ transform }) {
-        let x = transform.rescaleX(X);
-        let y = transform.rescaleY(Y);
-    
-        xAxis.call(d3.axisBottom(x));
-        yAxis.call(d3.axisLeft(y));
-    
-        nodes.selectAll("text")
-            .attr("x", d => x(d.pos.x))
-            .attr("y", d => y(d.pos.y))
-            .style("visibility", () => transform.k > 2 ? "visible" : "hidden"); // Show names only when zoom > 2
-    
-        nodes.selectAll('circle')
-            .attr("r", 5)
-            .attr("cx", d => x(d.pos.x))
-            .attr("cy", d => y(d.pos.y));
-    
-        edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
-    }
+function draw({ transform }) {
+    let x = x => transform.applyX(X(x));
+    let y = y => transform.applyY(Y(y));
+
+    //xAxis.call(d3.axisBottom(x));
+    //yAxis.call(d3.axisLeft(y));
+
+    nodes.selectAll("text")
+        .attr("x", d => x(d.pos.x))
+        .attr("y", d => y(d.pos.y))
+        .style("visibility", () => transform.k > 2 ? "visible" : "hidden"); // Show names only when zoom > 2
+
+    nodes.selectAll('circle')
+        .attr("r", 5)
+        .attr("cx", d => x(d.pos.x))
+        .attr("cy", d => y(d.pos.y));
+
+    edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
+}
 function showSidePanel(d) {
     let sidePanel = d3.select("#side-panel");
     sidePanel.classed("hidden", false);
