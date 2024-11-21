@@ -23,9 +23,22 @@ function buy(e, d) {
     // Optional: Update the tooltip
     updateTooltip(e, d);
 
+    // Update the total CP display
+    document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
+
     alert(`House bought at ${d.name}!`);
 }
 
+function calculateTotalCP() {
+    let totalCP = 0;
+    owned.forEach(nodeId => {
+        const node = nodeMap.get(nodeId);
+        if (node && node.cp) {
+            totalCP += node.cp;
+        }
+    });
+    return totalCP;
+}
 
 // Generate edge data
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
@@ -122,7 +135,6 @@ function toggleNodeNames() {
 // Attach event listener to the toggle button
 document.getElementById('toggleNodeNames').addEventListener('click', toggleNodeNames);
 
-
 // Create edges
 let edges = svg.append("g")
     .attr("class", "edges")
@@ -206,17 +218,18 @@ function draw({ transform }) {
 
     edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
 }
+
 function showSidePanel(d) {
     let sidePanel = d3.select("#side-panel");
     sidePanel.classed("hidden", false);
     // TODO option to buy from house from side panel
     // TODO display yield, luckYield and whether it is a subnode (=not mainNode) and whether it is a monopoly node.
     d3.select("#side-panel-content").html(`
-            <div><strong>Name:</strong> ${d.name}</div>
-            <div><strong>Type:</strong> ${d.type}</div>
-            <div><strong>Territory:</strong> ${d.territory}</div>
-            <div><strong>Contribution Points:</strong> ${d.cp}</div>
-        `);
+        <div><strong>Name:</strong> ${d.name}</div>
+        <div><strong>Type:</strong> ${d.type}</div>
+        <div><strong>Territory:</strong> ${d.territory}</div>
+        <div><strong>Contribution Points:</strong> ${d.cp}</div>
+    `);
 }
 
 function hideSidePanel() {
@@ -235,3 +248,6 @@ d3.select("body").on("click", function (e) {
 
 // Initial render
 svg.call(zoom.transform, d3.zoomIdentity);
+
+// Initial CP display
+document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
