@@ -1,4 +1,6 @@
-# Tool to help with node investment, house investment and workers in Black Desert.
+# Black Desert Worker Tool
+
+Tool to help with node investment, house investment and workers in Black Desert.
 
 ## Development
 Run dev server
