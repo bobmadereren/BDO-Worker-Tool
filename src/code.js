@@ -1,5 +1,6 @@
 import nodeData from './nodes.json' with {type: 'json'};
 import ownedArray from './owned.json' with {type: 'json'};
+import * as d3 from 'd3';
 
 let owned = new Set(ownedArray);
 
@@ -164,7 +165,7 @@ nodes.append("text")
     .style("user-select", "none")
     .text(({ name }) => name);
 
-    nodes.append("circle")
+nodes.append("circle")
     .attr("r", 5) // TODO use symbols depending on type instead of circles
     .style("fill", d => (owned.has(d.id) ? "#ffaa00" : color(d.type)))
     .on("mouseover", updateTooltip)
