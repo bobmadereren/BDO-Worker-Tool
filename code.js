@@ -164,13 +164,16 @@ nodes.append("text")
     .style("user-select", "none")
     .text(({ name }) => name);
 
-nodes.append("circle")
+    nodes.append("circle")
     .attr("r", 5) // TODO use symbols depending on type instead of circles
     .style("fill", d => (owned.has(d.id) ? "#ffaa00" : color(d.type)))
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
     .on("mouseout", hideTooltip)
-    .on('dblclick', (e, d) => buy(e, d));
+    .on('dblclick', (e, d) => {
+        e.stopPropagation(); // Prevent zoom on double-click
+        buy(e, d);
+    });
 
 // Draw legend
 let legend = svg.append("g")
