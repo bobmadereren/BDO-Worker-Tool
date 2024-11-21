@@ -3,13 +3,20 @@
 Tool to help with node investment, house investment and workers in Black Desert.
 
 ## Development
-Run dev server
+
+### Install Dependencies
+
+```
+  npm install
+```
+
+### Run Dev Server
 
 ```
   npm run dev
 ```
 
-## Build
+### Build
 Bundle the project into the dist folder
 
 ```
