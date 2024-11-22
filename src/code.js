@@ -198,7 +198,7 @@ nodes.append("text")
     .text(({ name }) => name);
 
 nodes.append("circle")
-    .attr("r", 5) // TODO use symbols depending on type instead of circles
+    .attr("r", 5) // TODO use images depending on type instead of circles
     .style("fill", d => (owned.has(d.id) ? "#ffaa00" : color(d.type)))
     .on("mouseover", updateTooltip)
     .on("mousemove", updateTooltip)
