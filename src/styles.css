@@ -10,22 +10,31 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transitions for theme changes */
 }
 
-/* General Button Styling */
+/* Button Styling */
 button {
-    position: fixed; /* Keep buttons fixed in place */
-    width: 200px; /* Uniform width for all buttons */
-    height: 50px; /* Uniform height for all buttons */
-    display: flex; /* Center button content horizontally and vertically */
+    width: 200px;
+    height: 50px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0; /* Remove default padding */
     background-color: #555; /* Neutral background color */
     color: #ffffff; /* Default text color */
-    border-radius: 8px; /* Rounded corners for a modern look */
+    border-radius: 8px; /* Rounded corners for modern look */
     border: 1px solid #333; /* Subtle border for visual separation */
-    cursor: pointer; /* Pointer cursor to indicate interactivity */
-    font-size: 14px; /* Standard font size */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#button-container {
+    position: fixed; /* Fixed positioning for precise placement */
+    left:auto; /* Position the container on the Right */
+    top: 35%; /* Center vertically relative to the viewport */
+    transform: translateY(-50%); /* Adjust for proper vertical centering */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Add spacing between buttons */
+    margin-left: 36px;
 }
 
 /* Hover Effect for Buttons */
@@ -163,7 +172,7 @@ button:focus,
 #total-cp {
     position: fixed; /* Sticks when scrolling */
     top: 20px; /* Align with the legend */
-    right: 140px; /* Adjust to position next to the legend */
+    right: 160px; /* Adjust to position next to the legend */
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     color: #ffaa00; /* Highlight color for readability */
     font-size: 16px; /* Slightly larger font */
