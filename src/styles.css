@@ -160,6 +160,22 @@ button:focus,
     cursor: pointer;
 }
 
+#total-cp {
+    position: fixed; /* Sticks when scrolling */
+    top: 20px; /* Align with the legend */
+    right: 140px; /* Adjust to position next to the legend */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #ffaa00; /* Highlight color for readability */
+    font-size: 16px; /* Slightly larger font */
+    font-weight: bold; /* Emphasized text */
+    padding: 10px; /* Add spacing inside */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    z-index: 1000; /* Ensure it's above other elements */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 600px) {
