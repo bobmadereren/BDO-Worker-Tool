@@ -212,7 +212,7 @@ let legend = svg.append("g")
     .enter()
     .append("g")
     .attr("class", "legend")
-    .attr("transform", (_, i) => `translate(${width - 100}, ${i * 25})`); // Position legend to the right
+    .attr("transform", (_, i) => `translate(${width - 2500}, ${i * 25})`); // Position legend to the left
 
 // Add colored rectangles for the legend
 legend.append("rect")
