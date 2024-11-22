@@ -3,6 +3,10 @@ import nodeData from './nodes.json' with {type: 'json'};
 import ownedArray from './owned.json' with {type: 'json'};
 import * as d3 from 'd3';
 
+// Adjust position of total CP dynamically
+document.getElementById('total-cp').style.right = `${100}px`; // Adjust if needed
+document.getElementById('total-cp').style.top = `${20}px`; // Adjust to align with the legend
+
 let owned = new Set(ownedArray);
 
 /**
