@@ -6,7 +6,9 @@ import * as d3 from 'd3';
 let owned = new Set(ownedArray);
 
 /**
- * Shortest path from a node to any owned node
+ * Shortest path from a node to any owned node.
+ * @param {Number} id Id of the source node.
+ * @return {Array} an array containing the path starting from the source node, ending in an owned node.
  */
 function shortestPath(id) {
     let graph = new Map(nodeData.map(({ id, cp, neighbors }) => [id, { id, cp, neighbors }]));
@@ -27,8 +29,8 @@ function shortestPath(id) {
             q.enqueue(u);
         }
     }
-
-    let t1 = Date.now();;
+    
+    return [];
 }
 
 shortestPath(1);
