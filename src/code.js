@@ -158,16 +158,6 @@ function hideTooltip() {
 // Flag to track node name visibility
 let nodeNamesVisible = true;
 
-// Function to toggle node name visibility
-function toggleNodeNames() {
-    nodeNamesVisible = !nodeNamesVisible;
-    nodes.selectAll("text")
-        .style("visibility", nodeNamesVisible ? "visible" : "hidden");
-}
-
-// Attach event listener to the toggle button
-document.getElementById('toggleNodeNames').addEventListener('click', toggleNodeNames);
-
 // Create edges
 let edges = svg.append("g")
     .attr("class", "edges")
