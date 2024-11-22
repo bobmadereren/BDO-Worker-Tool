@@ -180,12 +180,14 @@ let nodes = svg.append("g")
     .append("g")
     .attr("class", "node");
 
-nodes.append("text")
+    nodes.append("text")
     .style("fill", d => color(d.type))
     .attr("text-anchor", "middle")
     .attr("dy", "-0.7em")
     .style("user-select", "none")
+    .style("opacity", 1) // Ensure default opacity is set
     .text(({ name }) => name);
+
 
 nodes.append("circle")
     .attr("r", 5) // TODO use images depending on type instead of circles
@@ -257,6 +259,16 @@ function showSidePanel(d) {
         <div><strong>Contribution Points:</strong> ${d.cp}</div>
     `);
 }
+
+// Select the slider
+const opacitySlider = document.getElementById("opacity-slider");
+
+// Update opacity of node names on slider change
+opacitySlider.addEventListener("input", function () {
+    const opacityValue = this.value / 100; // Convert to 0-1 range
+    d3.selectAll(".nodes text").style("opacity", opacityValue);
+});
+
 
 function hideSidePanel() {
     d3.select("#side-panel").classed("hidden", true);
