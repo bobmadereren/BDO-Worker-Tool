@@ -184,6 +184,12 @@ button:focus,
     white-space: nowrap; /* Prevent text from wrapping */
 }
 
+/* Hides the scroll bar while still allowing scrolling */
+body {
+    overflow: hidden; /* Prevents scrollbars from showing */
+}
+
+
 
 
 /* Responsive Design */
