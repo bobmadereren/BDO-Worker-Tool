@@ -46,12 +46,6 @@ button:hover {
     right: 1rem;
 }
 
-/* Toggle Node Names Button Position */
-#toggleNodeNames {
-    top: calc(1rem + 120px); /* Positioned below the high contrast toggle */
-    right: 1rem;
-}
-
 /* Tooltip Styling */
 .node-tooltip {
     position: absolute;
