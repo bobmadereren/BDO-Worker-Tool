@@ -153,22 +153,6 @@ button:focus,
     color: #ffaa00; /* Highlighted header */
 }
 
-#opacity-slider-container {
-    position: fixed;
-    bottom: 2rem; /* Adjust as needed */
-    left: 1rem; /* Adjust as needed */
-    color: #fff; /* Text color for dark mode */
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-#opacity-slider {
-    width: 150px; /* Adjust slider width */
-    cursor: pointer;
-}
-
 #total-cp {
     position: fixed; /* Sticks when scrolling */
     top: 20px; /* Align with the legend */

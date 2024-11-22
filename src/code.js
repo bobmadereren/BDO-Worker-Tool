@@ -237,24 +237,26 @@ legend.append("text")
     .style("fill", "#FFFFFF") // Adjust text color if necessary
     .text(d => d); // Display the type names
 
-function draw({ transform }) {
-    let x = x => transform.applyX(X(x));
-    let y = y => transform.applyY(Y(y));
-
-    console.log(transform.k); // <--- zoom scaling
-
-    nodes.selectAll("text")
-        .attr("x", d => x(d.pos.x))
-        .attr("y", d => y(d.pos.y))
-        .style("visibility", () => transform.k > 2 ? "visible" : "hidden"); // Show names only when zoom > 2
-
-    nodes.selectAll('circle')
-        .attr("r", 5)
-        .attr("cx", d => x(d.pos.x))
-        .attr("cy", d => y(d.pos.y));
-
-    edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
-}
+    function draw({ transform }) {
+        let x = x => transform.applyX(X(x));
+        let y = y => transform.applyY(Y(y));
+    
+        console.log(transform.k); // Log the zoom scale for debugging
+    
+        nodes.selectAll("text")
+            .attr("x", d => x(d.pos.x))
+            .attr("y", d => y(d.pos.y))
+            .style("visibility", () => transform.k > 2 ? "visible" : "hidden") // Show names only when zoom > 2
+            .style("opacity", () => Math.min(1, transform.k / 2)); // Gradual opacity scaling with zoom
+    
+        nodes.selectAll('circle')
+            .attr("r", 5)
+            .attr("cx", d => x(d.pos.x))
+            .attr("cy", d => y(d.pos.y));
+    
+        edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
+    }
+    
 
 function showSidePanel(d) {
     let sidePanel = d3.select("#side-panel");
@@ -268,16 +270,6 @@ function showSidePanel(d) {
         <div><strong>Contribution Points:</strong> ${d.cp}</div>
     `);
 }
-
-// Select the slider
-const opacitySlider = document.getElementById("opacity-slider");
-
-// Update opacity of node names on slider change
-opacitySlider.addEventListener("input", function () {
-    const opacityValue = this.value / 100; // Convert to 0-1 range
-    d3.selectAll(".nodes text").style("opacity", opacityValue);
-});
-
 
 function hideSidePanel() {
     d3.select("#side-panel").classed("hidden", true);
