@@ -1,8 +1,38 @@
+import { MinPriorityQueue } from '@datastructures-js/priority-queue';
 import nodeData from './nodes.json' with {type: 'json'};
 import ownedArray from './owned.json' with {type: 'json'};
 import * as d3 from 'd3';
 
 let owned = new Set(ownedArray);
+
+/**
+ * Shortest path from a node to any owned node
+ */
+function shortestPath(id) {
+    let graph = new Map(nodeData.map(({ id, cp, neighbors }) => [id, { id, cp, neighbors }]));
+    let path = (v) => v.prev ? [v] : path(v.prev).push(v);
+
+    let q = new MinPriorityQueue(v => v.d);
+
+    let s = graph.get(id);
+    s.d = s.cp;
+    q.enqueue(s);
+
+    while (!q.isEmpty()) {
+        let v = q.dequeue();
+        if(owned.has(v)) return path(v);
+        for (let u of v.neighbors.map(id => graph.get(id)).filter(({ d }) => d == undefined)) {
+            u.d = v.d + u.cp;
+            u.prev = v;
+            q.enqueue(u);
+        }
+    }
+
+    let t1 = Date.now();;
+}
+
+shortestPath(1);
+
 
 function buy(e, d) {
     // Check if at least one neighbor is owned
