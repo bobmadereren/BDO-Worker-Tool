@@ -258,18 +258,38 @@ legend.append("text")
     }
     
 
-function showSidePanel(d) {
-    let sidePanel = d3.select("#side-panel");
-    sidePanel.classed("hidden", false);
-    // TODO option to buy from house from side panel
-    // TODO display yield, luckYield and whether it is a subnode (=not mainNode) and whether it is a monopoly node.
-    d3.select("#side-panel-content").html(`
-        <div><strong>Name:</strong> ${d.name}</div>
-        <div><strong>Type:</strong> ${d.type}</div>
-        <div><strong>Territory:</strong> ${d.territory}</div>
-        <div><strong>Contribution Points:</strong> ${d.cp}</div>
-    `);
-}
+    function showSidePanel(d) {
+        let sidePanel = d3.select("#side-panel");
+        sidePanel.classed("hidden", false);
+    
+        // Display node details, including yield, luckYield, subnode status, and monopoly status
+        d3.select("#side-panel-content").html(`
+            <div><strong>Name:</strong> ${d.name}</div>
+            <div><strong>Type:</strong> ${d.type}</div>
+            <div><strong>Territory:</strong> ${d.territory}</div>
+            <div><strong>Contribution Points:</strong> ${d.cp}</div>
+            <div><strong>Yield:</strong> ${d.yield || 'N/A'}</div>
+            <div><strong>Luck Yield:</strong> ${d.luckYield || 'N/A'}</div>
+            <div><strong>Is Subnode:</strong> ${d.subNode ? 'Yes' : 'No'}</div>
+            <div><strong>Is Monopoly Node:</strong> ${d.isMonopoly ? 'Yes' : 'No'}</div>
+            <button id="buy-button">Buy House</button>
+        `);
+    
+        // Add functionality for buying a house from the side panel
+        d3.select("#buy-button").on("click", function(e) {
+            e.stopPropagation(); // Prevent any unwanted propagation of the click event
+    
+            if (d.neighbors.some(neighborId => owned.has(neighborId))) {
+                buy(e, d); // Trigger the buy function to complete the purchase
+                d3.select("#buy-button").property("disabled", true);
+                showSidePanel(d); // Refresh side panel to update details
+            } else {
+                alert("You cannot buy this house. Make sure a neighboring node is owned.");
+            }
+        });
+    }
+    
+    
 
 function hideSidePanel() {
     d3.select("#side-panel").classed("hidden", true);
