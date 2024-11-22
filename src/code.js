@@ -44,7 +44,6 @@ function shortestPath(id) {
 }
 
 function highlightShortestPath(_, d) {
-    console.log('h');
     let path = shortestPath(d.id);
     for (let id of path) {
         d3.select("#i" + id)
@@ -241,6 +240,8 @@ legend.append("text")
 function draw({ transform }) {
     let x = x => transform.applyX(X(x));
     let y = y => transform.applyY(Y(y));
+
+    console.log(transform.k); // <--- zoom scaling
 
     nodes.selectAll("text")
         .attr("x", d => x(d.pos.x))
