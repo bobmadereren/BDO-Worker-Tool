@@ -12,11 +12,17 @@ let owned = new Set(ownedArray);
 /**
  * Shortest path from a node to any owned node.
  * @param {Number} id Id of the source node.
- * @return {Array} an array containing the path starting from the source node, ending in an owned node.
+ * @return {Array} an array containing the ids of for nodes in the path starting from the source node, ending in an owned node.
  */
 function shortestPath(id) {
     let graph = new Map(nodeData.map(({ id, cp, neighbors }) => [id, { id, cp, neighbors }]));
-    let path = (v) => v.prev ? [v] : path(v.prev).push(v);
+
+    let path = function (v) {
+        if (v.prev == undefined) return [v.id];
+        let result = path(v.prev);
+        result.push(v.id);
+        return result;
+    };
 
     let q = new MinPriorityQueue(v => v.d);
 
@@ -26,19 +32,26 @@ function shortestPath(id) {
 
     while (!q.isEmpty()) {
         let v = q.dequeue();
-        if(owned.has(v)) return path(v);
+        if (owned.has(v.id)) return path(v);
         for (let u of v.neighbors.map(id => graph.get(id)).filter(({ d }) => d == undefined)) {
             u.d = v.d + u.cp;
             u.prev = v;
             q.enqueue(u);
         }
     }
-    
+
     return [];
 }
 
-shortestPath(1);
-
+function highlightShortestPath(_, d) {
+    console.log('h');
+    let path = shortestPath(d.id);
+    for (let id of path) {
+        d3.select("#i" + id)
+            .select('circle')
+            .style("fill", "white");
+    }
+}
 
 function buy(e, d) {
     // Check if at least one neighbor is owned
@@ -125,14 +138,6 @@ let svg = d3.select("body")
     .attr("height", height)
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// Add axes
-let xAxis = svg.append("g")
-    .attr("class", "x-axis")
-    .attr("transform", `translate(0, ${height})`);
-
-let yAxis = svg.append("g")
-    .attr("class", "y-axis");
-
 // Create tooltip
 let tooltip = d3.select("body")
     .append("div")
@@ -182,6 +187,7 @@ let nodes = svg.append("g")
     .data(nodeData, ({ id }) => id)
     .enter()
     .append("g")
+    .attr("id", ({ id }) => "i" + id)
     .attr("class", "node");
 
     nodes.append("text")
@@ -196,7 +202,8 @@ let nodes = svg.append("g")
 nodes.append("circle")
     .attr("r", 5) // TODO use images depending on type instead of circles
     .style("fill", d => (owned.has(d.id) ? "#ffaa00" : color(d.type)))
-    .on("mouseover", updateTooltip)
+    .on("mouseover.tooltip", updateTooltip)
+    .on("mouseover.path", highlightShortestPath)
     .on("mousemove", updateTooltip)
     .on("mouseout", hideTooltip)
     .on('dblclick', (e, d) => {
@@ -234,9 +241,6 @@ legend.append("text")
 function draw({ transform }) {
     let x = x => transform.applyX(X(x));
     let y = y => transform.applyY(Y(y));
-
-    //xAxis.call(d3.axisBottom(x));
-    //yAxis.call(d3.axisLeft(y));
 
     nodes.selectAll("text")
         .attr("x", d => x(d.pos.x))
