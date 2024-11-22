@@ -46,12 +46,6 @@ button:hover {
     right: 1rem;
 }
 
-/* Toggle Node Names Button Position */
-#toggleNodeNames {
-    top: calc(1rem + 120px); /* Positioned below the high contrast toggle */
-    right: 1rem;
-}
-
 /* Tooltip Styling */
 .node-tooltip {
     position: absolute;
@@ -149,6 +143,39 @@ button:focus,
     font-size: 18px;
     color: #ffaa00; /* Highlighted header */
 }
+
+#opacity-slider-container {
+    position: fixed;
+    bottom: 2rem; /* Adjust as needed */
+    left: 1rem; /* Adjust as needed */
+    color: #fff; /* Text color for dark mode */
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#opacity-slider {
+    width: 150px; /* Adjust slider width */
+    cursor: pointer;
+}
+
+#total-cp {
+    position: fixed; /* Sticks when scrolling */
+    top: 20px; /* Align with the legend */
+    right: 140px; /* Adjust to position next to the legend */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #ffaa00; /* Highlight color for readability */
+    font-size: 16px; /* Slightly larger font */
+    font-weight: bold; /* Emphasized text */
+    padding: 10px; /* Add spacing inside */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    z-index: 1000; /* Ensure it's above other elements */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 600px) {

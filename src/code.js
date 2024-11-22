@@ -3,6 +3,10 @@ import nodeData from './nodes.json' with {type: 'json'};
 import ownedArray from './owned.json' with {type: 'json'};
 import * as d3 from 'd3';
 
+// Adjust position of total CP dynamically
+document.getElementById('total-cp').style.right = `${100}px`; // Adjust if needed
+document.getElementById('total-cp').style.top = `${20}px`; // Adjust to align with the legend
+
 let owned = new Set(ownedArray);
 
 /**
@@ -163,16 +167,6 @@ function hideTooltip() {
 // Flag to track node name visibility
 let nodeNamesVisible = true;
 
-// Function to toggle node name visibility
-function toggleNodeNames() {
-    nodeNamesVisible = !nodeNamesVisible;
-    nodes.selectAll("text")
-        .style("visibility", nodeNamesVisible ? "visible" : "hidden");
-}
-
-// Attach event listener to the toggle button
-document.getElementById('toggleNodeNames').addEventListener('click', toggleNodeNames);
-
 // Create edges
 let edges = svg.append("g")
     .attr("class", "edges")
@@ -196,12 +190,14 @@ let nodes = svg.append("g")
     .attr("id", ({ id }) => "i" + id)
     .attr("class", "node");
 
-nodes.append("text")
+    nodes.append("text")
     .style("fill", d => color(d.type))
     .attr("text-anchor", "middle")
     .attr("dy", "-0.7em")
     .style("user-select", "none")
+    .style("opacity", 1) // Ensure default opacity is set
     .text(({ name }) => name);
+
 
 nodes.append("circle")
     .attr("r", 5) // TODO use images depending on type instead of circles
@@ -271,6 +267,16 @@ function showSidePanel(d) {
         <div><strong>Contribution Points:</strong> ${d.cp}</div>
     `);
 }
+
+// Select the slider
+const opacitySlider = document.getElementById("opacity-slider");
+
+// Update opacity of node names on slider change
+opacitySlider.addEventListener("input", function () {
+    const opacityValue = this.value / 100; // Convert to 0-1 range
+    d3.selectAll(".nodes text").style("opacity", opacityValue);
+});
+
 
 function hideSidePanel() {
     d3.select("#side-panel").classed("hidden", true);
