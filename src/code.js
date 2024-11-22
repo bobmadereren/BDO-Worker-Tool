@@ -47,8 +47,8 @@ function highlightShortestPath(_, d) {
     let path = shortestPath(d.id);
     for (let id of path) {
         d3.select("#i" + id)
-            .select('circle')
-            .style("fill", "white");
+            .select('image')
+            .style("opacity", 0.5);
     }
 }
 
@@ -66,8 +66,8 @@ function buy(e, d) {
 
     // Update the visualization
     d3.select(e.target) // Assuming the target is the node element
-        .select('circle') // Update the node's circle
-        .style('fill', '#ffaa00'); // Example: Change color to indicate ownership
+        .select('image') // Update the node's image
+        .style('opacity', 1); // Example: Change opacity to indicate ownership
 
     // Optional: Update the tooltip
     updateTooltip(e, d);
@@ -187,7 +187,7 @@ let nodes = svg.append("g")
     .attr("id", ({ id }) => "i" + id)
     .attr("class", "node");
 
-    nodes.append("text")
+nodes.append("text")
     .style("fill", d => color(d.type))
     .attr("text-anchor", "middle")
     .attr("dy", "-0.7em")
@@ -195,10 +195,23 @@ let nodes = svg.append("g")
     .style("opacity", 1) // Ensure default opacity is set
     .text(({ name }) => name);
 
-
-nodes.append("circle")
-    .attr("r", 5) // TODO use images depending on type instead of circles
-    .style("fill", d => (owned.has(d.id) ? "#ffaa00" : color(d.type)))
+nodes.append("image")
+    .attr("xlink:href", d => {
+        // Provide different image paths based on the type of node
+        switch (d.type) {
+            case "house":
+                return "images/house.png";  // TODO Adjust path as necessary
+            case "shop":
+                return "images/shop.png";
+            // TODO Add more cases for different types
+            default:
+                return "images/default.png";
+        }
+    })
+    .attr("width", 30)  // Adjust size as needed
+    .attr("height", 30)
+    .attr("x", -15) // To center the image on the node
+    .attr("y", -15) // To center the image on the node
     .on("mouseover.tooltip", updateTooltip)
     .on("mouseover.path", highlightShortestPath)
     .on("mousemove", updateTooltip)
@@ -216,78 +229,85 @@ let legend = svg.append("g")
     .enter()
     .append("g")
     .attr("class", "legend")
-    .attr("transform", (_, i) => `translate(${width - 2500}, ${i * 25})`); // Position legend to the left
+    .attr("transform", (_, i) => `translate(${width - 2500}, ${i * 40})`); // Position legend to the left
 
-// Add colored rectangles for the legend
-legend.append("rect")
-    .attr("x", 0)
+// Add images for the legend
+legend.append("image")
+    .attr("xlink:href", d => {
+        switch (d) {
+            case "house":
+                return "images/house.png"; // TODO Adjust path as necessary
+            case "shop":
+                return "images/shop.png";
+            // TODO Add more cases for different types
+            default:
+                return "images/default.png";
+        }
+    })
     .attr("width", 18)
     .attr("height", 18)
-    .style("fill", color); // Use the same color scale
+    .attr("x", 0)
+    .attr("y", -9);
 
 // Add text labels for the legend
 legend.append("text")
     .attr("x", 25)
-    .attr("y", 12)
+    .attr("y", 0)
     .style("text-anchor", "start")
     .style("font-size", "14px")
     .style("font-weight", "bold")
     .style("fill", "#FFFFFF") // Adjust text color if necessary
-    .text(d => d); // Display the type names
+    .text(d => d);
 
-    function draw({ transform }) {
-        let x = x => transform.applyX(X(x));
-        let y = y => transform.applyY(Y(y));
-    
-        console.log(transform.k); // Log the zoom scale for debugging
-    
-        nodes.selectAll("text")
-            .attr("x", d => x(d.pos.x))
-            .attr("y", d => y(d.pos.y))
-            .style("visibility", () => transform.k > 2 ? "visible" : "hidden") // Show names only when zoom > 2
-            .style("opacity", () => Math.min(1, transform.k / 2)); // Gradual opacity scaling with zoom
-    
-        nodes.selectAll('circle')
-            .attr("r", 5)
-            .attr("cx", d => x(d.pos.x))
-            .attr("cy", d => y(d.pos.y));
-    
-        edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
-    }
-    
+function draw({ transform }) {
+    let x = x => transform.applyX(X(x));
+    let y = y => transform.applyY(Y(y));
 
-    function showSidePanel(d) {
-        let sidePanel = d3.select("#side-panel");
-        sidePanel.classed("hidden", false);
-    
-        // Display node details, including yield, luckYield, subnode status, and monopoly status
-        d3.select("#side-panel-content").html(`
-            <div><strong>Name:</strong> ${d.name}</div>
-            <div><strong>Type:</strong> ${d.type}</div>
-            <div><strong>Territory:</strong> ${d.territory}</div>
-            <div><strong>Contribution Points:</strong> ${d.cp}</div>
-            <div><strong>Yield:</strong> ${d.yield || 'N/A'}</div>
-            <div><strong>Luck Yield:</strong> ${d.luckYield || 'N/A'}</div>
-            <div><strong>Is Subnode:</strong> ${d.subNode ? 'Yes' : 'No'}</div>
-            <div><strong>Is Monopoly Node:</strong> ${d.isMonopoly ? 'Yes' : 'No'}</div>
-            <button id="buy-button">Buy House</button>
-        `);
-    
-        // Add functionality for buying a house from the side panel
-        d3.select("#buy-button").on("click", function(e) {
-            e.stopPropagation(); // Prevent any unwanted propagation of the click event
-    
-            if (d.neighbors.some(neighborId => owned.has(neighborId))) {
-                buy(e, d); // Trigger the buy function to complete the purchase
-                d3.select("#buy-button").property("disabled", true);
-                showSidePanel(d); // Refresh side panel to update details
-            } else {
-                alert("You cannot buy this house. Make sure a neighboring node is owned.");
-            }
-        });
-    }
-    
-    
+    console.log(transform.k); // Log the zoom scale for debugging
+
+    nodes.selectAll("text")
+        .attr("x", d => x(d.pos.x))
+        .attr("y", d => y(d.pos.y))
+        .style("visibility", () => transform.k > 2 ? "visible" : "hidden") // Show names only when zoom > 2
+        .style("opacity", () => Math.min(1, transform.k / 2)); // Gradual opacity scaling with zoom
+
+    nodes.selectAll('image')
+        .attr("x", d => x(d.pos.x) - 15) // Adjust to keep image centered
+        .attr("y", d => y(d.pos.y) - 15); // Adjust to keep image centered
+
+    edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
+}
+
+function showSidePanel(d) {
+    let sidePanel = d3.select("#side-panel");
+    sidePanel.classed("hidden", false);
+
+    // Display node details, including yield, luckYield, subnode status, and monopoly status
+    d3.select("#side-panel-content").html(`
+        <div><strong>Name:</strong> ${d.name}</div>
+        <div><strong>Type:</strong> ${d.type}</div>
+        <div><strong>Territory:</strong> ${d.territory}</div>
+        <div><strong>Contribution Points:</strong> ${d.cp}</div>
+        <div><strong>Yield:</strong> ${d.yield || 'N/A'}</div>
+        <div><strong>Luck Yield:</strong> ${d.luckYield || 'N/A'}</div>
+        <div><strong>Is Subnode:</strong> ${d.subNode ? 'Yes' : 'No'}</div>
+        <div><strong>Is Monopoly Node:</strong> ${d.isMonopoly ? 'Yes' : 'No'}</div>
+        <button id="buy-button">Buy House</button>
+    `);
+
+    // Add functionality for buying a house from the side panel
+    d3.select("#buy-button").on("click", function(e) {
+        e.stopPropagation(); // Prevent any unwanted propagation of the click event
+
+        if (d.neighbors.some(neighborId => owned.has(neighborId))) {
+            buy(e, d); // Trigger the buy function to complete the purchase
+            d3.select("#buy-button").property("disabled", true);
+            showSidePanel(d); // Refresh side panel to update details
+        } else {
+            alert("You cannot buy this house. Make sure a neighboring node is owned.");
+        }
+    });
+}
 
 function hideSidePanel() {
     d3.select("#side-panel").classed("hidden", true);
