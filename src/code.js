@@ -1,10 +1,10 @@
 import { MinPriorityQueue } from '@datastructures-js/priority-queue';
-import nodeData from './nodes.json' with {type: 'json'};
-import ownedArray from './owned.json' with {type: 'json'};
+import nodeData from './data/nodes.json' with {type: 'json'};
+import ownedArray from './config/investedNodes.json' with {type: 'json'};
 import * as d3 from 'd3';
 import { Axe, Castle, createElement, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
 
-const icons = {
+let icons = {
     'Connection': UtilityPole,
     'Town': Castle,
     'City': Castle,
@@ -21,10 +21,6 @@ const icons = {
     'Production': Factory,
     'Excavation': Shovel,
 }
-
-// Adjust position of total CP dynamically
-document.getElementById('total-cp').style.right = `${100}px`; // Adjust if needed
-document.getElementById('total-cp').style.top = `${20}px`; // Adjust to align with the legend
 
 let owned = new Set(ownedArray);
 

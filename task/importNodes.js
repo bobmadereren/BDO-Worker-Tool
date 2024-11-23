@@ -51,7 +51,7 @@ const NODE_TYPES = [
 
     let json = JSON.stringify(result);
 
-    let fileName = 'nodes.json';
+    let fileName = 'src/data/nodes.json';
 
     writeFile(fileName, json, error => console.log(error ? error : "File written", fileName));
 })();

@@ -2,7 +2,9 @@
   "type": "module",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "import-nodes": "node task/importNodes",
+    "reset-config": "node task/resetConfig"
   },
   "devDependencies": {
     "css-loader": "^7.1.2",

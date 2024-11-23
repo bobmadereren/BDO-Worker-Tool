@@ -17,8 +17,22 @@ Tool to help with node investment, house investment and workers in Black Desert.
 ```
 
 ### Build
-Bundle the project into the dist folder
+Bundle the project into the dist folder.
 
 ```
   npm run build
+```
+
+### Import Node Data
+Import up-to-data node data into the project.
+
+```
+  npm run import-nodes
+```
+
+### Reset Config
+Build default user configuration. Any existing config will be overridden.
+
+```
+  npm run reset-config
 ```
