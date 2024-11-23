@@ -2,11 +2,11 @@
 body {
 	background: linear-gradient(
 		135deg,
-		#0f0c29,
-		#302b63,
-		#24243e,
-		#ff5f6d,
-		#ffc371
+		#2bffe3,
+		#fd641c,
+		#000057,
+		#6e0009,
+		#ffffff
 	); /* Defines a diagonal gradient with bold colors */
 	background-size: 400% 400%; /* Scales the gradient to allow smooth transitions between colors */
 	animation: gradientAnimation 12s ease infinite; /* Applies the gradient animation */
