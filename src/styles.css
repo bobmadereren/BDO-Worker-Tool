@@ -1,14 +1,31 @@
 /* General Body Styling */
 body {
-    background-color: #121212; /* Dark background for dark mode */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #ff5f6d, #ffc371); /* Defines a diagonal gradient with bold colors */
+    background-size: 400% 400%; /* Scales the gradient to allow smooth transitions between colors */
+    animation: gradientAnimation 12s ease infinite; /* Applies the gradient animation */
     color: #ffffff; /* Light text color for readability */
     font-family: 'Arial', sans-serif; /* Clean and modern font */
     font-size: 14px; /* Standard font size for readability */
     line-height: 1.6; /* Line height for better spacing */
     margin: 0; /* Remove default margin for a clean layout */
-    padding: 0;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transitions for theme changes */
+    padding: 0; 
+    transition: background 0.5s ease, color 0.5s ease; /* Smooth transition for theme changes */
 }
+
+/* Keyframes define the gradient animation steps */
+@keyframes gradientAnimation {
+    0% { 
+        background-position: 0% 50%; /* Start with the gradient positioned at the left */
+    }
+    50% { 
+        background-position: 100% 50%; /* Shift the gradient fully to the right for a smooth transition */
+    }
+    100% { 
+        background-position: 0% 50%; /* Reset to the initial position to loop seamlessly */
+    }
+}
+
+
 
 /* Button Styling */
 button {
@@ -31,6 +48,8 @@ button {
     position: absolute;
     max-width: 320px;
     padding: 15px;
+    margin-left: 10px;
+    margin-top: -50px;
     background: rgba(50, 50, 50, 0.9); /* Semi-transparent background */
     color: #f0f0f0; /* Light text color */
     border: 1px solid rgba(200, 200, 200, 0.3); /* Subtle border */
@@ -163,6 +182,7 @@ body {
     overflow: hidden; /* Prevents scrollbars from showing */
 }
 
+
 /* Responsive Design */
 @media (max-width: 600px) {
     button {
@@ -175,4 +195,5 @@ body {
         max-width: 90%; /* Adjust width */
         padding: 10px; /* Smaller padding */
     }
+
 }
