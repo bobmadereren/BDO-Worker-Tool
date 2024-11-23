@@ -190,13 +190,72 @@ let edges = svg.append("g")
     .selectAll(".edge")
     .data(edgeData, d => d.source.id + '-' + d.target.id)
     .enter()
-    .append("path") // TODO style depending on whether none, one or both nodes are owned
+    .append("path")
     .attr("class", "edge")
-    .attr("stroke", "white")
+    .attr("stroke", d => {
+        if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+            return "green"; // Both nodes owned
+        } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+            return "yellow"; // One node owned
+        } else {
+            return "white"; // No nodes owned
+        }
+    })
+    .attr("stroke-width", d => {
+        if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+            return 3; // Thicker line for both owned
+        } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+            return 2; // Medium line for one owned
+        } else {
+            return 1; // Thin line for none owned
+        }
+    })
     .attr("fill", "none")
     .on("mouseover", e => d3.select(e.target).attr("stroke", "#ffaa00").attr("stroke-width", 4))
-    .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
+    .on("mouseout", (e, d) => d3.select(e.target)
+        .attr("stroke", d => {
+            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                return "green";
+            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                return "yellow";
+            } else {
+                return "white";
+            }
+        })
+        .attr("stroke-width", d => {
+            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                return 3;
+            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                return 2;
+            } else {
+                return 1;
+            }
+        })
+    );
 
+
+    function updateEdgeStyles() {
+        edges
+            .attr("stroke", d => {
+                if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                    return "green";
+                } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                    return "yellow";
+                } else {
+                    return "white";
+                }
+            })
+            .attr("stroke-width", d => {
+                if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                    return 3;
+                } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                    return 2;
+                } else {
+                    return 1;
+                }
+            });
+    }
+    
 // Create nodes
 let nodes = svg.append("g")
     .attr("class", "nodes")
