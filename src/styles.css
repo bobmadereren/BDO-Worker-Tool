@@ -17,54 +17,23 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #555; /* Neutral background color */
+    background-color: #444; /* Neutral background color */
     color: #ffffff; /* Default text color */
     border-radius: 8px; /* Rounded corners for modern look */
-    border: 1px solid #333; /* Subtle border for visual separation */
+    border: 1px solid #222; /* Subtle border for visual separation */
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#button-container {
-    position: fixed; /* Fixed positioning for precise placement */
-    left:auto; /* Position the container on the Right */
-    top: 35%; /* Center vertically relative to the viewport */
-    transform: translateY(-50%); /* Adjust for proper vertical centering */
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Add spacing between buttons */
-    margin-left: 36px;
-}
-
-/* Hover Effect for Buttons */
-button:hover {
-    background-color: #444; /* Slightly darker on hover */
-    color: #eaeaea; /* Lighter text for hover state */
-}
-
-/* Dark Mode Toggle Button Position */
-.dark-mode-toggle {
-    top: 1rem; /* Top margin from the edge */
-    right: 1rem; /* Right margin from the edge */
-}
-
-/* High Contrast Toggle Button Position */
-.high-contrast-toggle {
-    top: calc(1rem + 60px); /* Positioned below the dark mode toggle */
-    right: 1rem;
-}
-
 /* Tooltip Styling */
 .node-tooltip {
     position: absolute;
-    margin-left: 10px;
-    margin-top: -50px;
     max-width: 320px;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
-    color: #fff; /* Text color */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    background: rgba(50, 50, 50, 0.9); /* Semi-transparent background */
+    color: #f0f0f0; /* Light text color */
+    border: 1px solid rgba(200, 200, 200, 0.3); /* Subtle border */
     border-radius: 6px; /* Rounded corners */
     font-size: 13px; /* Smaller font size */
     line-height: 1.6; /* Line height for readability */
@@ -85,47 +54,14 @@ button:hover {
 /* Focus Indicators */
 button:focus,
 .node:hover circle {
-    outline: 3px solid #ffaa00; /* High-visibility outline */
+    outline: 3px solid #00bcd4; /* High-visibility outline */
     outline-offset: 2px; /* Spaced from the element */
 }
 
 /* Tooltip Focus Styling */
 .node-tooltip:focus {
-    border: 2px solid #ffaa00;
-    box-shadow: 0 0 10px #ffaa00;
-}
-
-/* High Contrast Mode Styling */
-.high-contrast-mode body {
-    background-color: #000; /* Black background for maximum contrast */
-    color: #fff; /* White text for readability */
-}
-
-/* High Contrast Mode Button Styling */
-.high-contrast-mode button {
-    background-color: #000; /* Black background */
-    color: #ffaa00; /* Bright yellow for contrast */
-    border-color: #ffaa00; /* Matching border */
-}
-
-/* High Contrast Mode Hover Effect */
-.high-contrast-mode button:hover {
-    background-color: #ffaa00; /* Yellow background */
-    color: #000; /* Black text for contrast */
-}
-
-/* Tooltip in High Contrast Mode */
-.high-contrast-mode .node-tooltip {
-    background: #000; /* Black background */
-    color: #fff; /* White text */
-    border: 1px solid #ffaa00; /* Bright border */
-    box-shadow: 0 0 10px #ffaa00; /* Highlighted glow */
-}
-
-/* Light Mode Styling */
-.light-mode {
-    background-color: #ffffff; /* White background */
-    color: #121212; /* Dark text for readability */
+    border: 2px solid #00bcd4;
+    box-shadow: 0 0 10px #00bcd4;
 }
 
 /* Side Panel Styling */
@@ -134,8 +70,8 @@ button:focus,
     top: 150px; /* Aligned with SVG top margin */
     right: 50px; /* Right margin */
     width: 250px; /* Fixed width */
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    color: #fff; /* White text */
+    background: rgba(50, 50, 50, 0.8); /* Semi-transparent background */
+    color: #f0f0f0; /* Light text */
     padding: 15px; /* Padding for content */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
@@ -152,15 +88,15 @@ button:focus,
 #side-panel h3 {
     margin: 0 0 10px;
     font-size: 18px;
-    color: #ffaa00; /* Highlighted header */
+    color: #00bcd4; /* Highlighted header */
 }
 
 #total-cp {
     position: fixed; /* Sticks when scrolling */
     top: 20px; /* Align with the legend */
     right: 160px; /* Adjust to position next to the legend */
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    color: #ffaa00; /* Highlight color for readability */
+    background-color: rgba(50, 50, 50, 0.8); /* Semi-transparent background */
+    color: #00bcd4; /* Highlight color for readability */
     font-size: 16px; /* Slightly larger font */
     font-weight: bold; /* Emphasized text */
     padding: 10px; /* Add spacing inside */
@@ -174,9 +110,6 @@ button:focus,
 body {
     overflow: hidden; /* Prevents scrollbars from showing */
 }
-
-
-
 
 /* Responsive Design */
 @media (max-width: 600px) {

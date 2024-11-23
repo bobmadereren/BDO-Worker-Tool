@@ -8,42 +8,14 @@
 </head>
 
 <body>
+    <div id="node-tooltip" class="node-tooltip"></div>
+    <div id="legends" style="position: fixed"></div>
 
-    <body>
-        <div id="node-tooltip" class="node-tooltip"></div>
-        <div id="legends" style="position: fixed"></div>
-        
-        <div id="button-container">
-            <button class="dark-mode-toggle" id="darkModeToggle">Switch to Light Mode</button>
-            <button class="high-contrast-toggle" id="highContrastToggle">Enable High Contrast Mode</button>
-        </div>
+    <div id="total-cp" style="right: 100px; top: 20px">Total CP Spent: 0</div>
 
-        <div id="total-cp" style="right: 100px; top: 20px">Total CP Spent: 0</div>
-
-        <div id="side-panel" class="hidden">
-            <h3>Node Details</h3>
-            <div id="side-panel-content"></div>
-        </div>
-
-    </body>
-    <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const highContrastToggle = document.getElementById('highContrastToggle');
-
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            darkModeToggle.textContent = document.body.classList.contains('light-mode')
-                ? 'Switch to Dark Mode'
-                : 'Switch to Light Mode';
-        });
-
-        highContrastToggle.addEventListener('click', () => {
-            document.body.classList.toggle('high-contrast-mode');
-            highContrastToggle.textContent = document.body.classList.contains('high-contrast-mode')
-                ? 'Disable High Contrast Mode'
-                : 'Enable High Contrast Mode';
-        });
-    </script>
+    <div id="side-panel" class="hidden">
+        <h3>Node Details</h3>
+        <div id="side-panel-content"></div>
+    </div>
 </body>
-
 </html>
