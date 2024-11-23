@@ -2,7 +2,7 @@ import { MinPriorityQueue } from '@datastructures-js/priority-queue';
 import nodeData from './nodes.json' with {type: 'json'};
 import ownedArray from './owned.json' with {type: 'json'};
 import * as d3 from 'd3';
-import { createElement, UtilityPole } from 'lucide';
+import { createElement, icons, UtilityPole } from 'lucide';
 
 // Adjust position of total CP dynamically
 document.getElementById('total-cp').style.right = `${100}px`; // Adjust if needed
@@ -325,6 +325,9 @@ legend.append("text")
     .style("fill", "#FFFFFF") // Adjust text color if necessary
     .text(d => d);
 
+let textSize = d3.scaleLog([1, 500], [0, 20]);
+let iconSize = d3.scaleLog([1, 500], [10, 75]);
+
 function draw({ transform }) {
     let x = x => transform.applyX(X(x));
     let y = y => transform.applyY(Y(y));
@@ -332,15 +335,14 @@ function draw({ transform }) {
 
     nodes.selectAll("text")
         .attr("x", d => x(d.pos.x))
-        .attr("y", d => y(d.pos.y))
-        .style("visibility", () => k > 2 ? "visible" : "hidden") // Show names only when zoom > 2
-        .style("opacity", () => Math.min(1, k / 2)); // Gradual opacity scaling with zoom
+        .attr("y", d => y(d.pos.y) - iconSize(k))
+        .style("font-size", textSize(k) + "px");
 
     nodes.selectAll('svg')
-        .attr("width", 10 * k)
-        .attr("height", 10 * k)
-        .attr("x", d => x(d.pos.x) - 10 * k / 2) // Adjust to keep image centered
-        .attr("y", d => y(d.pos.y) - 10 * k); // Adjust to keep image centered
+        .attr("width", iconSize(k))
+        .attr("height", iconSize(k))
+        .attr("x", d => x(d.pos.x) - iconSize(k) / 2)
+        .attr("y", d => y(d.pos.y) - iconSize(k));
 
     edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
 }
