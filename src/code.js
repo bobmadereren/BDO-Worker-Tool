@@ -2,7 +2,25 @@ import { MinPriorityQueue } from '@datastructures-js/priority-queue';
 import nodeData from './nodes.json' with {type: 'json'};
 import ownedArray from './owned.json' with {type: 'json'};
 import * as d3 from 'd3';
-import { createElement, icons, UtilityPole } from 'lucide';
+import { createElement, Menu, UtilityPole } from 'lucide';
+
+const icons = {
+    'Connection': UtilityPole,
+    'Town': UtilityPole,
+    'City': UtilityPole,
+    'Gateway': UtilityPole,
+    'Farming': UtilityPole,
+    'Trade': UtilityPole,
+    'Gathering': UtilityPole,
+    'Mining': UtilityPole,
+    'Lumbering': UtilityPole,
+    'Danger Zone': UtilityPole,
+    'Investment Bank': UtilityPole,
+    'Fish Drying Yard': Menu,
+    'Specialties': UtilityPole,
+    'Production': UtilityPole,
+    'Excavation': UtilityPole,
+}
 
 // Adjust position of total CP dynamically
 document.getElementById('total-cp').style.right = `${100}px`; // Adjust if needed
@@ -109,10 +127,14 @@ let Y = y => (y - (y0 + y1) / 2) * (-1) * k + height / 2;
 // Edge lines
 let line = d3.line();
 
+// Zoom
 let zoom = d3.zoom()
     .translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]])
     .scaleExtent([1, 500])
     .on("zoom", draw);
+
+let textSize = d3.scaleLog(zoom.scaleExtent(), [0, 20]);
+let iconSize = d3.scaleLog(zoom.scaleExtent(), [10, 75]);
 
 // Define a custom color palette
 let customColors = [
@@ -193,140 +215,29 @@ nodes.append("text")
     .attr("text-anchor", "middle")
     .attr("dy", "-0.7em")
     .style("user-select", "none")
-    .style("opacity", 1) // Ensure default opacity is set
     .text(({ name }) => name);
 
-nodes.append(() => createElement(UtilityPole))
+nodes.append((d) => createElement(icons[d.type]))
     .attr("class", "icon")
-    /*
-    .attr("xlink:href", d => {
-        // Provide different image paths based on the type of node
-        switch (d.type) {
-            case 'Connection':
-                return 'images/Connection.png';
-            case 'Town':
-                return 'images/Town.png';
-            case 'City':
-                return 'images/City.png';
-            case 'Gateway':
-                return 'images/Gateway.png';
-            case 'Farming':
-                return 'images/Farming.png';
-            case 'Trade':
-                return 'images/Trade.png';
-            case 'Gathering':
-                return 'images/Gathering.png';
-            case 'Mining':
-                return 'images/Mining.png';
-            case 'Lumbering':
-                return 'images/Lumbering.png';
-            case 'Danger Zone':
-                return 'images/Danger Zone.png';
-            case 'Investment Bank':
-                // Check subtype to differentiate between Monopoly and CP
-                if (d.subtype === 'Monopoly') {
-                    return 'images/InvestmentBankMonopoly.png';
-                } else if (d.subtype === 'CP') {
-                    return 'images/InvestmentBankCP.png';
-                }
-                return 'images/InvestmentBank.png'; // Default for undefined subtype
-            case 'Fish Drying Yard':
-                return 'images/FishDryingYard.png';
-            case 'Specialties':
-                return 'images/Specialties.png';
-            case 'Production':
-                return 'images/Production.png';
-            case 'Excavation':
-                return 'images/Excavation.png';
-            default:
-                return 'images/default.png'; // Fallback for unknown types
-        }
-    })
-    */
-    //.attr("width", 1500)
-    //.attr("height", 200)
     .on("mouseover.tooltip", updateTooltip)
     .on("mouseover.path", highlightShortestPath)
     .on("mousemove", updateTooltip)
     .on("mouseout", hideTooltip)
     .on('dblclick', (e, d) => {
-        e.stopPropagation(); // Prevent zoom on double-click
+        e.stopPropagation();
         buy(e, d);
     });
 
-
-
 // Draw legend
-let legend = svg.append("g")
-    .attr("class", "legends")
+d3.select("#legends")
     .selectAll(".legend")
-    .data(types) // Use the unique types from the dataset
-    .enter()
-    .append("g")
-    .attr("class", "legend")
-    .attr("transform", (_, i) => `translate(${width - 2500}, ${i * 40})`); // Position legend to the left
-
-legend.append("image")
-    .attr("xlink:href", d => {
-        switch (d) {
-            case 'Connection':
-                return 'images/Connection.png';
-            case 'Town':
-                return 'images/Town.png';
-            case 'City':
-                return 'images/City.png';
-            case 'Gateway':
-                return 'images/Gateway.png';
-            case 'Farming':
-                return 'images/Farming.png';
-            case 'Trade':
-                return 'images/Trade.png';
-            case 'Gathering':
-                return 'images/Gathering.png';
-            case 'Mining':
-                return 'images/Mining.png';
-            case 'Lumbering':
-                return 'images/Lumbering.png';
-            case 'Danger Zone':
-                return 'images/Danger Zone.png';
-            case 'Investment Bank':
-                // Use specific images for subtypes in the legend
-                if (d.subtype === 'Monopoly') {
-                    return 'images/InvestmentBankMonopoly.png';
-                } else if (d.subtype === 'CP') {
-                    return 'images/InvestmentBankCP.png';
-                }
-                return 'images/InvestmentBank.png';
-            case 'Fish Drying Yard':
-                return 'images/FishDryingYard.png';
-            case 'Specialties':
-                return 'images/Specialties.png';
-            case 'Production':
-                return 'images/Production.png';
-            case 'Excavation':
-                return 'images/Excavation.png';
-            default:
-                return 'images/default.png'; // Optional fallback
-        }
+    .data(types)
+    .join(enter => {
+        let div = enter.append("div")
+            .attr("class", "legend");
+        div.append(d => createElement(icons[d]));
+        div.append("text").text(d => d);
     })
-    .attr("width", 18)  // Adjust size as needed
-    .attr("height", 18)
-    .attr("x", 0)
-    .attr("y", -9);
-
-
-// Add text labels for the legend
-legend.append("text")
-    .attr("x", 25)
-    .attr("y", 0)
-    .style("text-anchor", "start")
-    .style("font-size", "14px")
-    .style("font-weight", "bold")
-    .style("fill", "#FFFFFF") // Adjust text color if necessary
-    .text(d => d);
-
-let textSize = d3.scaleLog([1, 500], [0, 20]);
-let iconSize = d3.scaleLog([1, 500], [10, 75]);
 
 function draw({ transform }) {
     let x = x => transform.applyX(X(x));
