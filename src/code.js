@@ -1,33 +1,13 @@
 import { MinPriorityQueue } from '@datastructures-js/priority-queue';
 import nodeData from './data/nodes.json' with {type: 'json'};
-import ownedArray from './config/investedNodes.json' with {type: 'json'};
+import investedData from './config/investedNodes.json' with {type: 'json'};
 import * as d3 from 'd3';
 import { Axe, Castle, createElement, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
 
-let icons = {
-    'Connection': UtilityPole,
-    'Town': Castle,
-    'City': Castle,
-    'Gateway': UtilityPole,
-    'Farming': Wheat,
-    'Trade': Handshake,
-    'Gathering': Leaf,
-    'Mining': Pickaxe,
-    'Lumbering': Axe,
-    'Danger Zone': TriangleAlert,
-    'Investment Bank': Landmark,
-    'Fish Drying Yard': FishSymbol,
-    'Specialties': Package,
-    'Production': Factory,
-    'Excavation': Shovel,
-}
-
-let owned = new Set(ownedArray);
-
 /**
- * Shortest path from a node to any owned node.
+ * Shortest path from a node to any invested node.
  * @param {Number} id Id of the source node.
- * @return {Array} an array containing the ids of for nodes in the path starting from the source node, ending in an owned node.
+ * @return {Array} an array containing the ids for nodes in the path starting from the source node, ending in an invested node.
  */
 function shortestPath(id) {
     let graph = new Map(nodeData.map(({ id, cp, neighbors }) => [id, { id, cp, neighbors }]));
@@ -47,7 +27,7 @@ function shortestPath(id) {
 
     while (!q.isEmpty()) {
         let v = q.dequeue();
-        if (owned.has(v.id)) return path(v);
+        if (investedNodes.has(v.id)) return path(v);
         for (let u of v.neighbors.map(id => graph.get(id)).filter(({ d }) => d == undefined)) {
             u.d = v.d + u.cp;
             u.prev = v;
@@ -58,6 +38,9 @@ function shortestPath(id) {
     return [];
 }
 
+/**
+ * Highlights the shortest path in terms of CP from a node to any node that has been invested in.
+ */
 function highlightShortestPath(_, d) {
     let path = shortestPath(d.id);
     for (let id of path) {
@@ -68,16 +51,14 @@ function highlightShortestPath(_, d) {
 }
 
 function buy(e, d) {
-    // Check if at least one neighbor is owned
-    const hasOwnedNeighbor = d.neighbors.some(neighborId => owned.has(neighborId));
 
-    if (!hasOwnedNeighbor) {
-        alert('You can only buy a house if at least one neighbor is owned.');
+    if (!d.neighbors.some(id => investedNodes.has(id))) {
+        alert('You can only invest in a node adjacent to a node that has allrady been invested in.');
         return;
     }
 
     // Add the current node to the owned set
-    owned.add(d.id);
+    investedNodes.add(d.id);
 
     // Update the visualization
     d3.select(e.target) // Assuming the target is the node element
@@ -95,7 +76,7 @@ function buy(e, d) {
 
 function calculateTotalCP() {
     let totalCP = 0;
-    owned.forEach(nodeId => {
+    investedNodes.forEach(nodeId => {
         const node = nodeMap.get(nodeId);
         if (node && node.cp) {
             totalCP += node.cp;
@@ -103,6 +84,33 @@ function calculateTotalCP() {
     });
     return totalCP;
 }
+
+
+/**
+ * Icons to use for different node types
+ */
+let icons = {
+    'Connection': UtilityPole,
+    'Town': Castle,
+    'City': Castle,
+    'Gateway': UtilityPole,
+    'Farming': Wheat,
+    'Trade': Handshake,
+    'Gathering': Leaf,
+    'Mining': Pickaxe,
+    'Lumbering': Axe,
+    'Danger Zone': TriangleAlert,
+    'Investment Bank': Landmark,
+    'Fish Drying Yard': FishSymbol,
+    'Specialties': Package,
+    'Production': Factory,
+    'Excavation': Shovel,
+}
+
+/**
+ * Set of ids for all nodes that has been invested in
+ */
+let investedNodes = new Set(investedData);
 
 // Generate edge data
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
@@ -156,28 +164,24 @@ let svg = d3.select("body")
     .attr("height", height)
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// Create tooltip
-let tooltip = d3.select("body")
-    .append("div")
-    .attr("class", "node-tooltip");
-
+// Tootlip
 function updateTooltip(e, d) {
-    tooltip
-        .style("left", `${e.pageX + 10}px`)
-        .style("top", `${e.pageY - 50}px`)
+    d3.select("#node-tooltip")
+        .style("left", e.pageX + "px")
+        .style("top", e.pageY + "px")
         .classed("visible", true)
         .html(`
             <div><strong>${d.name}</strong></div>
             <div>Type: ${d.type}</div>
             <div>Territory: ${d.territory}</div>
             <div>CP: ${d.cp}</div>
-            <div>Owned: ${owned.has(d.id)}</div>
+            <div>Owned: ${investedNodes.has(d.id)}</div>
             <div>Double click to buy</div>
         `);
 }
 
 function hideTooltip() {
-    tooltip.classed("visible", false);
+    d3.select("#node-tooltip").classed("visible", false);
 }
 
 // Create edges
@@ -273,7 +277,7 @@ function showSidePanel(_, d) {
     d3.select("#buy-button").on("click", function (e) {
         e.stopPropagation(); // Prevent any unwanted propagation of the click event
 
-        if (d.neighbors.some(neighborId => owned.has(neighborId))) {
+        if (d.neighbors.some(neighborId => investedNodes.has(neighborId))) {
             buy(e, d); // Trigger the buy function to complete the purchase
             d3.select("#buy-button").property("disabled", true);
             showSidePanel(d); // Refresh side panel to update details
