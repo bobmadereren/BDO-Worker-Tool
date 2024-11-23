@@ -195,23 +195,54 @@ nodes.append("text")
     .style("opacity", 1) // Ensure default opacity is set
     .text(({ name }) => name);
 
-nodes.append("image")
+    nodes.append("image")
     .attr("xlink:href", d => {
         // Provide different image paths based on the type of node
         switch (d.type) {
-            case "house":
-                return "images/house.png";  // TODO Adjust path as necessary
-            case "shop":
-                return "images/shop.png";
-            // TODO Add more cases for different types
+            case 'Connection':
+                return 'images/Connection.png';
+            case 'Town':
+                return 'images/Town.png';
+            case 'City':
+                return 'images/City.png';
+            case 'Gateway':
+                return 'images/Gateway.png';
+            case 'Farming':
+                return 'images/Farming.png';
+            case 'Trade':
+                return 'images/Trade.png';
+            case 'Gathering':
+                return 'images/Gathering.png';
+            case 'Mining':
+                return 'images/Mining.png';
+            case 'Lumbering':
+                return 'images/Lumbering.png';
+            case 'Danger Zone':
+                return 'images/Danger Zone.png';
+            case 'Investment Bank':
+                // Check subtype to differentiate between Monopoly and CP
+                if (d.subtype === 'Monopoly') {
+                    return 'images/InvestmentBankMonopoly.png';
+                } else if (d.subtype === 'CP') {
+                    return 'images/InvestmentBankCP.png';
+                }
+                return 'images/InvestmentBank.png'; // Default for undefined subtype
+            case 'Fish Drying Yard':
+                return 'images/FishDryingYard.png';
+            case 'Specialties':
+                return 'images/Specialties.png';
+            case 'Production':
+                return 'images/Production.png';
+            case 'Excavation':
+                return 'images/Excavation.png';
             default:
-                return "images/default.png";
+                return 'images/default.png'; // Fallback for unknown types
         }
     })
     .attr("width", 30)  // Adjust size as needed
     .attr("height", 30)
-    .attr("x", -15) // To center the image on the node
-    .attr("y", -15) // To center the image on the node
+    .attr("x", -15) // Center the image on the node
+    .attr("y", -15) // Center the image on the node
     .on("mouseover.tooltip", updateTooltip)
     .on("mouseover.path", highlightShortestPath)
     .on("mousemove", updateTooltip)
@@ -220,6 +251,7 @@ nodes.append("image")
         e.stopPropagation(); // Prevent zoom on double-click
         buy(e, d);
     });
+
 
 // Draw legend
 let legend = svg.append("g")
@@ -231,23 +263,54 @@ let legend = svg.append("g")
     .attr("class", "legend")
     .attr("transform", (_, i) => `translate(${width - 2500}, ${i * 40})`); // Position legend to the left
 
-// Add images for the legend
-legend.append("image")
+    legend.append("image")
     .attr("xlink:href", d => {
         switch (d) {
-            case "house":
-                return "images/house.png"; // TODO Adjust path as necessary
-            case "shop":
-                return "images/shop.png";
-            // TODO Add more cases for different types
+            case 'Connection':
+                return 'images/Connection.png';
+            case 'Town':
+                return 'images/Town.png';
+            case 'City':
+                return 'images/City.png';
+            case 'Gateway':
+                return 'images/Gateway.png';
+            case 'Farming':
+                return 'images/Farming.png';
+            case 'Trade':
+                return 'images/Trade.png';
+            case 'Gathering':
+                return 'images/Gathering.png';
+            case 'Mining':
+                return 'images/Mining.png';
+            case 'Lumbering':
+                return 'images/Lumbering.png';
+            case 'Danger Zone':
+                return 'images/Danger Zone.png';
+            case 'Investment Bank':
+                // Use specific images for subtypes in the legend
+                if (d.subtype === 'Monopoly') {
+                    return 'images/InvestmentBankMonopoly.png';
+                } else if (d.subtype === 'CP') {
+                    return 'images/InvestmentBankCP.png';
+                }
+                return 'images/InvestmentBank.png';
+            case 'Fish Drying Yard':
+                return 'images/FishDryingYard.png';
+            case 'Specialties':
+                return 'images/Specialties.png';
+            case 'Production':
+                return 'images/Production.png';
+            case 'Excavation':
+                return 'images/Excavation.png';
             default:
-                return "images/default.png";
+                return 'images/default.png'; // Optional fallback
         }
     })
-    .attr("width", 18)
+    .attr("width", 18)  // Adjust size as needed
     .attr("height", 18)
     .attr("x", 0)
     .attr("y", -9);
+
 
 // Add text labels for the legend
 legend.append("text")
