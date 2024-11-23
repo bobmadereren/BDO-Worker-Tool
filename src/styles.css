@@ -183,49 +183,45 @@ body {
 }
 
 #controls {
-    padding: 0; /* Maintain current styling */
-    background: none; /* Maintain current styling */
-    border: none; /* Maintain current styling */
-    box-shadow: none; /* Maintain current styling */
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: inherit; /* Use the site's default text color */
-    z-index: 1000;
-    text-align: center;
-    user-select: none; /* Prevent text selection */
+	padding: 0; /* Maintain current styling */
+	background: none; /* Maintain current styling */
+	border: none; /* Maintain current styling */
+	box-shadow: none; /* Maintain current styling */
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: inherit; /* Use the site's default text color */
+	z-index: 1000;
+	text-align: center;
+	user-select: none; /* Prevent text selection */
 }
-
 
 #controls {
-    cursor: default; /* Restore default cursor */
+	cursor: default; /* Restore default cursor */
 }
 
-
 #controls input#node-search {
-    width: 250px; /* Adjust width */
-    padding: 10px 14px; /* Adjust padding for better spacing */
-    border: 2px solid #ccc; /* Subtle border */
-    border-radius: 20px; /* Rounded corners for modern look */
-    background: rgba(255, 255, 255, 0.9); /* Light background */
-    color: #333; /* Dark text for readability */
-    font-size: 16px; /* Increased font size for readability */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+	width: 250px; /* Adjust width */
+	padding: 10px 14px; /* Adjust padding for better spacing */
+	border: 2px solid #ccc; /* Subtle border */
+	border-radius: 20px; /* Rounded corners for modern look */
+	background: rgba(255, 255, 255, 0.9); /* Light background */
+	color: #333; /* Dark text for readability */
+	font-size: 16px; /* Increased font size for readability */
+	transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 #controls input#node-search:focus {
-    border-color: #00bcd4; /* Highlight border on focus */
-    box-shadow: 0 0 8px rgba(0, 188, 212, 0.5); /* Add subtle glow */
-    outline: none; /* Remove default outline */
+	border-color: #00bcd4; /* Highlight border on focus */
+	box-shadow: 0 0 8px rgba(0, 188, 212, 0.5); /* Add subtle glow */
+	outline: none; /* Remove default outline */
 }
 
 #controls input#node-search::placeholder {
-    color: #777; /* Subtle placeholder text color */
-    font-style: italic; /* Italic style for placeholder */
+	color: #777; /* Subtle placeholder text color */
+	font-style: italic; /* Italic style for placeholder */
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 600px) {
