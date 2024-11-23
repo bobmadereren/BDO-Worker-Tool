@@ -362,3 +362,33 @@ svg.call(zoom.transform, d3.zoomIdentity);
 
 // Initial CP display
 document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
+
+// Search and Filter Functionality
+let searchInput = document.getElementById('node-search');
+searchInput.addEventListener('input', function() {
+    let query = searchInput.value.toLowerCase();
+    nodes.style('opacity', d => (d.name.toLowerCase().includes(query) ? 1 : 0.1));
+    edges.style('opacity', d => {
+        let sourceMatch = d.source.name.toLowerCase().includes(query);
+        let targetMatch = d.target.name.toLowerCase().includes(query);
+        return sourceMatch || targetMatch ? 1 : 0.1;
+    });
+});
+
+// Dynamically generate filters for node types
+let filterContainer = d3.select('#type-filters');
+types.forEach(type => {
+    let checkbox = filterContainer.append('label').style('margin-right', '10px');
+    checkbox.append('input')
+        .attr('type', 'checkbox')
+        .attr('checked', true)
+        .on('change', function() {
+            let checkedTypes = new Set(
+                d3.selectAll('#type-filters input:checked').nodes().map(input => input.nextSibling.textContent)
+            );
+            nodes.style('opacity', d => (checkedTypes.has(d.type) ? 1 : 0.1));
+            edges.style('opacity', d => (checkedTypes.has(d.source.type) || checkedTypes.has(d.target.type) ? 1 : 0.1));
+        });
+    checkbox.append('span').text(type);
+});
+
