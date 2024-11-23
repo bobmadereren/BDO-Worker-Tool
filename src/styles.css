@@ -92,18 +92,70 @@ button:focus,
 }
 
 #total-cp {
-    position: fixed; /* Sticks when scrolling */
-    top: 20px; /* Align with the legend */
-    right: 160px; /* Adjust to position next to the legend */
-    background-color: rgba(50, 50, 50, 0.8); /* Semi-transparent background */
-    color: #00bcd4; /* Highlight color for readability */
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Align to the left side */
     font-size: 16px; /* Slightly larger font */
     font-weight: bold; /* Emphasized text */
-    padding: 10px; /* Add spacing inside */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    z-index: 1000; /* Ensure it's above other elements */
-    white-space: nowrap; /* Prevent text from wrapping */
+    white-space: nowrap; /* Prevent text wrapping */
+    background: none; /* Remove background */
+    box-shadow: none; /* Remove shadow */
+    border: none; /* Ensure no borders are present */
+    padding: 0; /* Remove any padding */
+    margin-bottom: 10px; /* Add space below Total CP */
+    color: inherit; /* Use default text color */
+    margin-left: 20px; /* Pushes the element slightly left */
+    margin-top: 20px; /* Pushes the element slightly down */
+}
+
+
+
+#legends {
+    position: fixed;
+    top: 50px; /* Position it below Total CP */
+    left: 20px; /* Align to the left side */
+    max-width: 300px; /* Limit width for consistency */
+    gap: 10px; /* Space between legend items */
+    display: flex;
+    flex-direction: column;
+    background: none; /* Remove background */
+    box-shadow: none; /* Remove shadow */
+    border: none; /* Ensure no borders are present */
+    margin: 0; /* Reset any default margins */
+    color: inherit; /* Use default text color */
+    margin-left: 20px; /* Pushes the element slightly left */
+    margin-top: 30px; /* Gives it some breathing room from the cp spent element */
+}
+
+
+
+
+/* Individual Legend Item Styling */
+.legend {
+    display: flex;
+    align-items: center; /* Align icons and text vertically */
+    gap: 10px; /* Space between icon and text */
+    color: #f0f0f0; /* Light text for contrast */
+    font-size: 15px; /* Font size for readability */
+}
+
+.legend svg {
+    width: 24px; /* Icon size */
+    height: 24px;
+    flex-shrink: 0; /* Prevent icon from resizing */
+    fill: none; /* Remove color fill */
+    stroke: currentColor; /* Match the text color (default is inherited) */
+    transition: transform 0.3s ease, fill 0.3s ease; /* Keep transform effect for hover */
+}
+
+.legend:hover svg {
+    transform: scale(1.2); /* Enlarge slightly on hover for interactivity */
+    stroke: #ffffff; /* Optional: Change stroke color on hover */
+}
+
+/* Legend Text Styling */
+.legend text {
+    user-select: none; /* Prevent text selection */
 }
 
 /* Hides the scroll bar while still allowing scrolling */
