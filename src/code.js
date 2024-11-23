@@ -2,6 +2,13 @@ import { MinPriorityQueue } from '@datastructures-js/priority-queue';
 import nodeData from './nodes.json' with {type: 'json'};
 import ownedArray from './owned.json' with {type: 'json'};
 import * as d3 from 'd3';
+import { createElement, UtilityPole } from 'lucide';
+
+let icon = createElement(UtilityPole); // Returns HTMLElement (svg)
+icon.setAttribute('stroke', '#333');
+icon.classList.add('icon');
+document.getElementById("bakmann").append(icon);
+
 
 // Adjust position of total CP dynamically
 document.getElementById('total-cp').style.right = `${100}px`; // Adjust if needed
@@ -263,8 +270,6 @@ function draw({ transform }) {
     let x = x => transform.applyX(X(x));
     let y = y => transform.applyY(Y(y));
 
-    console.log(transform.k); // Log the zoom scale for debugging
-
     nodes.selectAll("text")
         .attr("x", d => x(d.pos.x))
         .attr("y", d => y(d.pos.y))
@@ -296,7 +301,7 @@ function showSidePanel(d) {
     `);
 
     // Add functionality for buying a house from the side panel
-    d3.select("#buy-button").on("click", function(e) {
+    d3.select("#buy-button").on("click", function (e) {
         e.stopPropagation(); // Prevent any unwanted propagation of the click event
 
         if (d.neighbors.some(neighborId => owned.has(neighborId))) {
