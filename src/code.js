@@ -4,12 +4,6 @@ import ownedArray from './owned.json' with {type: 'json'};
 import * as d3 from 'd3';
 import { createElement, UtilityPole } from 'lucide';
 
-let icon = createElement(UtilityPole); // Returns HTMLElement (svg)
-icon.setAttribute('stroke', '#333');
-icon.classList.add('icon');
-document.getElementById("bakmann").append(icon);
-
-
 // Adjust position of total CP dynamically
 document.getElementById('total-cp').style.right = `${100}px`; // Adjust if needed
 document.getElementById('total-cp').style.top = `${20}px`; // Adjust to align with the legend
@@ -202,7 +196,9 @@ nodes.append("text")
     .style("opacity", 1) // Ensure default opacity is set
     .text(({ name }) => name);
 
-    nodes.append("image")
+nodes.append(() => createElement(UtilityPole))
+    .attr("class", "icon")
+    /*
     .attr("xlink:href", d => {
         // Provide different image paths based on the type of node
         switch (d.type) {
@@ -246,10 +242,9 @@ nodes.append("text")
                 return 'images/default.png'; // Fallback for unknown types
         }
     })
-    .attr("width", 30)  // Adjust size as needed
-    .attr("height", 30)
-    .attr("x", -15) // Center the image on the node
-    .attr("y", -15) // Center the image on the node
+    */
+    //.attr("width", 1500)
+    //.attr("height", 200)
     .on("mouseover.tooltip", updateTooltip)
     .on("mouseover.path", highlightShortestPath)
     .on("mousemove", updateTooltip)
@@ -258,6 +253,7 @@ nodes.append("text")
         e.stopPropagation(); // Prevent zoom on double-click
         buy(e, d);
     });
+
 
 
 // Draw legend
@@ -270,7 +266,7 @@ let legend = svg.append("g")
     .attr("class", "legend")
     .attr("transform", (_, i) => `translate(${width - 2500}, ${i * 40})`); // Position legend to the left
 
-    legend.append("image")
+legend.append("image")
     .attr("xlink:href", d => {
         switch (d) {
             case 'Connection':
@@ -332,16 +328,19 @@ legend.append("text")
 function draw({ transform }) {
     let x = x => transform.applyX(X(x));
     let y = y => transform.applyY(Y(y));
+    let k = transform.k;
 
     nodes.selectAll("text")
         .attr("x", d => x(d.pos.x))
         .attr("y", d => y(d.pos.y))
-        .style("visibility", () => transform.k > 2 ? "visible" : "hidden") // Show names only when zoom > 2
-        .style("opacity", () => Math.min(1, transform.k / 2)); // Gradual opacity scaling with zoom
+        .style("visibility", () => k > 2 ? "visible" : "hidden") // Show names only when zoom > 2
+        .style("opacity", () => Math.min(1, k / 2)); // Gradual opacity scaling with zoom
 
-    nodes.selectAll('image')
-        .attr("x", d => x(d.pos.x) - 15) // Adjust to keep image centered
-        .attr("y", d => y(d.pos.y) - 15); // Adjust to keep image centered
+    nodes.selectAll('svg')
+        .attr("width", 10 * k)
+        .attr("height", 10 * k)
+        .attr("x", d => x(d.pos.x) - 10 * k / 2) // Adjust to keep image centered
+        .attr("y", d => y(d.pos.y) - 10 * k); // Adjust to keep image centered
 
     edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
 }
