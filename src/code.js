@@ -2,24 +2,24 @@ import { MinPriorityQueue } from '@datastructures-js/priority-queue';
 import nodeData from './nodes.json' with {type: 'json'};
 import ownedArray from './owned.json' with {type: 'json'};
 import * as d3 from 'd3';
-import { createElement, Menu, UtilityPole } from 'lucide';
+import { Axe, Castle, createElement, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
 
 const icons = {
     'Connection': UtilityPole,
-    'Town': UtilityPole,
-    'City': UtilityPole,
+    'Town': Castle,
+    'City': Castle,
     'Gateway': UtilityPole,
-    'Farming': UtilityPole,
-    'Trade': UtilityPole,
-    'Gathering': UtilityPole,
-    'Mining': UtilityPole,
-    'Lumbering': UtilityPole,
-    'Danger Zone': UtilityPole,
-    'Investment Bank': UtilityPole,
-    'Fish Drying Yard': Menu,
-    'Specialties': UtilityPole,
-    'Production': UtilityPole,
-    'Excavation': UtilityPole,
+    'Farming': Wheat,
+    'Trade': Handshake,
+    'Gathering': Leaf,
+    'Mining': Pickaxe,
+    'Lumbering': Axe,
+    'Danger Zone': TriangleAlert,
+    'Investment Bank': Landmark,
+    'Fish Drying Yard': FishSymbol,
+    'Specialties': Package,
+    'Production': Factory,
+    'Excavation': Shovel,
 }
 
 // Adjust position of total CP dynamically
@@ -184,9 +184,6 @@ function hideTooltip() {
     tooltip.classed("visible", false);
 }
 
-// Flag to track node name visibility
-let nodeNamesVisible = true;
-
 // Create edges
 let edges = svg.append("g")
     .attr("class", "edges")
@@ -200,7 +197,7 @@ let edges = svg.append("g")
     .on("mouseover", e => d3.select(e.target).attr("stroke", "#ffaa00").attr("stroke-width", 4))
     .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
 
-// Create nodes with persistent names
+// Create nodes
 let nodes = svg.append("g")
     .attr("class", "nodes")
     .selectAll(".node")
@@ -208,7 +205,8 @@ let nodes = svg.append("g")
     .enter()
     .append("g")
     .attr("id", ({ id }) => "i" + id)
-    .attr("class", "node");
+    .attr("class", "node")
+    .on("click", showSidePanel);
 
 nodes.append("text")
     .style("fill", d => color(d.type))
@@ -217,7 +215,7 @@ nodes.append("text")
     .style("user-select", "none")
     .text(({ name }) => name);
 
-nodes.append((d) => createElement(icons[d.type]))
+nodes.append(d => createElement(icons[d.type]))
     .attr("class", "icon")
     .on("mouseover.tooltip", updateTooltip)
     .on("mouseover.path", highlightShortestPath)
@@ -228,7 +226,7 @@ nodes.append((d) => createElement(icons[d.type]))
         buy(e, d);
     });
 
-// Draw legend
+// Create legend
 d3.select("#legends")
     .selectAll(".legend")
     .data(types)
@@ -258,7 +256,7 @@ function draw({ transform }) {
     edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
 }
 
-function showSidePanel(d) {
+function showSidePanel(_, d) {
     let sidePanel = d3.select("#side-panel");
     sidePanel.classed("hidden", false);
 
@@ -292,9 +290,6 @@ function showSidePanel(d) {
 function hideSidePanel() {
     d3.select("#side-panel").classed("hidden", true);
 }
-
-// Attach event handlers to nodes
-nodes.on("click", (_, d) => showSidePanel(d));
 
 // Optional: Hide panel when clicking outside of nodes
 d3.select("body").on("click", function (e) {
