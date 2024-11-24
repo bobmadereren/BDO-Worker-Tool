@@ -1,16 +1,18 @@
 /* General Body Styling */
 body {
-	background: linear-gradient(
+	background-color: Canvas;
+	color-scheme: dark;
+	color: CanvasText;
+	/*background: linear-gradient(
 		135deg,
 		#2bffe3,
 		#fd641c,
 		#000057,
 		#6e0009,
 		#ffffff
-	); /* Defines a diagonal gradient with bold colors */
+	);*/ /* Defines a diagonal gradient with bold colors */
 	background-size: 400% 400%; /* Scales the gradient to allow smooth transitions between colors */
-	animation: gradientAnimation 12s ease infinite; /* Applies the gradient animation */
-	color: #ffffff; /* Light text color for readability */
+	/*animation: gradientAnimation 12s ease infinite;*/ /* Applies the gradient animation */
 	font-family: "Arial", sans-serif; /* Clean and modern font */
 	font-size: 14px; /* Standard font size for readability */
 	line-height: 1.6; /* Line height for better spacing */
