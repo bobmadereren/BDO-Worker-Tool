@@ -2,7 +2,7 @@ import { MinPriorityQueue } from '@datastructures-js/priority-queue';
 import nodeData from './data/nodes.json' with {type: 'json'};
 import investedData from './config/investedNodes.json' with {type: 'json'};
 import * as d3 from 'd3';
-import { Axe, Castle, createElement, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
+import { Axe, Castle, createElement, createIcons, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
 
 /**
  * Shortest path from a node to any invested node.
@@ -153,7 +153,7 @@ let color = d3.scaleOrdinal(types, customColors); // Ensure the scale matches th
 // Create SVG
 let svg = d3.select("body")
     .append("svg")
-    .attr("width", width + margin.left + margin.right) // Adjusted width
+    .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .style("display", "block")
     .style("margin", "0 auto")
@@ -166,18 +166,21 @@ let svg = d3.select("body")
 
 // Tootlip
 function updateTooltip(e, d) {
-    d3.select("#node-tooltip")
+    let tooltip = d3.select("#node-tooltip")
         .style("left", e.pageX + "px")
         .style("top", e.pageY + "px")
-        .classed("visible", true)
-        .html(`
-            <div><strong>${d.name}</strong></div>
-            <div>Type: ${d.type}</div>
-            <div>Territory: ${d.territory}</div>
-            <div>CP: ${d.cp}</div>
-            <div>Owned: ${investedNodes.has(d.id)}</div>
-            <div>Double click to buy</div>
-        `);
+    tooltip.classed("visible", true);
+
+    createIcons({
+        icons: {Axe},
+        nameAttr: 'data-lucide',
+    })
+
+    tooltip.select("#name").text(d.name);
+    //tooltip.select("#icon").html(createElement(icons[d.type]));
+    tooltip.select("#territory").text(d.territory);
+    tooltip.select("#cp").text(d.cp);
+    tooltip.select("#buy-sell").text(investedNodes.has(d.id) ? "sell" : "buy");
 }
 
 function hideTooltip() {

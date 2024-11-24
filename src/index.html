@@ -8,7 +8,14 @@
 </head>
 
 <body>
-    <div id="node-tooltip" class="node-tooltip"></div>
+    
+    <!--- // TODO figure out how to create dynamic html element with minimal javascript involvement--->
+    <div id="node-tooltip" class="node-tooltip">
+        <div><strong id="name"></strong><svg data-lucide="Axe"></svg></div>
+        <div id="territory"></div>
+        <div>Contribution Points: <text id="cp"></text></div>
+        <div>Double Click to <text id="buy-sell"></text></div>
+    </div>
     <div id="legends" style="position: fixed"></div>
 
     <div id="total-cp" style="right: 100px; top: 20px">Total CP Spent: 0</div>
@@ -18,4 +25,5 @@
         <div id="side-panel-content"></div>
     </div>
 </body>
+
 </html>
