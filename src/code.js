@@ -193,13 +193,72 @@ let edges = svg.append("g")
     .selectAll(".edge")
     .data(edgeData, d => d.source.id + '-' + d.target.id)
     .enter()
-    .append("path") // TODO style depending on whether none, one or both nodes are owned
+    .append("path")
     .attr("class", "edge")
-    .attr("stroke", "white")
+    .attr("stroke", d => {
+        if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+            return "green"; // Both nodes owned
+        } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+            return "yellow"; // One node owned
+        } else {
+            return "white"; // No nodes owned
+        }
+    })
+    .attr("stroke-width", d => {
+        if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+            return 3; // Thicker line for both owned
+        } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+            return 2; // Medium line for one owned
+        } else {
+            return 1; // Thin line for none owned
+        }
+    })
     .attr("fill", "none")
     .on("mouseover", e => d3.select(e.target).attr("stroke", "#ffaa00").attr("stroke-width", 4))
-    .on("mouseout", e => d3.select(e.target).attr("stroke", "white").attr("stroke-width", 2));
+    .on("mouseout", (e, d) => d3.select(e.target)
+        .attr("stroke", d => {
+            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                return "green";
+            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                return "yellow";
+            } else {
+                return "white";
+            }
+        })
+        .attr("stroke-width", d => {
+            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                return 3;
+            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                return 2;
+            } else {
+                return 1;
+            }
+        })
+    );
 
+
+    function updateEdgeStyles() {
+        edges
+            .attr("stroke", d => {
+                if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                    return "green";
+                } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                    return "yellow";
+                } else {
+                    return "white";
+                }
+            })
+            .attr("stroke-width", d => {
+                if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                    return 3;
+                } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                    return 2;
+                } else {
+                    return 1;
+                }
+            });
+    }
+    
 // Create nodes
 let nodes = svg.append("g")
     .attr("class", "nodes")
@@ -306,3 +365,33 @@ svg.call(zoom.transform, d3.zoomIdentity);
 
 // Initial CP display
 document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
+
+// Search and Filter Functionality
+let searchInput = document.getElementById('node-search');
+searchInput.addEventListener('input', function() {
+    let query = searchInput.value.toLowerCase();
+    nodes.style('opacity', d => (d.name.toLowerCase().includes(query) ? 1 : 0.1));
+    edges.style('opacity', d => {
+        let sourceMatch = d.source.name.toLowerCase().includes(query);
+        let targetMatch = d.target.name.toLowerCase().includes(query);
+        return sourceMatch || targetMatch ? 1 : 0.1;
+    });
+});
+
+// Dynamically generate filters for node types
+let filterContainer = d3.select('#type-filters');
+types.forEach(type => {
+    let checkbox = filterContainer.append('label').style('margin-right', '10px');
+    checkbox.append('input')
+        .attr('type', 'checkbox')
+        .attr('checked', true)
+        .on('change', function() {
+            let checkedTypes = new Set(
+                d3.selectAll('#type-filters input:checked').nodes().map(input => input.nextSibling.textContent)
+            );
+            nodes.style('opacity', d => (checkedTypes.has(d.type) ? 1 : 0.1));
+            edges.style('opacity', d => (checkedTypes.has(d.source.type) || checkedTypes.has(d.target.type) ? 1 : 0.1));
+        });
+    checkbox.append('span').text(type);
+});
+

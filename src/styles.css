@@ -1,199 +1,238 @@
 /* General Body Styling */
 body {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #ff5f6d, #ffc371); /* Defines a diagonal gradient with bold colors */
-    background-size: 400% 400%; /* Scales the gradient to allow smooth transitions between colors */
-    animation: gradientAnimation 12s ease infinite; /* Applies the gradient animation */
-    color: #ffffff; /* Light text color for readability */
-    font-family: 'Arial', sans-serif; /* Clean and modern font */
-    font-size: 14px; /* Standard font size for readability */
-    line-height: 1.6; /* Line height for better spacing */
-    margin: 0; /* Remove default margin for a clean layout */
-    padding: 0; 
-    transition: background 0.5s ease, color 0.5s ease; /* Smooth transition for theme changes */
+	background: linear-gradient(
+		135deg,
+		#2bffe3,
+		#fd641c,
+		#000057,
+		#6e0009,
+		#ffffff
+	); /* Defines a diagonal gradient with bold colors */
+	background-size: 400% 400%; /* Scales the gradient to allow smooth transitions between colors */
+	animation: gradientAnimation 12s ease infinite; /* Applies the gradient animation */
+	color: #ffffff; /* Light text color for readability */
+	font-family: "Arial", sans-serif; /* Clean and modern font */
+	font-size: 14px; /* Standard font size for readability */
+	line-height: 1.6; /* Line height for better spacing */
+	margin: 0; /* Remove default margin for a clean layout */
+	padding: 0;
+	transition: background 0.5s ease, color 0.5s ease; /* Smooth transition for theme changes */
 }
 
 /* Keyframes define the gradient animation steps */
 @keyframes gradientAnimation {
-    0% { 
-        background-position: 0% 50%; /* Start with the gradient positioned at the left */
-    }
-    50% { 
-        background-position: 100% 50%; /* Shift the gradient fully to the right for a smooth transition */
-    }
-    100% { 
-        background-position: 0% 50%; /* Reset to the initial position to loop seamlessly */
-    }
+	0% {
+		background-position: 0% 50%; /* Start with the gradient positioned at the left */
+	}
+	50% {
+		background-position: 100% 50%; /* Shift the gradient fully to the right for a smooth transition */
+	}
+	100% {
+		background-position: 0% 50%; /* Reset to the initial position to loop seamlessly */
+	}
 }
-
-
 
 /* Button Styling */
 button {
-    width: 200px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #444; /* Neutral background color */
-    color: #ffffff; /* Default text color */
-    border-radius: 8px; /* Rounded corners for modern look */
-    border: 1px solid #222; /* Subtle border for visual separation */
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+	width: 200px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #444; /* Neutral background color */
+	color: #ffffff; /* Default text color */
+	border-radius: 8px; /* Rounded corners for modern look */
+	border: 1px solid #222; /* Subtle border for visual separation */
+	font-size: 14px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Tooltip Styling */
 .node-tooltip {
-    position: absolute;
-    max-width: 320px;
-    padding: 15px;
-    margin-left: 10px;
-    margin-top: -50px;
-    background: rgba(50, 50, 50, 0.9); /* Semi-transparent background */
-    color: #f0f0f0; /* Light text color */
-    border: 1px solid rgba(200, 200, 200, 0.3); /* Subtle border */
-    border-radius: 6px; /* Rounded corners */
-    font-size: 13px; /* Smaller font size */
-    line-height: 1.6; /* Line height for readability */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Shadow for depth */
-    pointer-events: auto; /* Allow pointer events */
-    opacity: 0; /* Hidden by default */
-    visibility: hidden; /* Hidden by default */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade-in/out */
-    z-index: 9999; /* Ensure it appears above other elements */
+	position: absolute;
+	max-width: 320px;
+	padding: 15px;
+	margin-left: 10px;
+	margin-top: -50px;
+	background: rgba(50, 50, 50, 0.9); /* Semi-transparent background */
+	color: #f0f0f0; /* Light text color */
+	border: 1px solid rgba(200, 200, 200, 0.3); /* Subtle border */
+	border-radius: 6px; /* Rounded corners */
+	font-size: 13px; /* Smaller font size */
+	line-height: 1.6; /* Line height for readability */
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+	pointer-events: auto; /* Allow pointer events */
+	opacity: 0; /* Hidden by default */
+	visibility: hidden; /* Hidden by default */
+	transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade-in/out */
+	z-index: 9999; /* Ensure it appears above other elements */
 }
 
 /* Tooltip Visibility */
 .node-tooltip.visible {
-    visibility: visible;
-    opacity: 1;
+	visibility: visible;
+	opacity: 1;
 }
 
 /* Focus Indicators */
 button:focus,
 .node:hover circle {
-    outline: 3px solid #00bcd4; /* High-visibility outline */
-    outline-offset: 2px; /* Spaced from the element */
+	outline: 3px solid #00bcd4; /* High-visibility outline */
+	outline-offset: 2px; /* Spaced from the element */
 }
 
 /* Tooltip Focus Styling */
 .node-tooltip:focus {
-    border: 2px solid #00bcd4;
-    box-shadow: 0 0 10px #00bcd4;
+	border: 2px solid #00bcd4;
+	box-shadow: 0 0 10px #00bcd4;
 }
 
 /* Side Panel Styling */
 #side-panel {
-    position: absolute; /* Fixed position */
-    top: 150px; /* Aligned with SVG top margin */
-    right: 50px; /* Right margin */
-    width: 250px; /* Fixed width */
-    background: rgba(50, 50, 50, 0.8); /* Semi-transparent background */
-    color: #f0f0f0; /* Light text */
-    padding: 15px; /* Padding for content */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    font-family: Arial, sans-serif; /* Font consistency */
-    z-index: 1000; /* Higher stacking order */
+	position: absolute; /* Fixed position */
+	top: 150px; /* Aligned with SVG top margin */
+	right: 50px; /* Right margin */
+	width: 250px; /* Fixed width */
+	background: rgba(50, 50, 50, 0.8); /* Semi-transparent background */
+	color: #f0f0f0; /* Light text */
+	padding: 15px; /* Padding for content */
+	border-radius: 8px; /* Rounded corners */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+	font-family: Arial, sans-serif; /* Font consistency */
+	z-index: 1000; /* Higher stacking order */
 }
 
 /* Hidden Side Panel */
 #side-panel.hidden {
-    display: none;
+	display: none;
 }
 
 /* Side Panel Header */
 #side-panel h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
-    color: #00bcd4; /* Highlighted header */
+	margin: 0 0 10px;
+	font-size: 18px;
+	color: #00bcd4; /* Highlighted header */
 }
 
 #total-cp {
-    position: fixed;
-    top: 20px;
-    left: 20px; /* Align to the left side */
-    font-size: 16px; /* Slightly larger font */
-    font-weight: bold; /* Emphasized text */
-    white-space: nowrap; /* Prevent text wrapping */
-    background: none; /* Remove background */
-    box-shadow: none; /* Remove shadow */
-    border: none; /* Ensure no borders are present */
-    padding: 0; /* Remove any padding */
-    margin-bottom: 10px; /* Add space below Total CP */
-    color: inherit; /* Use default text color */
-    margin-left: 20px; /* Pushes the element slightly left */
-    margin-top: 20px; /* Pushes the element slightly down */
+	position: fixed;
+	top: 20px;
+	left: 20px; /* Align to the left side */
+	font-size: 16px; /* Slightly larger font */
+	font-weight: bold; /* Emphasized text */
+	white-space: nowrap; /* Prevent text wrapping */
+	background: none; /* Remove background */
+	box-shadow: none; /* Remove shadow */
+	border: none; /* Ensure no borders are present */
+	padding: 0; /* Remove any padding */
+	margin-bottom: 10px; /* Add space below Total CP */
+	color: inherit; /* Use default text color */
+	margin-left: 20px; /* Pushes the element slightly left */
+	margin-top: 97px; /* Pushes the element slightly down */
 }
-
-
 
 #legends {
-    position: fixed;
-    top: 50px; /* Position it below Total CP */
-    left: 20px; /* Align to the left side */
-    max-width: 300px; /* Limit width for consistency */
-    gap: 10px; /* Space between legend items */
-    display: flex;
-    flex-direction: column;
-    background: none; /* Remove background */
-    box-shadow: none; /* Remove shadow */
-    border: none; /* Ensure no borders are present */
-    margin: 0; /* Reset any default margins */
-    color: inherit; /* Use default text color */
-    margin-left: 20px; /* Pushes the element slightly left */
-    margin-top: 30px; /* Gives it some breathing room from the cp spent element */
+	position: fixed;
+	top: 50px; /* Position it below Total CP */
+	left: 20px; /* Align to the left side */
+	max-width: 300px; /* Limit width for consistency */
+	gap: 10px; /* Space between legend items */
+	display: flex;
+	flex-direction: column;
+	background: none; /* Remove background */
+	box-shadow: none; /* Remove shadow */
+	border: none; /* Ensure no borders are present */
+	margin: 0; /* Reset any default margins */
+	color: inherit; /* Use default text color */
+	margin-left: 20px; /* Pushes the element slightly left */
+	margin-top: 120px; /* Gives it some breathing room from the cp spent element */
 }
-
-
-
 
 /* Individual Legend Item Styling */
 .legend {
-    display: flex;
-    align-items: center; /* Align icons and text vertically */
-    gap: 10px; /* Space between icon and text */
-    color: #f0f0f0; /* Light text for contrast */
-    font-size: 15px; /* Font size for readability */
+	display: flex;
+	align-items: center; /* Align icons and text vertically */
+	gap: 10px; /* Space between icon and text */
+	color: #f0f0f0; /* Light text for contrast */
+	font-size: 15px; /* Font size for readability */
 }
 
 .legend svg {
-    width: 24px; /* Icon size */
-    height: 24px;
-    flex-shrink: 0; /* Prevent icon from resizing */
-    fill: none; /* Remove color fill */
-    stroke: currentColor; /* Match the text color (default is inherited) */
-    transition: transform 0.3s ease, fill 0.3s ease; /* Keep transform effect for hover */
+	width: 24px; /* Icon size */
+	height: 24px;
+	flex-shrink: 0; /* Prevent icon from resizing */
+	fill: none; /* Remove color fill */
+	stroke: currentColor; /* Match the text color (default is inherited) */
+	transition: transform 0.3s ease, fill 0.3s ease; /* Keep transform effect for hover */
 }
 
 .legend:hover svg {
-    transform: scale(1.2); /* Enlarge slightly on hover for interactivity */
-    stroke: #ffffff; /* Optional: Change stroke color on hover */
+	transform: scale(1.2); /* Enlarge slightly on hover for interactivity */
+	stroke: #ffffff; /* Optional: Change stroke color on hover */
 }
 
 /* Legend Text Styling */
 .legend text {
-    user-select: none; /* Prevent text selection */
+	user-select: none; /* Prevent text selection */
 }
 
 /* Hides the scroll bar while still allowing scrolling */
 body {
-    overflow: hidden; /* Prevents scrollbars from showing */
+	overflow: hidden; /* Prevents scrollbars from showing */
 }
 
+#controls {
+	padding: 0; /* Maintain current styling */
+	background: none; /* Maintain current styling */
+	border: none; /* Maintain current styling */
+	box-shadow: none; /* Maintain current styling */
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: inherit; /* Use the site's default text color */
+	z-index: 1000;
+	text-align: center;
+	user-select: none; /* Prevent text selection */
+}
+
+#controls {
+	cursor: default; /* Restore default cursor */
+}
+
+#controls input#node-search {
+	width: 250px; /* Adjust width */
+	padding: 10px 14px; /* Adjust padding for better spacing */
+	border: 2px solid #ccc; /* Subtle border */
+	border-radius: 20px; /* Rounded corners for modern look */
+	background: rgba(255, 255, 255, 0.9); /* Light background */
+	color: #333; /* Dark text for readability */
+	font-size: 16px; /* Increased font size for readability */
+	transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#controls input#node-search:focus {
+	border-color: #00bcd4; /* Highlight border on focus */
+	box-shadow: 0 0 8px rgba(0, 188, 212, 0.5); /* Add subtle glow */
+	outline: none; /* Remove default outline */
+}
+
+#controls input#node-search::placeholder {
+	color: #777; /* Subtle placeholder text color */
+	font-style: italic; /* Italic style for placeholder */
+}
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    button {
-        font-size: 10px; /* Smaller font for compact screens */
-        padding: 0.4rem 0.8rem; /* Adjust padding */
-    }
+	button {
+		font-size: 10px; /* Smaller font for compact screens */
+		padding: 0.4rem 0.8rem; /* Adjust padding */
+	}
 
-    .node-tooltip {
-        font-size: 11px; /* Smaller font for tooltips */
-        max-width: 90%; /* Adjust width */
-        padding: 10px; /* Smaller padding */
-    }
-
+	.node-tooltip {
+		font-size: 11px; /* Smaller font for tooltips */
+		max-width: 90%; /* Adjust width */
+		padding: 10px; /* Smaller padding */
+	}
 }

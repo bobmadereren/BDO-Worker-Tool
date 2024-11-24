@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BDO Worker Tool</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDO Worker Tool</title>
-</head>
+	<body>
 
-<body>
+        <div id="controls">
+            <input type="text" id="node-search" placeholder="Search nodes...">
+            <div id="type-filters">
+                <strong>Filter by Type:</strong>
+            </div>
+        </div>
+        
+
     
     <!--- // TODO figure out how to create dynamic html element with minimal javascript involvement--->
-    <div id="node-tooltip" class="node-tooltip">
+		<div id="node-tooltip" class="node-tooltip">
         <div><strong id="name"></strong><svg data-lucide="Axe"></svg></div>
         <div id="territory"></div>
         <div>Contribution Points: <text id="cp"></text></div>
         <div>Double Click to <text id="buy-sell"></text></div>
     </div>
-    <div id="legends" style="position: fixed"></div>
+		<div id="legends"></div>
 
-    <div id="total-cp" style="right: 100px; top: 20px">Total CP Spent: 0</div>
+		<div id="total-cp">Total CP Spent: 0</div>
 
     <div id="side-panel" class="hidden">
         <h3>Node Details</h3>
         <div id="side-panel-content"></div>
     </div>
 </body>
-
 </html>
