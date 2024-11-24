@@ -32,6 +32,38 @@ body {
 	}
 }
 
+/* Default legend state (active) */
+.legend {
+    opacity: 1; /* Fully visible by default */
+    cursor: pointer; /* Show pointer cursor for interactivity */
+    border: 1px solid #ccc; /* Subtle border for clarity */
+    padding: 5px; /* Add padding for better visibility */
+    border-radius: 5px; /* Rounded corners for better aesthetics */
+    transition: all 0.3s ease; /* Smooth transitions */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for active state */
+}
+
+/* Filtered out state (inactive) */
+.legend.active {
+    border: 2px solid #00bcd4; /* Highlight active legends with a border */
+    background-color: rgba(0, 188, 212, 0.2); /* Highlighted background */
+    color: #00bcd4; /* Text color for active legends */
+}
+
+.legend.inactive {
+    opacity: 0.5; /* Dim inactive legends */
+    border: 1px dashed #ff5722; /* Dashed border for filtered state */
+    background-color: rgba(255, 87, 34, 0.1); /* Subtle red background for inactive */
+    color: #ff5722; /* Red text for filtered legends */
+}
+
+/* Hover feedback for both states */
+.legend:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover for feedback */
+    opacity: 1; /* Always fully visible on hover */
+}
+
+
 /* Button Styling */
 button {
 	width: 200px;

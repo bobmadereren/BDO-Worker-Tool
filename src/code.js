@@ -288,16 +288,44 @@ nodes.append(d => createElement(icons[d.type]))
         buy(e, d);
     });
 
-// Create legend
+// Create legend with toggle functionality
 d3.select("#legends")
     .selectAll(".legend")
     .data(types)
     .join(enter => {
         let div = enter.append("div")
-            .attr("class", "legend");
-        div.append(d => createElement(icons[d]));
+            .attr("class", "legend active") // Start with all legends active
+            .on("click", function (event, type) {
+                const legendItem = d3.select(this);
+                const isActive = legendItem.classed("active");
+
+                // Toggle between active and inactive states
+                legendItem
+                    .classed("active", !isActive)
+                    .classed("inactive", isActive);
+
+                // Collect all active types
+                const activeTypes = new Set(
+                    d3.selectAll(".legend.active")
+                        .data()
+                );
+
+                // Update nodes and edges visibility
+                nodes.style('opacity', d =>
+                    activeTypes.has(d.type) ? 1 : 0.1 // Show nodes of active types
+                );
+
+                edges.style('opacity', d =>
+                    activeTypes.has(d.source.type) || activeTypes.has(d.target.type) ? 1 : 0.1 // Show edges with active nodes
+                );
+            });
+
+        // Append icon and name
+        div.append(d => createElement(icons[d]))
+            .attr("class", "legend-icon");
         div.append("text").text(d => d);
-    })
+    });
+
 
 function draw({ transform }) {
     let x = x => transform.applyX(X(x));
@@ -377,21 +405,3 @@ searchInput.addEventListener('input', function() {
         return sourceMatch || targetMatch ? 1 : 0.1;
     });
 });
-
-// Dynamically generate filters for node types
-let filterContainer = d3.select('#type-filters');
-types.forEach(type => {
-    let checkbox = filterContainer.append('label').style('margin-right', '10px');
-    checkbox.append('input')
-        .attr('type', 'checkbox')
-        .attr('checked', true)
-        .on('change', function() {
-            let checkedTypes = new Set(
-                d3.selectAll('#type-filters input:checked').nodes().map(input => input.nextSibling.textContent)
-            );
-            nodes.style('opacity', d => (checkedTypes.has(d.type) ? 1 : 0.1));
-            edges.style('opacity', d => (checkedTypes.has(d.source.type) || checkedTypes.has(d.target.type) ? 1 : 0.1));
-        });
-    checkbox.append('span').text(type);
-});
-
