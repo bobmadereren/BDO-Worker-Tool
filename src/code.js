@@ -388,32 +388,41 @@ function showSidePanel(_, d) {
         <div><strong>Luck Yield:</strong> ${d.luckYield || 'N/A'}</div>
         <div><strong>Is Subnode:</strong> ${d.subNode ? 'Yes' : 'No'}</div>
         <div><strong>Is Monopoly Node:</strong> ${d.isMonopoly ? 'Yes' : 'No'}</div>
-        <button id="buy-button" ${investedNodes.has(d.id) ? "disabled" : ""}>Buy House</button>
-        <button id="sell-button" ${!investedNodes.has(d.id) ? "disabled" : ""}>Sell House</button>
     `);
 
-    // Add functionality for buying
-    d3.select("#buy-button").on("click", function (e) {
-        e.stopPropagation(); // Prevent propagation
-        if (d.neighbors.some(neighborId => investedNodes.has(neighborId))) {
-            buy(e, d);
-            d3.select("#buy-button").property("disabled", true);
-            d3.select("#sell-button").property("disabled", false);
-            showSidePanel(d); // Refresh side panel
-        } else {
-            alert("You cannot buy this house. Make sure a neighboring node is owned.");
-        }
-    });
+    const sidePanelContent = d3.select("#side-panel-content");
 
-    // Add functionality for selling
-    d3.select("#sell-button").on("click", function (e) {
-        e.stopPropagation(); // Prevent propagation
-        sell(e, d);
-        d3.select("#sell-button").property("disabled", true);
-        d3.select("#buy-button").property("disabled", false);
-        showSidePanel(d); // Refresh side panel
-    });
+    // Check conditions and add appropriate button
+    if (!investedNodes.has(d.id) && d.neighbors.some(neighborId => investedNodes.has(neighborId))) {
+        // Add Buy Button
+        sidePanelContent.append("button")
+            .attr("id", "buy-button")
+            .style("background-color", "green")
+            .style("color", "white")
+            .text("Buy House")
+            .on("click", function (e) {
+                e.stopPropagation();
+                buy(e, d);
+                showSidePanel(_, d); // Refresh side panel
+            });
+    }
+
+    if (investedNodes.has(d.id)) {
+        // Add Sell Button
+        sidePanelContent.append("button")
+            .attr("id", "sell-button")
+            .style("background-color", "green")
+            .style("color", "white")
+            .text("Sell House")
+            .on("click", function (e) {
+                e.stopPropagation();
+                sell(e, d);
+                showSidePanel(_, d); // Refresh side panel
+            });
+    }
 }
+
+
 
 
 
