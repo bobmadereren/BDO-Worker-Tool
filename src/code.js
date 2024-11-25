@@ -169,22 +169,45 @@ function updateTooltip(e, d) {
     let tooltip = d3.select("#node-tooltip")
         .style("left", e.pageX + "px")
         .style("top", e.pageY + "px")
-    tooltip.classed("visible", true);
+        .classed("visible", true);
 
     createIcons({
         icons: {Axe},
         nameAttr: 'data-lucide',
     })
 
-    tooltip.select("#name").text(d.name);
-    //tooltip.select("#icon").html(createElement(icons[d.type]));
-    tooltip.select("#territory").text(d.territory);
-    tooltip.select("#cp").text(d.cp);
-    tooltip.select("#buy-sell").text(investedNodes.has(d.id) ? "sell" : "buy");
+ //tooltip.select("#icon").html(createElement(icons[d.type]));
+ tooltip.select("#name").text(d.name);
+ tooltip.select("#territory").text(d.territory);
+ tooltip.select("#cp").text(d.cp);
+ tooltip.select("#buy-sell").text(investedNodes.has(d.id) ? "sell" : "buy");
 }
 
 function hideTooltip() {
     d3.select("#node-tooltip").classed("visible", false);
+}
+
+function sell(e, d) {
+    if (!investedNodes.has(d.id)) {
+        alert('This node is not owned. You cannot sell it.');
+        return;
+    }
+
+    // Remove the current node from the owned set
+    investedNodes.delete(d.id);
+
+    // Update the visualization
+    d3.select(`#i${d.id}`) // Target the node element
+        .select('image') // Update the node's image
+        .style('opacity', 0.5); // Example: Change opacity to indicate it’s unowned
+
+    // Optional: Update the tooltip
+    updateTooltip(e, d);
+
+    // Update the total CP display
+    document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
+
+    alert(`House sold at ${d.name}!`);
 }
 
 // Create edges
@@ -237,27 +260,27 @@ let edges = svg.append("g")
     );
 
 
-    function updateEdgeStyles() {
-        edges
-            .attr("stroke", d => {
-                if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
-                    return "green";
-                } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
-                    return "yellow";
-                } else {
-                    return "white";
-                }
-            })
-            .attr("stroke-width", d => {
-                if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
-                    return 3;
-                } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
-                    return 2;
-                } else {
-                    return 1;
-                }
-            });
-    }
+function updateEdgeStyles() {
+    edges
+        .attr("stroke", d => {
+            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                return "green";
+            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                return "yellow";
+            } else {
+                return "white";
+            }
+        })
+        .attr("stroke-width", d => {
+            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
+                return 3;
+            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
+                return 2;
+            } else {
+                return 1;
+            }
+        });
+}
     
 // Create nodes
 let nodes = svg.append("g")
@@ -268,7 +291,10 @@ let nodes = svg.append("g")
     .append("g")
     .attr("id", ({ id }) => "i" + id)
     .attr("class", "node")
-    .on("click", showSidePanel);
+    .on("click", (e, d) => {
+        e.stopPropagation(); // Prevent propagation to avoid unwanted behaviors
+        showSidePanel(e, d); // Open the side panel with node details
+    });
 
 nodes.append("text")
     .style("fill", d => color(d.type))
@@ -285,8 +311,10 @@ nodes.append(d => createElement(icons[d.type]))
     .on("mouseout", hideTooltip)
     .on('dblclick', (e, d) => {
         e.stopPropagation();
-        buy(e, d);
+        buy(e, d); // Double-click remains for buying nodes
     });
+
+
 
 // Create legend with toggle functionality
 d3.select("#legends")
@@ -350,7 +378,7 @@ function showSidePanel(_, d) {
     let sidePanel = d3.select("#side-panel");
     sidePanel.classed("hidden", false);
 
-    // Display node details, including yield, luckYield, subnode status, and monopoly status
+    // Display node details
     d3.select("#side-panel-content").html(`
         <div><strong>Name:</strong> ${d.name}</div>
         <div><strong>Type:</strong> ${d.type}</div>
@@ -360,30 +388,42 @@ function showSidePanel(_, d) {
         <div><strong>Luck Yield:</strong> ${d.luckYield || 'N/A'}</div>
         <div><strong>Is Subnode:</strong> ${d.subNode ? 'Yes' : 'No'}</div>
         <div><strong>Is Monopoly Node:</strong> ${d.isMonopoly ? 'Yes' : 'No'}</div>
-        <button id="buy-button">Buy House</button>
+        <button id="buy-button" ${investedNodes.has(d.id) ? "disabled" : ""}>Buy House</button>
+        <button id="sell-button" ${!investedNodes.has(d.id) ? "disabled" : ""}>Sell House</button>
     `);
 
-    // Add functionality for buying a house from the side panel
+    // Add functionality for buying
     d3.select("#buy-button").on("click", function (e) {
-        e.stopPropagation(); // Prevent any unwanted propagation of the click event
-
+        e.stopPropagation(); // Prevent propagation
         if (d.neighbors.some(neighborId => investedNodes.has(neighborId))) {
-            buy(e, d); // Trigger the buy function to complete the purchase
+            buy(e, d);
             d3.select("#buy-button").property("disabled", true);
-            showSidePanel(d); // Refresh side panel to update details
+            d3.select("#sell-button").property("disabled", false);
+            showSidePanel(d); // Refresh side panel
         } else {
             alert("You cannot buy this house. Make sure a neighboring node is owned.");
         }
     });
+
+    // Add functionality for selling
+    d3.select("#sell-button").on("click", function (e) {
+        e.stopPropagation(); // Prevent propagation
+        sell(e, d);
+        d3.select("#sell-button").property("disabled", true);
+        d3.select("#buy-button").property("disabled", false);
+        showSidePanel(d); // Refresh side panel
+    });
 }
+
+
 
 function hideSidePanel() {
     d3.select("#side-panel").classed("hidden", true);
 }
 
-// Optional: Hide panel when clicking outside of nodes
+// Hide panel when clicking outside nodes
 d3.select("body").on("click", function (e) {
-    if (!e.target.closest(".node")) {
+    if (!e.target.closest(".node") && !e.target.closest("#side-panel")) {
         hideSidePanel();
     }
 });
