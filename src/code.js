@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import { Axe, Castle, createElement, createIcons, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
 import { shortestPath } from './graph/graph.ts';
 
-function buy(e, d) {
+function invest(e, d) {
 
     if (!d.neighbors.some(id => investedNodes.has(id))) {
         alert('You can only invest in a node adjacent to a node that has allrady been invested in.');
@@ -25,7 +25,7 @@ function buy(e, d) {
     // Update the total CP display
     document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
 
-    alert(`House bought at ${d.name}!`);
+    alert(`node invested at ${d.name}!`);
 }
 
 function calculateTotalCP() {
@@ -140,11 +140,11 @@ function updateTooltip(e, d) {
         nameAttr: 'data-lucide',
     })
 
-    //tooltip.select("#icon").html(createElement(icons[d.type]));
-    tooltip.select("#name").text(d.name);
-    tooltip.select("#territory").text(d.territory);
-    tooltip.select("#cp").text(d.cp);
-    tooltip.select("#buy-sell").text(investedNodes.has(d.id) ? "sell" : "buy");
+ //tooltip.select("#icon").html(createElement(icons[d.type]));
+ tooltip.select("#name").text(d.name);
+ tooltip.select("#territory").text(d.territory);
+ tooltip.select("#cp").text(d.cp);
+ tooltip.select("#invest-sell").text("Use the side panel to invest or sell.");
 }
 
 function hideTooltip() {
@@ -171,7 +171,7 @@ function sell(e, d) {
     // Update the total CP display
     document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
 
-    alert(`House sold at ${d.name}!`);
+    alert(`node sold at ${d.name}!`);
 }
 
 // Create edges
@@ -276,7 +276,7 @@ nodes.append(d => createElement(icons[d.type]))
     .on("mouseout.path", () => nodes.attr("highlight", undefined))
     .on('dblclick', (e, d) => {
         e.stopPropagation();
-        buy(e, d); // Double-click remains for buying nodes
+        showSidePanel(e, d); // Open side panel on double-click
     });
 
 
@@ -353,32 +353,41 @@ function showSidePanel(_, d) {
         <div><strong>Luck Yield:</strong> ${d.luckYield || 'N/A'}</div>
         <div><strong>Is Subnode:</strong> ${d.subNode ? 'Yes' : 'No'}</div>
         <div><strong>Is Monopoly Node:</strong> ${d.isMonopoly ? 'Yes' : 'No'}</div>
-        <button id="buy-button" ${investedNodes.has(d.id) ? "disabled" : ""}>Buy House</button>
-        <button id="sell-button" ${!investedNodes.has(d.id) ? "disabled" : ""}>Sell House</button>
     `);
 
-    // Add functionality for buying
-    d3.select("#buy-button").on("click", function (e) {
-        e.stopPropagation(); // Prevent propagation
-        if (d.neighbors.some(neighborId => investedNodes.has(neighborId))) {
-            buy(e, d);
-            d3.select("#buy-button").property("disabled", true);
-            d3.select("#sell-button").property("disabled", false);
-            showSidePanel(d); // Refresh side panel
-        } else {
-            alert("You cannot buy this house. Make sure a neighboring node is owned.");
-        }
-    });
+    const sidePanelContent = d3.select("#side-panel-content");
 
-    // Add functionality for selling
-    d3.select("#sell-button").on("click", function (e) {
-        e.stopPropagation(); // Prevent propagation
-        sell(e, d);
-        d3.select("#sell-button").property("disabled", true);
-        d3.select("#buy-button").property("disabled", false);
-        showSidePanel(d); // Refresh side panel
-    });
+    // Check conditions and add appropriate button
+    if (!investedNodes.has(d.id) && d.neighbors.some(neighborId => investedNodes.has(neighborId))) {
+        // Add invest Button
+        sidePanelContent.append("button")
+            .attr("id", "invest-button")
+            .style("background-color", "green")
+            .style("color", "white")
+            .text("invest node")
+            .on("click", function (e) {
+                e.stopPropagation();
+                invest(e, d);
+                showSidePanel(_, d); // Refresh side panel
+            });
+    }
+
+    if (investedNodes.has(d.id)) {
+        // Add Sell Button
+        sidePanelContent.append("button")
+            .attr("id", "sell-button")
+            .style("background-color", "green")
+            .style("color", "white")
+            .text("Sell node")
+            .on("click", function (e) {
+                e.stopPropagation();
+                sell(e, d);
+                showSidePanel(_, d); // Refresh side panel
+            });
+    }
 }
+
+
 
 
 
