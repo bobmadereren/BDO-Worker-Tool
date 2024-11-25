@@ -180,7 +180,7 @@ function updateTooltip(e, d) {
  tooltip.select("#name").text(d.name);
  tooltip.select("#territory").text(d.territory);
  tooltip.select("#cp").text(d.cp);
- tooltip.select("#buy-sell").text(investedNodes.has(d.id) ? "sell" : "buy");
+ tooltip.select("#buy-sell").text("Use the side panel to buy or sell.");
 }
 
 function hideTooltip() {
@@ -311,7 +311,7 @@ nodes.append(d => createElement(icons[d.type]))
     .on("mouseout", hideTooltip)
     .on('dblclick', (e, d) => {
         e.stopPropagation();
-        buy(e, d); // Double-click remains for buying nodes
+        showSidePanel(e, d); // Open side panel on double-click
     });
 
 
