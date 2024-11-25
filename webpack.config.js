@@ -40,6 +40,11 @@ const module = {
         {
             test: /\.png$/i,
             type: 'asset/resource'
+        },
+        {
+            test: /\.ts$/,
+            use: 'ts-loader',
+            exclude: /node_modules/
         }
     ]
 }

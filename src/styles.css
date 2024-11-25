@@ -273,6 +273,10 @@ body {
 	font-style: italic; /* Italic style for placeholder */
 }
 
+.node[highlight] {
+	color: red;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
 	button {

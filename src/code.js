@@ -1,54 +1,8 @@
-import { MinPriorityQueue } from '@datastructures-js/priority-queue';
 import nodeData from './data/nodes.json' with {type: 'json'};
 import investedData from './config/investedNodes.json' with {type: 'json'};
 import * as d3 from 'd3';
 import { Axe, Castle, createElement, createIcons, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
-
-/**
- * Shortest path from a node to any invested node.
- * @param {Number} id Id of the source node.
- * @return {Array} an array containing the ids for nodes in the path starting from the source node, ending in an invested node.
- */
-function shortestPath(id) {
-    let graph = new Map(nodeData.map(({ id, cp, neighbors }) => [id, { id, cp, neighbors }]));
-
-    let path = function (v) {
-        if (v.prev == undefined) return [v.id];
-        let result = path(v.prev);
-        result.push(v.id);
-        return result;
-    };
-
-    let q = new MinPriorityQueue(v => v.d);
-
-    let s = graph.get(id);
-    s.d = s.cp;
-    q.enqueue(s);
-
-    while (!q.isEmpty()) {
-        let v = q.dequeue();
-        if (investedNodes.has(v.id)) return path(v);
-        for (let u of v.neighbors.map(id => graph.get(id)).filter(({ d }) => d == undefined)) {
-            u.d = v.d + u.cp;
-            u.prev = v;
-            q.enqueue(u);
-        }
-    }
-
-    return [];
-}
-
-/**
- * Highlights the shortest path in terms of CP from a node to any node that has been invested in.
- */
-function highlightShortestPath(_, d) {
-    let path = shortestPath(d.id);
-    for (let id of path) {
-        d3.select("#i" + id)
-            .select('image')
-            .style("opacity", 0.5);
-    }
-}
+import { shortestPath } from './graph/graph.ts';
 
 function buy(e, d) {
 
@@ -150,6 +104,16 @@ let customColors = [
 let types = [...new Set(nodeData.map(({ type }) => type))]; // Unique types
 let color = d3.scaleOrdinal(types, customColors); // Ensure the scale matches the dataset
 
+/**
+ * Highlights the shortest path in terms of CP from a node to any node that has been invested in.
+ */
+function highlightShortestPath(_, node) {
+    let { path, cost } = shortestPath(node, ({ id }) => investedNodes.has(id), ({ neighbors }) => neighbors.map(id => nodeMap.get(id)), ({ cp }) => cp);
+    let pathSet = new Set(path);
+    nodes.filter(d => pathSet.has(d))
+        .attr("highlight", '');
+}
+
 // Create SVG
 let svg = d3.select("body")
     .append("svg")
@@ -172,15 +136,15 @@ function updateTooltip(e, d) {
         .classed("visible", true);
 
     createIcons({
-        icons: {Axe},
+        icons: { Axe },
         nameAttr: 'data-lucide',
     })
 
- //tooltip.select("#icon").html(createElement(icons[d.type]));
- tooltip.select("#name").text(d.name);
- tooltip.select("#territory").text(d.territory);
- tooltip.select("#cp").text(d.cp);
- tooltip.select("#buy-sell").text(investedNodes.has(d.id) ? "sell" : "buy");
+    //tooltip.select("#icon").html(createElement(icons[d.type]));
+    tooltip.select("#name").text(d.name);
+    tooltip.select("#territory").text(d.territory);
+    tooltip.select("#cp").text(d.cp);
+    tooltip.select("#buy-sell").text(investedNodes.has(d.id) ? "sell" : "buy");
 }
 
 function hideTooltip() {
@@ -281,7 +245,7 @@ function updateEdgeStyles() {
             }
         });
 }
-    
+
 // Create nodes
 let nodes = svg.append("g")
     .attr("class", "nodes")
@@ -308,7 +272,8 @@ nodes.append(d => createElement(icons[d.type]))
     .on("mouseover.tooltip", updateTooltip)
     .on("mouseover.path", highlightShortestPath)
     .on("mousemove", updateTooltip)
-    .on("mouseout", hideTooltip)
+    .on("mouseout.tooltip", hideTooltip)
+    .on("mouseout.path", () => nodes.attr("highlight", undefined))
     .on('dblclick', (e, d) => {
         e.stopPropagation();
         buy(e, d); // Double-click remains for buying nodes
@@ -436,7 +401,7 @@ document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTo
 
 // Search and Filter Functionality
 let searchInput = document.getElementById('node-search');
-searchInput.addEventListener('input', function() {
+searchInput.addEventListener('input', function () {
     let query = searchInput.value.toLowerCase();
     nodes.style('opacity', d => (d.name.toLowerCase().includes(query) ? 1 : 0.1));
     edges.style('opacity', d => {
