@@ -76,10 +76,20 @@ body {
 }
 
 #side-panel-content button {
-	margin-top: 10px; /* Add spacing above each button */
-	margin-right: 0; /* Optional: Ensure no horizontal spacing */
-	margin-left: 0; /* Optional: Ensure no horizontal spacing */
-	width: 100%; /* Make the buttons span the width of the panel */
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#side-panel-content button:hover {
+    background-color: darkgreen;
 }
 
 /* Button Styling */
