@@ -50,7 +50,7 @@ function highlightShortestPath(_, d) {
     }
 }
 
-function buy(e, d) {
+function invest(e, d) {
 
     if (!d.neighbors.some(id => investedNodes.has(id))) {
         alert('You can only invest in a node adjacent to a node that has allrady been invested in.');
@@ -71,7 +71,7 @@ function buy(e, d) {
     // Update the total CP display
     document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
 
-    alert(`House bought at ${d.name}!`);
+    alert(`node invested at ${d.name}!`);
 }
 
 function calculateTotalCP() {
@@ -180,7 +180,7 @@ function updateTooltip(e, d) {
  tooltip.select("#name").text(d.name);
  tooltip.select("#territory").text(d.territory);
  tooltip.select("#cp").text(d.cp);
- tooltip.select("#buy-sell").text("Use the side panel to buy or sell.");
+ tooltip.select("#invest-sell").text("Use the side panel to invest or sell.");
 }
 
 function hideTooltip() {
@@ -207,7 +207,7 @@ function sell(e, d) {
     // Update the total CP display
     document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
 
-    alert(`House sold at ${d.name}!`);
+    alert(`node sold at ${d.name}!`);
 }
 
 // Create edges
@@ -394,15 +394,15 @@ function showSidePanel(_, d) {
 
     // Check conditions and add appropriate button
     if (!investedNodes.has(d.id) && d.neighbors.some(neighborId => investedNodes.has(neighborId))) {
-        // Add Buy Button
+        // Add invest Button
         sidePanelContent.append("button")
-            .attr("id", "buy-button")
+            .attr("id", "invest-button")
             .style("background-color", "green")
             .style("color", "white")
-            .text("Buy House")
+            .text("invest node")
             .on("click", function (e) {
                 e.stopPropagation();
-                buy(e, d);
+                invest(e, d);
                 showSidePanel(_, d); // Refresh side panel
             });
     }
@@ -413,7 +413,7 @@ function showSidePanel(_, d) {
             .attr("id", "sell-button")
             .style("background-color", "green")
             .style("color", "white")
-            .text("Sell House")
+            .text("Sell node")
             .on("click", function (e) {
                 e.stopPropagation();
                 sell(e, d);
