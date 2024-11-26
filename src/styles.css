@@ -301,6 +301,11 @@ body {
 	color: red;
 }
 
+.edge{
+	stroke: currentColor;
+	stroke-width: 1.5;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
 	button {

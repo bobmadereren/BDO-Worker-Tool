@@ -4,42 +4,6 @@ import * as d3 from 'd3';
 import { Axe, Castle, createElement, createIcons, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
 import { shortestPath } from './graph/graph.ts';
 
-function invest(e, d) {
-
-    if (!d.neighbors.some(id => investedNodes.has(id))) {
-        alert('You can only invest in a node adjacent to a node that has allrady been invested in.');
-        return;
-    }
-
-    // Add the current node to the owned set
-    investedNodes.add(d.id);
-
-    // Update the visualization
-    d3.select(e.target) // Assuming the target is the node element
-        .select('image') // Update the node's image
-        .style('opacity', 1); // Example: Change opacity to indicate ownership
-
-    // Optional: Update the tooltip
-    updateTooltip(e, d);
-
-    // Update the total CP display
-    document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
-
-    alert(`node invested at ${d.name}!`);
-}
-
-function calculateTotalCP() {
-    let totalCP = 0;
-    investedNodes.forEach(nodeId => {
-        const node = nodeMap.get(nodeId);
-        if (node && node.cp) {
-            totalCP += node.cp;
-        }
-    });
-    return totalCP;
-}
-
-
 /**
  * Icons to use for different node types
  */
@@ -61,14 +25,11 @@ let icons = {
     'Excavation': Shovel,
 }
 
-/**
- * Set of ids for all nodes that has been invested in
- */
-let investedNodes = new Set(investedData);
-
-// Generate edge data
+// Replace implicit referance to a node through its ids with a pointer to the node
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
-let edgeData = nodeData.flatMap(d => d.neighbors.filter(id => id > d.id).map(id => ({ source: d, target: nodeMap.get(id) })));
+nodeData.forEach(node => node.neighbors = node.neighbors.map(id => nodeMap.get(id)));
+let investedNodes = new Set(investedData.map(id => nodeMap.get(id)));
+let edgeData = nodeData.flatMap(node => node.neighbors.filter(neighbor => node.id < neighbor.id).map(neighbor => ({ source: node, target: neighbor })));
 
 // Adjust dimensions and margins
 let margin = { top: 20, right: 20, bottom: 20, left: 20 };
@@ -108,7 +69,7 @@ let color = d3.scaleOrdinal(types, customColors); // Ensure the scale matches th
  * Highlights the shortest path in terms of CP from a node to any node that has been invested in.
  */
 function highlightShortestPath(_, node) {
-    let { path, cost } = shortestPath(node, ({ id }) => investedNodes.has(id), ({ neighbors }) => neighbors.map(id => nodeMap.get(id)), ({ cp }) => cp);
+    let { path, cost } = shortestPath(node, node => investedNodes.has(node), ({ neighbors }) => neighbors, ({ cp }) => cp);
     let pathSet = new Set(path);
     nodes.filter(d => pathSet.has(d))
         .attr("highlight", '');
@@ -140,147 +101,77 @@ function updateTooltip(e, d) {
         nameAttr: 'data-lucide',
     })
 
- //tooltip.select("#icon").html(createElement(icons[d.type]));
- tooltip.select("#name").text(d.name);
- tooltip.select("#territory").text(d.territory);
- tooltip.select("#cp").text(d.cp);
- tooltip.select("#invest-sell").text("Use the side panel to invest or sell.");
+    //tooltip.select("#icon").html(createElement(icons[d.type]));
+    tooltip.select("#name").text(d.name);
+    tooltip.select("#territory").text(d.territory);
+    tooltip.select("#cp").text(d.cp);
+    tooltip.select("#invest-sell").text("Use the side panel to invest or sell.");
 }
 
 function hideTooltip() {
     d3.select("#node-tooltip").classed("visible", false);
 }
 
-function sell(e, d) {
-    if (!investedNodes.has(d.id)) {
-        alert('This node is not owned. You cannot sell it.');
-        return;
-    }
+function updateTotalCP() {
+    let cp = [...investedNodes].reduce((sum, { cp }) => sum + cp, 0);
+    d3.select('#total-cp').text("Total CP Spent: " + cp);
+}
 
-    // Remove the current node from the owned set
-    investedNodes.delete(d.id);
+function invest({ target }, node) {
+    investedNodes.add(node);
 
-    // Update the visualization
-    d3.select(`#i${d.id}`) // Target the node element
-        .select('image') // Update the node's image
-        .style('opacity', 0.5); // Example: Change opacity to indicate it’s unowned
+    d3.select(target)
+        .classed('invested', true);
 
-    // Optional: Update the tooltip
     updateTooltip(e, d);
+    updateTotalCP();
+}
 
-    // Update the total CP display
-    document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
+function sell({ target }, node) {
+    investedNodes.delete(d);
 
-    alert(`node sold at ${d.name}!`);
+    d3.select(target)
+        .classed('invested', false);
+
+    updateTooltip(e, d);
+    updateTotalCP();
 }
 
 // Create edges
 let edges = svg.append("g")
-    .attr("class", "edges")
+    .attr("id", "edges")
     .selectAll(".edge")
-    .data(edgeData, d => d.source.id + '-' + d.target.id)
+    .data(edgeData)
     .enter()
     .append("path")
     .attr("class", "edge")
-    .attr("stroke", d => {
-        if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
-            return "green"; // Both nodes owned
-        } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
-            return "yellow"; // One node owned
-        } else {
-            return "white"; // No nodes owned
-        }
-    })
-    .attr("stroke-width", d => {
-        if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
-            return 3; // Thicker line for both owned
-        } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
-            return 2; // Medium line for one owned
-        } else {
-            return 1; // Thin line for none owned
-        }
-    })
-    .attr("fill", "none")
-    .on("mouseover", e => d3.select(e.target).attr("stroke", "#ffaa00").attr("stroke-width", 4))
-    .on("mouseout", (e, d) => d3.select(e.target)
-        .attr("stroke", d => {
-            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
-                return "green";
-            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
-                return "yellow";
-            } else {
-                return "white";
-            }
-        })
-        .attr("stroke-width", d => {
-            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
-                return 3;
-            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
-                return 2;
-            } else {
-                return 1;
-            }
-        })
-    );
-
-
-function updateEdgeStyles() {
-    edges
-        .attr("stroke", d => {
-            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
-                return "green";
-            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
-                return "yellow";
-            } else {
-                return "white";
-            }
-        })
-        .attr("stroke-width", d => {
-            if (investedNodes.has(d.source.id) && investedNodes.has(d.target.id)) {
-                return 3;
-            } else if (investedNodes.has(d.source.id) || investedNodes.has(d.target.id)) {
-                return 2;
-            } else {
-                return 1;
-            }
-        });
-}
+    .attr("invested", edge => investedNodes.has(edge.source) + investedNodes.has(edge.target));
 
 // Create nodes
 let nodes = svg.append("g")
-    .attr("class", "nodes")
+    .attr("id", "nodes")
     .selectAll(".node")
-    .data(nodeData, ({ id }) => id)
+    .data(nodeData)
     .enter()
     .append("g")
-    .attr("id", ({ id }) => "i" + id)
     .attr("class", "node")
-    .on("click", (e, d) => {
-        e.stopPropagation(); // Prevent propagation to avoid unwanted behaviors
-        showSidePanel(e, d); // Open the side panel with node details
-    });
-
-nodes.append("text")
-    .style("fill", d => color(d.type))
-    .attr("text-anchor", "middle")
-    .attr("dy", "-0.7em")
-    .style("user-select", "none")
-    .text(({ name }) => name);
-
-nodes.append(d => createElement(icons[d.type]))
-    .attr("class", "icon")
+    .on("click", showSidePanel)
     .on("mouseover.tooltip", updateTooltip)
-    .on("mouseover.path", highlightShortestPath)
     .on("mousemove", updateTooltip)
     .on("mouseout.tooltip", hideTooltip)
+    .on("mouseover.path", highlightShortestPath)
     .on("mouseout.path", () => nodes.attr("highlight", undefined))
     .on('dblclick', (e, d) => {
         e.stopPropagation();
-        showSidePanel(e, d); // Open side panel on double-click
+        showSidePanel(e, d);
     });
 
+nodes.append("text")
+    .text(({ name }) => name);
 
-
+nodes.append(d => createElement(icons[d.type]))
+    .attr("class", "icon");
+    
 // Create legend with toggle functionality
 d3.select("#legends")
     .selectAll(".legend")
@@ -339,26 +230,26 @@ function draw({ transform }) {
     edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
 }
 
-function showSidePanel(_, d) {
+function showSidePanel(_, node) {
     let sidePanel = d3.select("#side-panel");
     sidePanel.classed("hidden", false);
 
     // Display node details
     d3.select("#side-panel-content").html(`
-        <div><strong>Name:</strong> ${d.name}</div>
-        <div><strong>Type:</strong> ${d.type}</div>
-        <div><strong>Territory:</strong> ${d.territory}</div>
-        <div><strong>Contribution Points:</strong> ${d.cp}</div>
-        <div><strong>Yield:</strong> ${d.yield || 'N/A'}</div>
-        <div><strong>Luck Yield:</strong> ${d.luckYield || 'N/A'}</div>
-        <div><strong>Is Subnode:</strong> ${d.subNode ? 'Yes' : 'No'}</div>
-        <div><strong>Is Monopoly Node:</strong> ${d.isMonopoly ? 'Yes' : 'No'}</div>
+        <div><strong>Name:</strong> ${node.name}</div>
+        <div><strong>Type:</strong> ${node.type}</div>
+        <div><strong>Territory:</strong> ${node.territory}</div>
+        <div><strong>Contribution Points:</strong> ${node.cp}</div>
+        <div><strong>Yield:</strong> ${node.yield || 'N/A'}</div>
+        <div><strong>Luck Yield:</strong> ${node.luckYield || 'N/A'}</div>
+        <div><strong>Is Subnode:</strong> ${node.subNode ? 'Yes' : 'No'}</div>
+        <div><strong>Is Monopoly Node:</strong> ${node.isMonopoly ? 'Yes' : 'No'}</div>
     `);
 
     const sidePanelContent = d3.select("#side-panel-content");
 
     // Check conditions and add appropriate button
-    if (!investedNodes.has(d.id) && d.neighbors.some(neighborId => investedNodes.has(neighborId))) {
+    if (!investedNodes.has(node) && node.neighbors.some(neighbor => investedNodes.has(neighbor))) {
         // Add invest Button
         sidePanelContent.append("button")
             .attr("id", "invest-button")
@@ -367,12 +258,12 @@ function showSidePanel(_, d) {
             .text("invest node")
             .on("click", function (e) {
                 e.stopPropagation();
-                invest(e, d);
-                showSidePanel(_, d); // Refresh side panel
+                invest(e, node);
+                showSidePanel(_, node); // Refresh side panel
             });
     }
 
-    if (investedNodes.has(d.id)) {
+    if (investedNodes.has(node)) {
         // Add Sell Button
         sidePanelContent.append("button")
             .attr("id", "sell-button")
@@ -381,15 +272,11 @@ function showSidePanel(_, d) {
             .text("Sell node")
             .on("click", function (e) {
                 e.stopPropagation();
-                sell(e, d);
-                showSidePanel(_, d); // Refresh side panel
+                sell(e, node);
+                showSidePanel(_, node); // Refresh side panel
             });
     }
 }
-
-
-
-
 
 function hideSidePanel() {
     d3.select("#side-panel").classed("hidden", true);
@@ -406,7 +293,7 @@ d3.select("body").on("click", function (e) {
 svg.call(zoom.transform, d3.zoomIdentity);
 
 // Initial CP display
-document.getElementById('total-cp').textContent = `Total CP Spent: ${calculateTotalCP()}`;
+updateTotalCP();
 
 // Search and Filter Functionality
 let searchInput = document.getElementById('node-search');
