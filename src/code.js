@@ -4,6 +4,12 @@ import * as d3 from 'd3';
 import { Axe, Castle, createElement, createIcons, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
 import { shortestPath } from './graph/graph.ts';
 
+// Replace implicit referance to a node through its ids with a pointer to the node
+let nodeMap = new Map(nodeData.map(d => [d.id, d]));
+nodeData.forEach(node => node.neighbors = node.neighbors.map(id => nodeMap.get(id)));
+let investedNodes = new Set(investedData.map(id => nodeMap.get(id)));
+let edgeData = nodeData.flatMap(node => node.neighbors.filter(neighbor => node.id < neighbor.id).map(neighbor => ({ source: node, target: neighbor })));
+
 /**
  * Icons to use for different node types
  */
@@ -25,13 +31,7 @@ let icons = {
     'Excavation': Shovel,
 }
 
-// Replace implicit referance to a node through its ids with a pointer to the node
-let nodeMap = new Map(nodeData.map(d => [d.id, d]));
-nodeData.forEach(node => node.neighbors = node.neighbors.map(id => nodeMap.get(id)));
-let investedNodes = new Set(investedData.map(id => nodeMap.get(id)));
-let edgeData = nodeData.flatMap(node => node.neighbors.filter(neighbor => node.id < neighbor.id).map(neighbor => ({ source: node, target: neighbor })));
-
-// Adjust dimensions and margins
+// d3 margin convention
 let margin = { top: 20, right: 20, bottom: 20, left: 20 };
 let width = window.innerWidth - margin.left - margin.right;
 let height = window.innerHeight - margin.top - margin.bottom;
@@ -52,18 +52,9 @@ let zoom = d3.zoom()
     .scaleExtent([1, 500])
     .on("zoom", draw);
 
+// Node size scaling with zoom
 let textSize = d3.scaleLog(zoom.scaleExtent(), [0, 20]);
 let iconSize = d3.scaleLog(zoom.scaleExtent(), [10, 75]);
-
-// Define a custom color palette
-let customColors = [
-    "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728",
-    "#9467bd", "#8c564b", "#e377c2", "#7f7f7f",
-    "#bcbd22", "#17becf"
-];
-
-let types = [...new Set(nodeData.map(({ type }) => type))]; // Unique types
-let color = d3.scaleOrdinal(types, customColors); // Ensure the scale matches the dataset
 
 /**
  * Highlights the shortest path in terms of CP from a node to any node that has been invested in.
@@ -90,22 +81,20 @@ let svg = d3.select("body")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Tootlip
-function updateTooltip(e, d) {
-    let tooltip = d3.select("#node-tooltip")
+function updateTooltip(e, node) {
+    d3.select(".body")
+        .append(document.createElement("node-tooltip"))
         .style("left", e.pageX + "px")
         .style("top", e.pageY + "px")
-        .classed("visible", true);
+    //.classed("visible", true);
 
-    createIcons({
-        icons: { Axe },
-        nameAttr: 'data-lucide',
-    })
-
-    //tooltip.select("#icon").html(createElement(icons[d.type]));
+    /*
+    tooltip.select("#icon").html(createElement(icons[d.type]));
     tooltip.select("#name").text(d.name);
     tooltip.select("#territory").text(d.territory);
     tooltip.select("#cp").text(d.cp);
     tooltip.select("#invest-sell").text("Use the side panel to invest or sell.");
+    */
 }
 
 function hideTooltip() {
@@ -171,11 +160,11 @@ nodes.append("text")
 
 nodes.append(d => createElement(icons[d.type]))
     .attr("class", "icon");
-    
+
 // Create legend with toggle functionality
 d3.select("#legends")
     .selectAll(".legend")
-    .data(types)
+    .data(Object.keys(icons))
     .join(enter => {
         let div = enter.append("div")
             .attr("class", "legend active") // Start with all legends active
