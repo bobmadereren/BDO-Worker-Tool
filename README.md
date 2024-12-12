@@ -36,3 +36,8 @@ Build default user configuration. Any existing config will be overridden.
 ```
   npm run reset-config
 ```
+
+## TO DO
+- [x] Task 1
+- [ ] Task 2
+- [ ] Task 3
