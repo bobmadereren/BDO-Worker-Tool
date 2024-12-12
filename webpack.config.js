@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 export default {
     entry: './src/index.js',
-    
+
     output: {
         filename: 'bundle[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
@@ -32,9 +32,17 @@ export default {
             },
             {
                 test: /\.ts$/,
-                use: 'ts-loader',
-                exclude: /node_modules/
-            }
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-typescript']
+                    },
+                },
+                resolve: {
+                    fullySpecified: true,
+                }
+            },
         ]
     },
 
