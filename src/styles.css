@@ -21,6 +21,10 @@ body {
 	transition: background 0.5s ease, color 0.5s ease; /* Smooth transition for theme changes */
 }
 
+svg text{
+	fill: currentColor;
+}
+
 /* Keyframes define the gradient animation steps */
 @keyframes gradientAnimation {
 	0% {
