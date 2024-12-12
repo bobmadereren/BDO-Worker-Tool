@@ -81,24 +81,38 @@ let svg = d3.select("body")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Tootlip
-function updateTooltip(e, node) {
-    d3.select(".body")
-        .append(document.createElement("node-tooltip"))
-        .style("left", e.pageX + "px")
-        .style("top", e.pageY + "px")
-    //.classed("visible", true);
+let tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "node-tooltip");
 
-    /*
-    tooltip.select("#icon").html(createElement(icons[d.type]));
-    tooltip.select("#name").text(d.name);
-    tooltip.select("#territory").text(d.territory);
-    tooltip.select("#cp").text(d.cp);
-    tooltip.select("#invest-sell").text("Use the side panel to invest or sell.");
-    */
+
+function updateTooltip(node) {
+    tooltip.selectAll("div").remove();
+
+    // TODO move style to css
+    tooltip.append("div")
+        .append("strong")
+        .style("display", "flex")
+        .style("align-items", "center")
+        .style("gap", "5px")
+        .node().append(node.name, createElement(icons[node.type]));
+
+    tooltip.append("div").text(node.territory);
+    tooltip.append("div").text("CP: " + node.cp);
+}
+
+function positionTooltip(e) {
+    tooltip
+        .style("left", e.pageX + "px")
+        .style("top", e.pageY + "px");
+}
+
+function showTooltip() {
+    tooltip.classed("visible", true);
 }
 
 function hideTooltip() {
-    d3.select("#node-tooltip").classed("visible", false);
+    tooltip.classed("visible", false);
 }
 
 function updateTotalCP() {
@@ -144,10 +158,15 @@ let nodes = svg.append("g")
     .enter()
     .append("g")
     .attr("class", "node")
+    .style("pointer-events", "bounding-box")
     .on("click", showSidePanel)
-    .on("mouseover.tooltip", updateTooltip)
-    .on("mousemove", updateTooltip)
-    .on("mouseout.tooltip", hideTooltip)
+    .on("mouseenter.tooltip", (e, node) => {
+        updateTooltip(node);
+        positionTooltip(e);
+        showTooltip();
+    })
+    .on("mousemove.tooltip", positionTooltip)
+    .on("mouseleave.tooltip", hideTooltip)
     .on("mouseover.path", highlightShortestPath)
     .on("mouseout.path", () => nodes.attr("highlight", undefined))
     .on('dblclick', (e, d) => {
