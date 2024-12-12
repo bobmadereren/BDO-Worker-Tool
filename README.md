@@ -37,7 +37,8 @@ Build default user configuration. Any existing config will be overridden.
   npm run reset-config
 ```
 
-## TO DO
-- [x] Task 1
-- [ ] Task 2
-- [ ] Task 3
+## TODO
+- [ ] Highligh owned nodes
+- [ ] Ability to purchase node (including required nodes)
+- [ ] Ability to sell node (including dependent nodes)
+- [ ] Side panel should take up the whole vertical space and be animated in and out
