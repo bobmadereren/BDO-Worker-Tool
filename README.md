@@ -42,3 +42,4 @@ Build default user configuration. Any existing config will be overridden.
 - [ ] Ability to purchase node (including required nodes and edges which should be highlighted on hovering node or buy button)
 - [ ] Ability to sell node (including dependent nodes and edges which should be highlighted when hovering node or sell button)
 - [ ] Animate side panel in and out
+- [ ] Update dimensions on window size change
