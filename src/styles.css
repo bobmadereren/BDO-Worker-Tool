@@ -51,21 +51,16 @@ body {
 }
 
 /* Filtered out state (inactive) */
-.legend.active {
-	border: 2px solid #00bcd4; /* Highlight active legends with a border */
+.legend:has(input:checked) {
+	border: 1px solid #00bcd4; /* Highlight active legends with a border */
 	background-color: rgba(0, 188, 212, 0.2); /* Highlighted background */
 	color: #00bcd4; /* Text color for active legends */
 }
 
-.legend.inactive {
+.legend:has(input:not(:checked)) {
 	opacity: 0.5; /* Dim inactive legends */
 	border: 1px dashed #ff5722; /* Dashed border for filtered state */
-	background-color: rgba(
-		255,
-		87,
-		34,
-		0.1
-	); /* Subtle red background for inactive */
+	background-color: rgba(255,87,34,0.1); /* Subtle red background for inactive */
 	color: #ff5722; /* Red text for filtered legends */
 }
 
@@ -122,7 +117,7 @@ button {
 	font-size: 13px; /* Smaller font size */
 	line-height: 1.6; /* Line height for readability */
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Shadow for depth */
-	pointer-events: auto; /* Allow pointer events */
+	pointer-events: none; /* NO Allow pointer events */
 	opacity: 0; /* Hidden by default */
 	visibility: hidden; /* Hidden by default */
 	transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade-in/out */
@@ -297,8 +292,28 @@ body {
 	cursor: not-allowed;
 }
 
-.node[highlight] {
+.node {
+	cursor: pointer;
+}
+
+.node.highlight {
 	color: red;
+}
+
+.node.filtered {
+	visibility: hidden;
+}
+
+.edge.highlight {
+	color: red;
+}
+
+.edge.source-filtered {
+	visibility: hidden;
+}
+
+.edge.target-filtered {
+	visibility: hidden;
 }
 
 .edge{

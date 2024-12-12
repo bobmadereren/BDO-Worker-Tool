@@ -9,6 +9,7 @@ let nodeMap = new Map(nodeData.map(d => [d.id, d]));
 nodeData.forEach(node => node.neighbors = node.neighbors.map(id => nodeMap.get(id)));
 let investedNodes = new Set(investedData.map(id => nodeMap.get(id)));
 let edgeData = nodeData.flatMap(node => node.neighbors.filter(neighbor => node.id < neighbor.id).map(neighbor => ({ source: node, target: neighbor })));
+nodeMap = null;
 
 /**
  * Icons to use for different node types
@@ -36,7 +37,7 @@ let margin = { top: 20, right: 20, bottom: 20, left: 20 };
 let width = window.innerWidth - margin.left - margin.right;
 let height = window.innerHeight - margin.top - margin.bottom;
 
-// Define the affine transformation sending the world to the svg
+// Define the transformation sending the world to the svg
 let [x0, x1] = d3.extent(nodeData, d => d.pos.x);
 let [y0, y1] = d3.extent(nodeData, d => d.pos.y);
 let k = Math.min(width / (x1 - x0), height / (y1 - y0));
@@ -56,16 +57,6 @@ let zoom = d3.zoom()
 let textSize = d3.scaleLog(zoom.scaleExtent(), [0, 20]);
 let iconSize = d3.scaleLog(zoom.scaleExtent(), [10, 75]);
 
-/**
- * Highlights the shortest path in terms of CP from a node to any node that has been invested in.
- */
-function highlightShortestPath(_, node) {
-    let { path, cost } = shortestPath(node, node => investedNodes.has(node), ({ neighbors }) => neighbors, ({ cp }) => cp);
-    let pathSet = new Set(path);
-    nodes.filter(d => pathSet.has(d))
-        .attr("highlight", '');
-}
-
 // Create SVG
 let svg = d3.select("body")
     .append("svg")
@@ -84,7 +75,6 @@ let svg = d3.select("body")
 let tooltip = d3.select("body")
     .append("div")
     .attr("class", "node-tooltip");
-
 
 function updateTooltip(node) {
     tooltip.selectAll("div").remove();
@@ -115,29 +105,49 @@ function hideTooltip() {
     tooltip.classed("visible", false);
 }
 
+// Shortest path
+function highlightShortestPath(_, node) {
+    let { path, cost } = shortestPath(node, node => investedNodes.has(node), ({ neighbors }) => neighbors, ({ cp }) => cp);
+    let pathSet = new Set(path);
+    nodes.filter(node => pathSet.has(node))
+        .classed("highlight", true);
+    edges.filter(({ source, target }) => pathSet.has(source) && pathSet.has(target))
+        .classed("highlight", true);
+}
+
+function lowlight() {
+    nodes.classed("highlight", false);
+    edges.classed("highlight", false);
+}
+
+// Total CP
+let totalCP = d3.select("body")
+    .append("div")
+    .attr("id", "total-cp");
+
 function updateTotalCP() {
     let cp = [...investedNodes].reduce((sum, { cp }) => sum + cp, 0);
-    d3.select('#total-cp').text("Total CP Spent: " + cp);
+    totalCP.text("Total CP Spent: " + cp);
 }
 
-function invest({ target }, node) {
-    investedNodes.add(node);
+// Buy / Sell
+function invest(e, node) {
+    if (!(e.ctrlKey || e.metaKey)) return;
 
-    d3.select(target)
-        .classed('invested', true);
+    let { path, cost } = shortestPath(node, node => investedNodes.has(node), ({ neighbors }) => neighbors, ({ cp }) => cp);
 
-    updateTooltip(e, d);
+    for (let node of path)
+        investedNodes.add(node);
+
+    let pathSet = new Set(path);
+    nodes.filter(node => pathSet.has(node))
+        .classed("invested", true);
+
     updateTotalCP();
 }
 
-function sell({ target }, node) {
-    investedNodes.delete(d);
-
-    d3.select(target)
-        .classed('invested', false);
-
-    updateTooltip(e, d);
-    updateTotalCP();
+function sell(e, node) {
+    // TODO
 }
 
 // Create edges
@@ -147,8 +157,7 @@ let edges = svg.append("g")
     .data(edgeData)
     .enter()
     .append("path")
-    .attr("class", "edge")
-    .attr("invested", edge => investedNodes.has(edge.source) + investedNodes.has(edge.target));
+    .attr("class", "edge");
 
 // Create nodes
 let nodes = svg.append("g")
@@ -159,7 +168,7 @@ let nodes = svg.append("g")
     .append("g")
     .attr("class", "node")
     .style("pointer-events", "bounding-box")
-    .on("click", showSidePanel)
+    .on("click.sidepanel", showSidePanel)
     .on("mouseenter.tooltip", (e, node) => {
         updateTooltip(node);
         positionTooltip(e);
@@ -167,12 +176,9 @@ let nodes = svg.append("g")
     })
     .on("mousemove.tooltip", positionTooltip)
     .on("mouseleave.tooltip", hideTooltip)
-    .on("mouseover.path", highlightShortestPath)
-    .on("mouseout.path", () => nodes.attr("highlight", undefined))
-    .on('dblclick', (e, d) => {
-        e.stopPropagation();
-        showSidePanel(e, d);
-    });
+    .on("mouseenter.path", highlightShortestPath)
+    .on("mouseleave.path", lowlight)
+    .on('click.invest', invest);
 
 nodes.append("text")
     .text(({ name }) => name);
@@ -180,44 +186,38 @@ nodes.append("text")
 nodes.append(d => createElement(icons[d.type]))
     .attr("class", "icon");
 
-// Create legend with toggle functionality
-d3.select("#legends")
+// Create legend
+let legends = d3.select("body")
+    .append("div")
+    .attr("id", "legends")
     .selectAll(".legend")
     .data(Object.keys(icons))
-    .join(enter => {
-        let div = enter.append("div")
-            .attr("class", "legend active") // Start with all legends active
-            .on("click", function (event, type) {
-                const legendItem = d3.select(this);
-                const isActive = legendItem.classed("active");
+    .enter()
+    .append("label")
+    .attr("class", "legend");
 
-                // Toggle between active and inactive states
-                legendItem
-                    .classed("active", !isActive)
-                    .classed("inactive", isActive);
+legends.append("input")
+    .attr("type", "checkbox")
+    .property("hidden", true)
+    .on("click", legendFilter)
+    .property("checked", true);
 
-                // Collect all active types
-                const activeTypes = new Set(
-                    d3.selectAll(".legend.active")
-                        .data()
-                );
+legends.append(type => createElement(icons[type]));
+legends.append("text").text(type => type);
 
-                // Update nodes and edges visibility
-                nodes.style('opacity', d =>
-                    activeTypes.has(d.type) ? 1 : 0.1 // Show nodes of active types
-                );
+// Filter
+function legendFilter(e, type) {
 
-                edges.style('opacity', d =>
-                    activeTypes.has(d.source.type) || activeTypes.has(d.target.type) ? 1 : 0.1 // Show edges with active nodes
-                );
-            });
+    nodes.filter(node => node.type == type)
+        .classed("filtered", !e.target.checked);
 
-        // Append icon and name
-        div.append(d => createElement(icons[d]))
-            .attr("class", "legend-icon");
-        div.append("text").text(d => d);
-    });
+    edges.filter(edge => edge.source.type == type)
+        .classed("source-filtered", !e.target.checked);
 
+    edges.filter(edge => edge.target.type == type)
+        .classed("target-filtered", !e.target.checked);
+
+}
 
 function draw({ transform }) {
     let x = x => transform.applyX(X(x));
@@ -239,6 +239,7 @@ function draw({ transform }) {
 }
 
 function showSidePanel(_, node) {
+    // TODO clean
     let sidePanel = d3.select("#side-panel");
     sidePanel.classed("hidden", false);
 

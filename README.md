@@ -41,5 +41,7 @@ Build default user configuration. Any existing config will be overridden.
 - [ ] Highligh owned nodes
 - [ ] Ability to purchase node (including required nodes and edges which should be highlighted on hovering node or buy button)
 - [ ] Ability to sell node (including dependent nodes and edges which should be highlighted when hovering node or sell button)
+- [ ] Save owned nodes
 - [ ] Animate side panel in and out
 - [ ] Update dimensions on window size change
+- [ ] Refactor components: svg, tooltip, sidepanel, legend, totalcp into separate files
