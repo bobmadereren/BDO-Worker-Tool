@@ -39,6 +39,6 @@ Build default user configuration. Any existing config will be overridden.
 
 ## TODO
 - [ ] Highligh owned nodes
-- [ ] Ability to purchase node (including required nodes)
-- [ ] Ability to sell node (including dependent nodes)
-- [ ] Side panel should take up the whole vertical space and be animated in and out
+- [ ] Ability to purchase node (including required nodes and edges which should be highlighted on hovering node or buy button)
+- [ ] Ability to sell node (including dependent nodes and edges which should be highlighted when hovering node or sell button)
+- [ ] Animate side panel in and out
