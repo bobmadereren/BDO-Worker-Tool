@@ -3,6 +3,7 @@ import investedData from './config/investedNodes.json' with {type: 'json'};
 import * as d3 from 'd3';
 import { Axe, Castle, createElement, createIcons, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
 import { shortestPath } from './graph/graph.ts';
+import { dependants } from './graph/graph.js';
 
 // Replace implicit referance to a node through its ids with a pointer to the node
 let nodeMap = new Map(nodeData.map(d => [d.id, d]));
@@ -105,12 +106,21 @@ function hideTooltip() {
     tooltip.classed("visible", false);
 }
 
-// Shortest path
-function highlightShortestPath(_, node) {
-    let { path, cost } = shortestPath(node, node => investedNodes.has(node), ({ neighbors }) => neighbors, ({ cp }) => cp);
+// Highlight
+function highlightShortestPath(node) {
+    let { path, cost } = shortestPath(node, node => investedNodes.has(node), node => node.neighbors, node => node.cp);
     let pathSet = new Set(path);
+
     nodes.classed("highlight", node => pathSet.has(node));
     edges.classed("highlight", ({ source, target }) => pathSet.has(source) && pathSet.has(target));
+}
+
+function highlightDependants(node) {
+    let deps = dependants(node, node => node.neighbors.filter(node => investedNodes.has(node)), node => node.cp == 0);
+    let depsSet = new Set(deps);
+
+    nodes.classed("highlight", node => depsSet.has(node));
+    edges.classed("highlight", edge => depsSet.has(edge.source) && depsSet.has(edge.target));
 }
 
 function lowlight() {
@@ -129,30 +139,32 @@ function updateTotalCP() {
 }
 
 // Buy / Sell
-function invest(e, node) {
-    if (!(e.ctrlKey || e.metaKey)) return;
-
-    let { path, cost } = shortestPath(node, node => investedNodes.has(node), ({ neighbors }) => neighbors, ({ cp }) => cp);
+function invest(node) {
+    let { path, cost } = shortestPath(node, node => investedNodes.has(node), node => node.neighbors, node => node.cp);
 
     for (let node of path)
         investedNodes.add(node);
 
-    let pathSet = new Set(path);
-    nodes.filter(node => pathSet.has(node))
-        .classed("invested", true);
+    nodes.classed("invested", node => investedNodes.has(node));
+    edges.classed("source-invested", edge => investedNodes.has(edge.source));
+    edges.classed("target-invested", edge => investedNodes.has(edge.target));
 
-    edges.filter(edge => pathSet.has(edge.source))
-        .classed("source-invested", true);
-
-    edges.filter(edge => pathSet.has(edge.target))
-        .classed("target-invested", true);
-
-    lowlight();
+    highlightDependants(node);
     updateTotalCP();
 }
 
-function sell(e, node) {
-    // TODO
+function sell(node) {
+    let deps = dependants(node, node => node.neighbors.filter(node => investedNodes.has(node)), node => node.cp == 0);
+
+    for (let node of deps)
+        investedNodes.delete(node);
+
+    nodes.classed("invested", node => investedNodes.has(node));
+    edges.classed("source-invested", edge => investedNodes.has(edge.source));
+    edges.classed("target-invested", edge => investedNodes.has(edge.target));
+
+    highlightShortestPath(node);
+    updateTotalCP();
 }
 
 // Create edges
@@ -183,9 +195,9 @@ let nodes = svg.append("g")
     })
     .on("mousemove.tooltip", positionTooltip)
     .on("mouseleave.tooltip", hideTooltip)
-    .on("mouseenter.path", highlightShortestPath)
+    .on("mouseenter.path", (_, node) => investedNodes.has(node) ? highlightDependants(node) : highlightShortestPath(node))
     .on("mouseleave.path", lowlight)
-    .on('click.invest', invest);
+    .on('click.invest-sell', (e, node) => e.ctrlKey || e.metaKey ? investedNodes.has(node) ? sell(node) : invest(node) : null);
 
 nodes.append("text")
     .text(({ name }) => name);
