@@ -175,7 +175,6 @@ let nodes = svg.append("g")
     .append("g")
     .attr("class", "node")
     .classed("invested", node => investedNodes.has(node))
-    .style("pointer-events", "bounding-box")
     .on("click.sidepanel", showSidePanel)
     .on("mouseenter.tooltip", (e, node) => {
         updateTooltip(node);

@@ -300,8 +300,9 @@ body {
 	Style nodes, there are three cases to consider .node, .node.filtered and .node.highlight
 	For eksample, add barely noticable glow to nodes and and stronger glow to highlighted nodes and maybe color
 */
-.node {
+g .node {
 	cursor: pointer;
+	pointer-events: bounding-box;
 }
 
 .node:not(.invested){
@@ -310,11 +311,13 @@ body {
 
 .node.filtered {
 	visibility: hidden;
+	pointer-events: none;
 }
 
 .node.highlight {
 	color: red;
 	opacity: 1;
+	visibility: visible;
 }
 
 .edge {
