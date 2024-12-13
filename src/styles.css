@@ -296,6 +296,10 @@ body {
 	cursor: not-allowed;
 }
 
+/* TODO
+	Style nodes, there are three cases to consider .node, .node.filtered and .node.highlight
+	For eksample, add barely noticable glow to nodes and and stronger glow to highlighted nodes and maybe color
+*/
 .node {
 	cursor: pointer;
 }
