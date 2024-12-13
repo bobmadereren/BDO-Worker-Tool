@@ -109,10 +109,8 @@ function hideTooltip() {
 function highlightShortestPath(_, node) {
     let { path, cost } = shortestPath(node, node => investedNodes.has(node), ({ neighbors }) => neighbors, ({ cp }) => cp);
     let pathSet = new Set(path);
-    nodes.filter(node => pathSet.has(node))
-        .classed("highlight", true);
-    edges.filter(({ source, target }) => pathSet.has(source) && pathSet.has(target))
-        .classed("highlight", true);
+    nodes.classed("highlight", node => pathSet.has(node));
+    edges.classed("highlight", ({ source, target }) => pathSet.has(source) && pathSet.has(target));
 }
 
 function lowlight() {
@@ -143,6 +141,13 @@ function invest(e, node) {
     nodes.filter(node => pathSet.has(node))
         .classed("invested", true);
 
+    edges.filter(edge => pathSet.has(edge.source))
+        .classed("source-invested", true);
+
+    edges.filter(edge => pathSet.has(edge.target))
+        .classed("target-invested", true);
+
+    lowlight();
     updateTotalCP();
 }
 
@@ -157,7 +162,9 @@ let edges = svg.append("g")
     .data(edgeData)
     .enter()
     .append("path")
-    .attr("class", "edge");
+    .attr("class", "edge")
+    .classed("source-invested", edge => investedNodes.has(edge.source))
+    .classed("target-invested", edge => investedNodes.has(edge.target));
 
 // Create nodes
 let nodes = svg.append("g")
@@ -167,6 +174,7 @@ let nodes = svg.append("g")
     .enter()
     .append("g")
     .attr("class", "node")
+    .classed("invested", node => investedNodes.has(node))
     .style("pointer-events", "bounding-box")
     .on("click.sidepanel", showSidePanel)
     .on("mouseenter.tooltip", (e, node) => {
@@ -219,6 +227,7 @@ function legendFilter(e, type) {
 
 }
 
+// Draw
 function draw({ transform }) {
     let x = x => transform.applyX(X(x));
     let y = y => transform.applyY(Y(y));
@@ -238,6 +247,7 @@ function draw({ transform }) {
     edges.attr("d", d => line([[x(d.source.pos.x), y(d.source.pos.y)], [x(d.target.pos.x), y(d.target.pos.y)]]));
 }
 
+// Side Panel
 function showSidePanel(_, node) {
     // TODO clean
     let sidePanel = d3.select("#side-panel");

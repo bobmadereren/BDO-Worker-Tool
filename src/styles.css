@@ -300,29 +300,37 @@ body {
 	cursor: pointer;
 }
 
-.node.highlight {
-	color: red;
+.node:not(.invested){
+	opacity: 0.1;
 }
 
 .node.filtered {
 	visibility: hidden;
 }
 
-.edge.highlight {
+.node.highlight {
 	color: red;
+	opacity: 1;
 }
 
-.edge.source-filtered {
+.edge {
+	stroke: currentColor;
+	stroke-width: 1.5;
+}
+
+.edge:not(.source-invested),
+.edge:not(.target-invested) {
 	visibility: hidden;
 }
 
+.edge.source-filtered,
 .edge.target-filtered {
 	visibility: hidden;
 }
 
-.edge{
-	stroke: currentColor;
-	stroke-width: 1.5;
+.edge.highlight {
+	color: red;
+	visibility: visible;
 }
 
 /* Responsive Design */
