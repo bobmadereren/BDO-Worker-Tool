@@ -1,5 +1,3 @@
-import { MinPriorityQueue } from "@datastructures-js/priority-queue";
-
 /**
  * Cheapest path from a node to another node, where each node has a cost.
  * @param {T} source Source node.
@@ -10,8 +8,6 @@ import { MinPriorityQueue } from "@datastructures-js/priority-queue";
  */
 function shortestPath(source, target, neighbors, cost) {
     let prev = new Map();
-    let dist = new Map();
-    let queue = new MinPriorityQueue(node => dist.get(node));
 
     let path = (node) => {
         if (!node) return [];
@@ -20,19 +16,21 @@ function shortestPath(source, target, neighbors, cost) {
         return result;
     }
 
-    queue.enqueue(source);
-    dist.set(source, cost(source));
+    let layers = [[[source]]];
+    let add = (node, dist, from) => layers[dist] ? layers[dist].push([node, from]) : layers[dist] = [[node, from]];
 
-    while (!queue.isEmpty()) {
-        let node = queue.dequeue();
-        if (target(node)) return path(node);
+    for (let l = 0; l < layers.length; l++) {
+        if (!layers[l]) continue;
+        
+        for (let [node, from] of layers[l]) {
+            if (prev.has(node)) continue;
 
-        for (let neighbor of neighbors(node))
-            if (!dist.has(neighbor)) {
-                prev.set(neighbor, node);
-                dist.set(neighbor, dist.get(node) + cost(neighbor));
-                queue.enqueue(neighbor);
-            }
+            prev.set(node, from);
+            if (target(node)) return path(prev.get(node));
+            
+            for (let neighbor of neighbors(node))
+                add(neighbor, l + cost(neighbor), node);
+        }
     }
 }
 
