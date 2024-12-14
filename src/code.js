@@ -2,7 +2,7 @@ import nodeData from './data/nodes.json' with {type: 'json'};
 import investedData from './config/investedNodes.json' with {type: 'json'};
 import * as d3 from 'd3';
 import { Axe, Castle, createElement, createIcons, Factory, FishSymbol, Handshake, Landmark, Leaf, Package, Pickaxe, Shovel, TriangleAlert, UtilityPole, Wheat } from 'lucide';
-import { shortestPath } from './graph/graph.ts';
+import { shortestPath } from './graph/graph.js';
 import { dependants } from './graph/graph.js';
 
 // Replace implicit referance to a node through its ids with a pointer to the node
@@ -108,7 +108,7 @@ function hideTooltip() {
 
 // Highlight
 function highlightShortestPath(node) {
-    let { path, cost } = shortestPath(node, node => investedNodes.has(node), node => node.neighbors, node => node.cp);
+    let path = shortestPath(node, node => investedNodes.has(node), node => node.neighbors, node => node.cp);
     let pathSet = new Set(path);
 
     nodes.classed("highlight", node => pathSet.has(node));
@@ -140,7 +140,7 @@ function updateTotalCP() {
 
 // Buy / Sell
 function invest(node) {
-    let { path, cost } = shortestPath(node, node => investedNodes.has(node), node => node.neighbors, node => node.cp);
+    let path = shortestPath(node, node => investedNodes.has(node), node => node.neighbors, node => node.cp);
 
     for (let node of path)
         investedNodes.add(node);
