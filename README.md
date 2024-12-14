@@ -40,6 +40,7 @@ Build default user configuration. Any existing config will be overridden.
 ## TODO
 - [X] Ability to purchase node (including required nodes and edges which should be shown and highlighted on hovering node or buy button)
 - [X] Ability to sell node (including dependent nodes and edges which should be shown and highlighted when hovering node or sell button)
+- [ ] Remove the need for a bundler
 - [ ] Save owned nodes
 - [ ] Animate side panel in and out
 - [ ] Update dimensions on window size change
