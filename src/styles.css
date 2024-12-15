@@ -81,14 +81,17 @@ svg text{
     font-size: 16px;
     border: none;
     border-radius: 8px;
-    background-color: green;
-    color: white;
-    cursor: pointer;
+	--lightness: 50%;
+    background-color: hsl(from steelblue h s var(--lightness));
     transition: background-color 0.3s ease;
 }
 
 #side-panel-content button:hover {
-    background-color: darkgreen;
+	--lightness: 40%;
+}
+
+#side-panel-content button:active {
+	--lightness: 30%;
 }
 
 /* Button Styling */
@@ -99,7 +102,7 @@ button {
 	align-items: center;
 	justify-content: center;
 	background-color: #444; /* Neutral background color */
-	color: #ffffff; /* Default text color */
+	color: currentColor; /* Default text color */
 	border-radius: 8px; /* Rounded corners for modern look */
 	border: 1px solid #222; /* Subtle border for visual separation */
 	font-size: 14px;
@@ -145,6 +148,13 @@ button:focus,
 .node-tooltip:focus {
 	border: 2px solid #00bcd4;
 	box-shadow: 0 0 10px #00bcd4;
+}
+
+.node-tooltip > div:first-child {
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 }
 
 /* Side Panel Styling */
@@ -282,20 +292,6 @@ body {
 	font-style: italic; /* Italic style for placeholder */
 }
 
-#side-panel-content button {
-	background-color: #00ff00;
-	color: #000000;
-	border: none;
-	font-size: 16px;
-	margin-top: 10px;
-	cursor: pointer;
-}
-
-#side-panel-content button:disabled {
-	background-color: #777;
-	cursor: not-allowed;
-}
-
 /* TODO
 	Style nodes, there are three cases to consider .node, .node.filtered and .node.highlight
 	For eksample, add barely noticable glow to nodes and and stronger glow to highlighted nodes and maybe color
@@ -309,7 +305,8 @@ g .node {
 	opacity: 0.1;
 }
 
-.node.filtered {
+.node.filtered,
+.node.search-filtered {
 	visibility: hidden;
 	pointer-events: none;
 }
@@ -326,18 +323,22 @@ g .node {
 }
 
 .edge:not(.source-invested),
-.edge:not(.target-invested) {
-	visibility: hidden;
-}
-
+.edge:not(.target-invested),
 .edge.source-filtered,
-.edge.target-filtered {
+.edge.target-filtered,
+.edge.source-search-filtered,
+.edge.target-search-filtered {
 	visibility: hidden;
 }
 
 .edge.highlight {
 	color: red;
 	visibility: visible;
+}
+
+#invest-button {
+	background-color: green;
+	color: white;
 }
 
 /* Responsive Design */

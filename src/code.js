@@ -80,14 +80,7 @@ let tooltip = d3.select("body")
 function updateTooltip(node) {
     tooltip.selectAll("div").remove();
 
-    // TODO move style to css
-    tooltip.append("div")
-        .append("strong")
-        .style("display", "flex")
-        .style("align-items", "center")
-        .style("gap", "5px")
-        .node().append(node.name, createElement(icons[node.type]));
-
+    tooltip.append("div").node().append(node.name, createElement(icons[node.type]));
     tooltip.append("div").text(node.territory);
     tooltip.append("div").text("CP: " + node.cp);
 }
@@ -187,7 +180,6 @@ let nodes = svg.append("g")
     .append("g")
     .attr("class", "node")
     .classed("invested", node => investedNodes.has(node))
-    .on("click.sidepanel", showSidePanel)
     .on("mouseenter.tooltip", (e, node) => {
         updateTooltip(node);
         positionTooltip(e);
@@ -197,7 +189,7 @@ let nodes = svg.append("g")
     .on("mouseleave.tooltip", hideTooltip)
     .on("mouseenter.path", (_, node) => investedNodes.has(node) ? highlightDependants(node) : highlightShortestPath(node))
     .on("mouseleave.path", lowlight)
-    .on('click.invest-sell', (e, node) => e.ctrlKey || e.metaKey ? investedNodes.has(node) ? sell(node) : invest(node) : null);
+    .on('click', (e, node) => e.ctrlKey || e.metaKey ? investedNodes.has(node) ? sell(node) : invest(node) : showSidePanel(node));
 
 nodes.append("text")
     .text(({ name }) => name);
@@ -259,13 +251,20 @@ function draw({ transform }) {
 }
 
 // Side Panel
-function showSidePanel(_, node) {
-    // TODO clean
-    let sidePanel = d3.select("#side-panel");
+let sidePanel = d3.select("body")
+    .append("div")
+    .attr("id", "side-panel");
+
+sidePanel.append("h3")
+    .text("Node Details");
+
+let sidePanelContent = sidePanel.append("div")
+    .attr("id", "side-panel-content");
+
+function showSidePanel(node) {
     sidePanel.classed("hidden", false);
 
-    // Display node details
-    d3.select("#side-panel-content").html(`
+    sidePanelContent.html(`
         <div><strong>Name:</strong> ${node.name}</div>
         <div><strong>Type:</strong> ${node.type}</div>
         <div><strong>Territory:</strong> ${node.territory}</div>
@@ -276,48 +275,16 @@ function showSidePanel(_, node) {
         <div><strong>Is Monopoly Node:</strong> ${node.isMonopoly ? 'Yes' : 'No'}</div>
     `);
 
-    const sidePanelContent = d3.select("#side-panel-content");
+    sidePanelContent.append("button")
+        .attr("id", "invest-button")
+        .text(investedNodes.has(node) ? "Sell" : "Invest")
+        .on("click", () => investedNodes.has(node) ? sell(node) : invest(node));
 
-    // Check conditions and add appropriate button
-    if (!investedNodes.has(node) && node.neighbors.some(neighbor => investedNodes.has(neighbor))) {
-        // Add invest Button
-        sidePanelContent.append("button")
-            .attr("id", "invest-button")
-            .style("background-color", "green")
-            .style("color", "white")
-            .text("invest node")
-            .on("click", function (e) {
-                e.stopPropagation();
-                invest(e, node);
-                showSidePanel(_, node); // Refresh side panel
-            });
-    }
-
-    if (investedNodes.has(node)) {
-        // Add Sell Button
-        sidePanelContent.append("button")
-            .attr("id", "sell-button")
-            .style("background-color", "green")
-            .style("color", "white")
-            .text("Sell node")
-            .on("click", function (e) {
-                e.stopPropagation();
-                sell(e, node);
-                showSidePanel(_, node); // Refresh side panel
-            });
-    }
 }
 
 function hideSidePanel() {
-    d3.select("#side-panel").classed("hidden", true);
+    sidePanel.classed("hidden", true);
 }
-
-// Hide panel when clicking outside nodes
-d3.select("body").on("click", function (e) {
-    if (!e.target.closest(".node") && !e.target.closest("#side-panel")) {
-        hideSidePanel();
-    }
-});
 
 // Initial render
 svg.call(zoom.transform, d3.zoomIdentity);
@@ -326,13 +293,19 @@ svg.call(zoom.transform, d3.zoomIdentity);
 updateTotalCP();
 
 // Search and Filter Functionality
-let searchInput = document.getElementById('node-search');
-searchInput.addEventListener('input', function () {
-    let query = searchInput.value.toLowerCase();
-    nodes.style('opacity', d => (d.name.toLowerCase().includes(query) ? 1 : 0.1));
-    edges.style('opacity', d => {
-        let sourceMatch = d.source.name.toLowerCase().includes(query);
-        let targetMatch = d.target.name.toLowerCase().includes(query);
-        return sourceMatch || targetMatch ? 1 : 0.1;
-    });
-});
+function searchFilter(e) {
+    let search = new RegExp(e.target.value, 'i');
+    
+    nodes.classed('search-filtered', node => !search.test(node.name));
+    edges.classed('source-search-filtered', edge => !search.test(edge.source.name));
+    edges.classed('target-search-filtered', edge => !search.test(edge.target.name));
+}
+
+let searchInput = d3.select("body")
+    .append("div")
+    .attr("id", "controls")
+    .append("input")
+    .attr("type", "text")
+    .attr("id", "node-search")
+    .attr("placeholder", "Search nodes...")
+    .on("input", searchFilter);
